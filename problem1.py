@@ -59,10 +59,10 @@ def shortest_sequence_from_kgrams(kgrams): #this is our pipeline basically
     return reconstruct_string(path) #return the path as a string
 
 kgrams = [
-    "C4 E4 G4",
+    "C4 E4 E4",
     "E4 G4 B4",
-    "G4 B4 D5",
-    "B4 D5 G5"
+    "G4 B4 B4",
+    "B4 B4 B4"
 ]
 
 print(shortest_sequence_from_kgrams(kgrams))
