@@ -11,8 +11,15 @@ Fux coverage notes are inline. Deviations from Fux are flagged with [FUX-DIFF].
 """
 
 from pulp import (
-    LpProblem, LpMinimize, LpVariable, LpBinary, LpInteger,
-    lpSum, LpStatus, value, PULP_CBC_CMD
+    LpProblem,
+    LpMinimize,
+    LpVariable,
+    LpBinary,
+    LpInteger,
+    lpSum,
+    LpStatus,
+    value,
+    PULP_CBC_CMD,
 )
 
 # =============================================================================
@@ -27,16 +34,16 @@ T = len(Cf)  # number of bars
 
 # Precompute CF direction arrays
 # CfUp[t] = 1 if CF moves UP from bar t to t+1
-CfUp   = [1 if Cf[t+1] > Cf[t] else 0 for t in range(T-1)]
+CfUp = [1 if Cf[t + 1] > Cf[t] else 0 for t in range(T - 1)]
 # CfDown[t] = 1 if CF moves DOWN from bar t to t+1
-CfDown = [1 if Cf[t+1] < Cf[t] else 0 for t in range(T-1)]
+CfDown = [1 if Cf[t + 1] < Cf[t] else 0 for t in range(T - 1)]
 
 # Index sets
-T0 = range(T)        # all bars
-T1 = range(T - 1)    # bars with a successor (for melodic intervals)
-T2 = range(T - 2)    # bars with two successors (for consecutive leaps)
-T3 = range(T - 3)    # bars with three successors (for parallel 3rds/6ths run)
-T4 = range(T - 4)    # bars with four successors (for pitch repetition window)
+T0 = range(T)  # all bars
+T1 = range(T - 1)  # bars with a successor (for melodic intervals)
+T2 = range(T - 2)  # bars with two successors (for consecutive leaps)
+T3 = range(T - 3)  # bars with three successors (for parallel 3rds/6ths run)
+T4 = range(T - 4)  # bars with four successors (for pitch repetition window)
 
 # Harmonic intervals (semitones above CF) that are consonant in first species.
 # Fux: unison(0), minor third(3), major third(4), perfect fourth(5) [above bass],
@@ -50,7 +57,7 @@ H = [0, 3, 4, 5, 7, 8, 9, 12]
 # perfect fourth (5), perfect fifth (7), minor sixth (8, ascending only in Fux),
 # octave (12). Tanaka encodes 8 as a "small leap" and allows both directions.
 # [FUX-DIFF]: Fux restricts ascending minor sixth (8) but Tanaka allows ±8.
-M_pos = [1, 2, 3, 4, 5, 7, 8, 12]   # upward melodic intervals
+M_pos = [1, 2, 3, 4, 5, 7, 8, 12]  # upward melodic intervals
 M_neg = [-1, -2, -3, -4, -5, -7, -8, -12]  # downward melodic intervals
 M = M_pos + M_neg  # all allowed melodic intervals (no 0 = no repeated pitch)
 
@@ -61,7 +68,7 @@ smallLeaps = [i for i in M if abs(i) not in (1, 2)]
 largeLeaps = [i for i in M if abs(i) > 4]
 
 # Bars where CF itself makes a large leap (so we can apply rule 3.4.7)
-CfLargeLeapT = [t for t in T1 if abs(Cf[t+1] - Cf[t]) > 4]
+CfLargeLeapT = [t for t in T1 if abs(Cf[t + 1] - Cf[t]) > 4]
 
 # Possible pitches for the soprano counterpoint voice (diatonic, semitones).
 # Tanaka uses C major/D minor soprano register: C4 to A5 roughly.
@@ -101,16 +108,15 @@ hInterval = {t: LpVariable(f"hInterval_{t}", cat=LpInteger) for t in T0}
 mInterval = {t: LpVariable(f"mInterval_{t}", cat=LpInteger) for t in T1}
 
 # Auxiliary direction and motion variables
-up      = {t: LpVariable(f"up_{t}",      cat=LpBinary) for t in T1}
-down    = {t: LpVariable(f"down_{t}",    cat=LpBinary) for t in T1}
+up = {t: LpVariable(f"up_{t}", cat=LpBinary) for t in T1}
+down = {t: LpVariable(f"down_{t}", cat=LpBinary) for t in T1}
 conjunct = {t: LpVariable(f"conjunct_{t}", cat=LpBinary) for t in T1}
 contrary = {t: LpVariable(f"contrary_{t}", cat=LpBinary) for t in T1}
-turn    = {t: LpVariable(f"turn_{t}",    cat=LpBinary) for t in T1}
+turn = {t: LpVariable(f"turn_{t}", cat=LpBinary) for t in T1}
 
 # consecutiveLeap[t]: number of leaps at bars t and t+1 (0, 1, or 2)
 consecutiveLeap = {
-    t: LpVariable(f"consLeap_{t}", lowBound=0, upBound=2, cat=LpInteger)
-    for t in T2
+    t: LpVariable(f"consLeap_{t}", lowBound=0, upBound=2, cat=LpInteger) for t in T2
 }
 
 # largeLeap[t]: 1 iff counterpoint has a large leap at bar t
@@ -159,8 +165,8 @@ for t in T1:
 #   mInterval[t]       = (Cf[t+1] + hInterval[t+1]) - (Cf[t] + hInterval[t])
 for t in T1:
     prob += (
-        mInterval[t] == (hInterval[t+1] + Cf[t+1]) - (hInterval[t] + Cf[t]),
-        f"mh_consistency_{t}"
+        mInterval[t] == (hInterval[t + 1] + Cf[t + 1]) - (hInterval[t] + Cf[t]),
+        f"mh_consistency_{t}",
     )
 
 # (7) Pitch consistency: p[t,u] encoding agrees with hInterval
@@ -169,7 +175,7 @@ for t in T1:
 for t in T0:
     prob += (
         lpSum(u * p[t, u] for u in P) == Cf[t] + hInterval[t],
-        f"pitch_consistency_{t}"
+        f"pitch_consistency_{t}",
     )
 
 # =============================================================================
@@ -181,10 +187,10 @@ for t in T0:
 #           Exactly one of {up, down} is active per bar (no unison in M).
 for t in T1:
     for i in M_pos:
-        prob += up[t] >= m[t, i],   f"up_forced_{t}_{i}"
+        prob += up[t] >= m[t, i], f"up_forced_{t}_{i}"
     for i in M_neg:
         prob += down[t] >= m[t, i], f"down_forced_{t}_{i}"
-    prob += up[t] + down[t] == 1,   f"up_down_exclusive_{t}"
+    prob += up[t] + down[t] == 1, f"up_down_exclusive_{t}"
 
 # (11) Contrary motion
 # Semantic: contrary[t]=1 iff CP moves opposite to CF.
@@ -192,17 +198,14 @@ for t in T1:
 #   CF down (CfDown[t]=1) and CP up   (up[t]=1)   → contrary
 # This is a direct equality (both terms are disjoint given CF direction is fixed).
 for t in T1:
-    prob += (
-        contrary[t] == CfUp[t] * down[t] + CfDown[t] * up[t],
-        f"contrary_def_{t}"
-    )
+    prob += (contrary[t] == CfUp[t] * down[t] + CfDown[t] * up[t], f"contrary_def_{t}")
 
 # (12) Conjunct motion
 # Semantic: conjunct[t]=1 iff CP moves by a step (±1 or ±2 semitones).
 for t in T1:
     prob += (
         conjunct[t] == m[t, 1] + m[t, -1] + m[t, 2] + m[t, -2],
-        f"conjunct_def_{t}"
+        f"conjunct_def_{t}",
     )
 
 # (13) Consecutive leaps
@@ -210,8 +213,8 @@ for t in T1:
 #           Value is 0, 1, or 2. Used to detect two consecutive leaps.
 for t in T2:
     prob += (
-        consecutiveLeap[t] == lpSum(m[t, i] + m[t+1, i] for i in smallLeaps),
-        f"consLeap_def_{t}"
+        consecutiveLeap[t] == lpSum(m[t, i] + m[t + 1, i] for i in smallLeaps),
+        f"consLeap_def_{t}",
     )
 
 # (14) Large leap indicator
@@ -221,10 +224,7 @@ for t in T2:
 #           [FUX-DIFF]: Tanaka only constrains largeLeap at CfLargeLeapT;
 #           Fux prohibits large leaps in CP anywhere without compensation.
 for t in T1:
-    prob += (
-        largeLeap[t] == lpSum(m[t, i] for i in largeLeaps),
-        f"largeLeap_def_{t}"
-    )
+    prob += (largeLeap[t] == lpSum(m[t, i] for i in largeLeaps), f"largeLeap_def_{t}")
 
 # (15)–(18) Turn variable
 # Semantic: turn[t]=1 iff CP changes melodic direction between bars t and t+2.
@@ -232,10 +232,10 @@ for t in T1:
 #   (up,down) or (down,up) → turn=1; (up,up) or (down,down) → turn=0.
 for t in T1:
     if t + 1 in T1:
-        prob += up[t]   + down[t+1] <= 1 + turn[t],       f"turn_ud_{t}"   # (15)
-        prob += down[t] + up[t+1]   <= 1 + turn[t],       f"turn_du_{t}"   # (16)
-        prob += up[t]   + up[t+1]   <= 1 + (1 - turn[t]), f"turn_uu_{t}"   # (17)
-        prob += down[t] + down[t+1] <= 1 + (1 - turn[t]), f"turn_dd_{t}"   # (18)
+        prob += up[t] + down[t + 1] <= 1 + turn[t], f"turn_ud_{t}"  # (15)
+        prob += down[t] + up[t + 1] <= 1 + turn[t], f"turn_du_{t}"  # (16)
+        prob += up[t] + up[t + 1] <= 1 + (1 - turn[t]), f"turn_uu_{t}"  # (17)
+        prob += down[t] + down[t + 1] <= 1 + (1 - turn[t]), f"turn_dd_{t}"  # (18)
 
 # =============================================================================
 # SECTION 3.4 — Rules of Counterpoint
@@ -246,7 +246,7 @@ for t in T1:
 # Semantic: h[t,0]=0 forces no unison at interior bars.
 # STATUS: ✓ Correctly encodes Fux Rule 1.
 for t in range(1, T - 1):
-    prob += h[t, 0] == 0, f"no_interior_unison_{t}"          # (19)
+    prob += h[t, 0] == 0, f"no_interior_unison_{t}"  # (19)
 
 # --- Rule 3.4.2: No parallel fifths or octaves ---
 # FUX: "Parallel motion to a perfect consonance (fifth, octave, unison) is forbidden."
@@ -261,8 +261,8 @@ for t in range(1, T - 1):
 for t in T1:
     for i1 in [0, 12]:
         for i2 in [0, 12]:
-            prob += h[t, i1] + h[t+1, i2] <= 1, f"no_par_octave_{t}_{i1}_{i2}"  # (20)
-    prob += h[t, 7] + h[t+1, 7] <= 1, f"no_par_fifth_{t}"                        # (21)
+            prob += h[t, i1] + h[t + 1, i2] <= 1, f"no_par_octave_{t}_{i1}_{i2}"  # (20)
+    prob += h[t, 7] + h[t + 1, 7] <= 1, f"no_par_fifth_{t}"  # (21)
 
 # --- Rule 3.4.3: No hidden (direct) fifths or octaves ---
 # FUX: "Hidden fifths and octaves (both voices moving in the same direction
@@ -275,10 +275,10 @@ for t in T1:
 for t in T1:
     if CfUp[t]:
         for i in [0, 7, 12]:
-            prob += h[t+1, i] <= 1 - up[t],   f"no_hidden_up_{t}_{i}"    # (22-26)
+            prob += h[t + 1, i] <= 1 - up[t], f"no_hidden_up_{t}_{i}"  # (22-26)
     if CfDown[t]:
         for i in [0, 7, 12]:
-            prob += h[t+1, i] <= 1 - down[t], f"no_hidden_down_{t}_{i}"  # (27-31)
+            prob += h[t + 1, i] <= 1 - down[t], f"no_hidden_down_{t}_{i}"  # (27-31)
 
 # --- Rule 3.4.4: No arpeggio of triads in one direction ---
 # FUX: "Avoid outlining a triad across three consecutive notes in one direction."
@@ -290,12 +290,18 @@ for t in T1:
 # STATUS: ✓ Semantically correct. Note this is more restrictive than some Fux
 #           readings which only forbid 3-note triadic outlines > an octave.
 for t in T2:
-    prob += m[t,3]  + m[t,4]  + m[t+1,3] + m[t+1,4] <= 1, f"no_arp_up_33_{t}"   # (32)
-    prob += m[t,-3] + m[t,-4] + m[t+1,-3]+ m[t+1,-4]<= 1, f"no_arp_dn_33_{t}"   # (33)
-    prob += m[t,3]  + m[t,4]  + m[t+1,5]             <= 1, f"no_arp_up_34_{t}"   # (34)
-    prob += m[t,-5] + m[t+1,-3]+ m[t+1,-4]           <= 1, f"no_arp_dn_34_{t}"   # (35)
-    prob += m[t,5]  + m[t+1,3] + m[t+1,4]            <= 1, f"no_arp_up_43_{t}"   # (36)
-    prob += m[t,-3] + m[t,-4]  + m[t+1,-5]           <= 1, f"no_arp_dn_43_{t}"   # (37)
+    prob += (
+        m[t, 3] + m[t, 4] + m[t + 1, 3] + m[t + 1, 4] <= 1,
+        f"no_arp_up_33_{t}",
+    )  # (32)
+    prob += (
+        m[t, -3] + m[t, -4] + m[t + 1, -3] + m[t + 1, -4] <= 1,
+        f"no_arp_dn_33_{t}",
+    )  # (33)
+    prob += m[t, 3] + m[t, 4] + m[t + 1, 5] <= 1, f"no_arp_up_34_{t}"  # (34)
+    prob += m[t, -5] + m[t + 1, -3] + m[t + 1, -4] <= 1, f"no_arp_dn_34_{t}"  # (35)
+    prob += m[t, 5] + m[t + 1, 3] + m[t + 1, 4] <= 1, f"no_arp_up_43_{t}"  # (36)
+    prob += m[t, -3] + m[t, -4] + m[t + 1, -5] <= 1, f"no_arp_dn_43_{t}"  # (37)
 
 # --- Rule 3.4.5: No two consecutive leaps in the same direction ---
 # FUX: "Two successive leaps in the same direction are forbidden."
@@ -305,7 +311,7 @@ for t in T2:
 # STATUS: ✓ Correct. Note turn[t] is defined for t in T1, and consecutiveLeap
 #           for t in T2, so t+1 must also be in T1. The indexing aligns correctly.
 for t in T2:
-    prob += consecutiveLeap[t] <= 1 + turn[t], f"no_consec_same_dir_leaps_{t}"   # (38)
+    prob += consecutiveLeap[t] <= 1 + turn[t], f"no_consec_same_dir_leaps_{t}"  # (38)
 
 # --- Rule 3.4.6: No pitch repeated 3 times in 5 consecutive notes ---
 # FUX: Fux does not state this precisely, but the spirit is against monotony/
@@ -318,7 +324,10 @@ for t in T2:
 # STATUS: ✓ Correctly encodes the stated rule. Fux completeness: partial.
 for t in T4:
     for u in P:
-        prob += lpSum(p[s, u] for s in range(t, t+5)) <= 2, f"no_triple_pitch_{t}_{u}"  # (39)
+        prob += (
+            lpSum(p[s, u] for s in range(t, t + 5)) <= 2,
+            f"no_triple_pitch_{t}_{u}",
+        )  # (39)
 
 # --- Rule 3.4.7: No simultaneous large leaps in both voices ---
 # FUX: "Avoid large leaps in the counterpoint when the CF also leaps."
@@ -330,7 +339,7 @@ for t in T4:
 #           reading would additionally require leap compensation (step in
 #           opposite direction after any large leap) — see FUX-MISSING below.
 for t in CfLargeLeapT:
-    prob += largeLeap[t] <= contrary[t], f"no_simult_large_leaps_{t}"             # (40)
+    prob += largeLeap[t] <= contrary[t], f"no_simult_large_leaps_{t}"  # (40)
 
 # --- Rule 3.4.8: Large leaps compensated by opposite movement ---
 # FUX: "After a large leap, the melody should move stepwise in the opposite direction."
@@ -367,8 +376,14 @@ for t in CfLargeLeapT:
 #           separately to thirds and sixths (not combined), which is correct—
 #           3 consecutive thirds followed by a sixth would be fine by Fux.
 for t in T3:
-    prob += lpSum(h[s, 3] + h[s, 4] for s in range(t, t+4)) <= 3, f"no_4par_thirds_{t}"    # (41)
-    prob += lpSum(h[s, 8] + h[s, 9] for s in range(t, t+4)) <= 3, f"no_4par_sixths_{t}"    # (42)
+    prob += (
+        lpSum(h[s, 3] + h[s, 4] for s in range(t, t + 4)) <= 3,
+        f"no_4par_thirds_{t}",
+    )  # (41)
+    prob += (
+        lpSum(h[s, 8] + h[s, 9] for s in range(t, t + 4)) <= 3,
+        f"no_4par_sixths_{t}",
+    )  # (42)
     # Tanaka also adds compound versions (15,16 = 10th; 20,21 = 13th):
     # These are outside the range of H={0..12}, so these constraints are vacuous
     # with this H definition. Included for completeness per the paper.
@@ -399,16 +414,16 @@ prob += lpSum(conjunct[t] for t in T1) >= MinConjunct, "min_conjunct"
 # [FUX-DIFF]: Fux doesn't prescribe a unique climax explicitly; this is a
 #   French conservatoire addition. It does improve melodic shape significantly.
 # STATUS: ✓ Correct Big-M encoding.
-prob += lpSum(climax[t] for t in T0) == 1, "unique_climax"                        # (47)
+prob += lpSum(climax[t] for t in T0) == 1, "unique_climax"  # (47)
 for t in T0:
     prob += (
         (Cf[t] + hInterval[t]) + (1 - climax[t]) <= maxP,
-        f"climax_upper_{t}"
-    )                                                                              # (48)
+        f"climax_upper_{t}",
+    )  # (48)
     prob += (
         maxP <= (Cf[t] + hInterval[t]) + Width * (1 - climax[t]),
-        f"climax_lower_{t}"
-    )                                                                              # (49)
+        f"climax_lower_{t}",
+    )  # (49)
 
 # =============================================================================
 # OBJECTIVE FUNCTION (Section 3.5)
@@ -423,7 +438,7 @@ prob += (
     lpSum(turn[t] for t in T2)
     - lpSum(contrary[t] for t in T2)
     - lpSum(conjunct[t] for t in T2),
-    "objective"
+    "objective",
 )
 
 # =============================================================================
@@ -448,7 +463,7 @@ if LpStatus[prob.status] == "Optimal":
     cp_intervals_h = []
     for t in T0:
         pitch = sum(u * value(p[t, u]) for u in P)
-        hi    = sum(i * value(h[t, i]) for i in H)
+        hi = sum(i * value(h[t, i]) for i in H)
         cp_pitches.append(int(round(pitch)))
         cp_intervals_h.append(int(round(hi)))
     print("Counterpoint pitches (semitones):", cp_pitches)
@@ -456,24 +471,28 @@ if LpStatus[prob.status] == "Optimal":
 
     print()
     print("Bar-by-bar:")
-    print(f"{'Bar':>4} {'CF':>4} {'CP':>4} {'HInt':>5} {'MInt':>5} "
-          f"{'Up':>3} {'Ctr':>4} {'Cnj':>4} {'Trn':>4}")
+    print(
+        f"{'Bar':>4} {'CF':>4} {'CP':>4} {'HInt':>5} {'MInt':>5} "
+        f"{'Up':>3} {'Ctr':>4} {'Cnj':>4} {'Trn':>4}"
+    )
     for t in T0:
         cf_p = Cf[t]
         cp_p = cp_pitches[t]
-        hi   = cp_intervals_h[t]
-        mi   = int(round(value(mInterval[t]))) if t in T1 else "-"
-        u    = int(round(value(up[t])))       if t in T1 else "-"
-        ctr  = int(round(value(contrary[t]))) if t in T1 else "-"
-        cnj  = int(round(value(conjunct[t]))) if t in T1 else "-"
-        trn  = int(round(value(turn[t])))     if t in T1 else "-"
-        print(f"{t:>4} {cf_p:>4} {cp_p:>4} {hi:>5} {str(mi):>5} "
-              f"{str(u):>3} {str(ctr):>4} {str(cnj):>4} {str(trn):>4}")
+        hi = cp_intervals_h[t]
+        mi = int(round(value(mInterval[t]))) if t in T1 else "-"
+        u = int(round(value(up[t]))) if t in T1 else "-"
+        ctr = int(round(value(contrary[t]))) if t in T1 else "-"
+        cnj = int(round(value(conjunct[t]))) if t in T1 else "-"
+        trn = int(round(value(turn[t]))) if t in T1 else "-"
+        print(
+            f"{t:>4} {cf_p:>4} {cp_p:>4} {hi:>5} {str(mi):>5} "
+            f"{str(u):>3} {str(ctr):>4} {str(cnj):>4} {str(trn):>4}"
+        )
 
     n_contrary = sum(int(round(value(contrary[t]))) for t in T1)
-    n_conjunct  = sum(int(round(value(conjunct[t]))) for t in T1)
-    n_turns     = sum(int(round(value(turn[t])))    for t in T1 if t+1 in T1)
-    climax_bar  = next(t for t in T0 if round(value(climax[t])) == 1)
+    n_conjunct = sum(int(round(value(conjunct[t]))) for t in T1)
+    n_turns = sum(int(round(value(turn[t]))) for t in T1 if t + 1 in T1)
+    climax_bar = next(t for t in T0 if round(value(climax[t])) == 1)
     print(f"\nContrary motions: {n_contrary}/{T-1}")
     print(f"Conjunct motions: {n_conjunct}/{T-1}")
     print(f"Turns:            {n_turns}/{T-2}")
@@ -482,7 +501,8 @@ if LpStatus[prob.status] == "Optimal":
 # =============================================================================
 # FUX COVERAGE SUMMARY
 # =============================================================================
-print("""
+print(
+    """
 === FUX FIRST SPECIES COVERAGE SUMMARY ===
 
 RULE                                      TANAKA  STATUS
@@ -508,4 +528,5 @@ RULE                                      TANAKA  STATUS
 16. Penultimate bar: leading tone motion  —         ✗ NOT IN TANAKA
     (Fux: the bar before the last should approach the final by step,
      often using the leading tone. Not encoded.)
-""")
+"""
+)
