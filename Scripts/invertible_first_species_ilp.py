@@ -50,7 +50,9 @@ T4 = range(T - 4)  # bars with four successors (for pitch repetition window)
 #      perfect fifth(7), minor sixth(8), major sixth(9), octave(12).
 # NOTE: 5 (perfect fourth) is consonant only when CF is in the bass (standard
 # two-voice 1st species). Tanaka includes it; Fux allows it above the bass.
-H = [0, 3, 4, 5, 7, 8, 9, 12, 15, 16, 17, 19, 20, 21, 24]
+
+# Invertible consonances only (3rds and 6ths and their compounds)
+H = [3, 4, 8, 9, 15, 16, 20, 21]
 
 # Melodic intervals allowed in the counterpoint voice (semitones, signed).
 # Fux allows: semitone (1), whole tone (2), minor third (3), major third (4),
@@ -241,14 +243,14 @@ for t in T1:
 # SECTION 3.4 — Rules of Counterpoint
 # =============================================================================
 
-# --- Rule 3.4.1: Unisons only at first and last bar ---
+# --- Rule 3.4.1: Unisons only at first and last bar -> already impossible given our new H---
 # FUX: "The unison is only permitted at the beginning or end." (Book I, Rule 1)
 # Semantic: h[t,0]=0 forces no unison at interior bars.
 # STATUS: ✓ Correctly encodes Fux Rule 1.
-for t in range(1, T - 1):
-    prob += h[t, 0] == 0, f"no_interior_unison_{t}"  # (19)
+# for t in range(1, T - 1):
+#     prob += h[t, 0] == 0, f"no_interior_unison_{t}"  # (19)
 
-# --- Rule 3.4.2: No parallel fifths or octaves ---
+# --- Rule 3.4.2: No parallel fifths or octaves -> NO FIFTHS OR OCTAVES LEFT TO BE PARALELL ---
 # FUX: "Parallel motion to a perfect consonance (fifth, octave, unison) is forbidden."
 # Semantic: if h[t,i1]=1 and h[t+1,i2]=1 where both are octave-class or fifth-class,
 #           their sum would be 2, violating ≤1. This prohibits parallel perfect consonances.
@@ -259,45 +261,45 @@ for t in range(1, T - 1):
 #       octave-class: {0,12} × {0,12}; fifth-class: {7} × {7}.
 # STATUS: ✓ Correct. Covers parallel P5 and P8 (and unison→unison).
 # --- Rule 3.4.2: No parallel fifths or octaves (with compound intervals) ---
-for t in T1:
-    # Octave-class intervals (unison, octave, double octave)
-    for i1 in [0, 12, 24]:
-        for i2 in [0, 12, 24]:
-            prob += h[t, i1] + h[t + 1, i2] <= 1, f"no_par_octave_{t}_{i1}_{i2}"
+# for t in T1:
+#     # Octave-class intervals (unison, octave, double octave)
+#     for i1 in [0, 12, 24]:
+#         for i2 in [0, 12, 24]:
+#             prob += h[t, i1] + h[t + 1, i2] <= 1, f"no_par_octave_{t}_{i1}_{i2}"
 
-    # Fifth-class intervals (perfect fifth, compound fifth)
-    for i1 in [7, 19]:
-        for i2 in [7, 19]:
-            prob += h[t, i1] + h[t + 1, i2] <= 1, f"no_par_fifth_{t}_{i1}_{i2}"
+#     # Fifth-class intervals (perfect fifth, compound fifth)
+#     for i1 in [7, 19]:
+#         for i2 in [7, 19]:
+#             prob += h[t, i1] + h[t + 1, i2] <= 1, f"no_par_fifth_{t}_{i1}_{i2}"
 
-# --- Rule 3.4.3: No hidden (direct) fifths or octaves ---
+# --- Rule 3.4.3: No hidden (direct) fifths or octaves -> no fifths or octaves anymore ---
 # Only forbid when:
 #   - voices move in the same direction (similar motion)
 #   - AND the counterpoint moves by leap (not stepwise)
 
 # Similar motion variable
-similar = {t: LpVariable(f"similar_{t}", cat=LpBinary) for t in T1}
+# similar = {t: LpVariable(f"similar_{t}", cat=LpBinary) for t in T1}
 
-for t in T1:
-    # CF direction is fixed, so similar motion reduces to:
-    if CfUp[t]:
-        prob += similar[t] == up[t], f"similar_up_{t}"
-    elif CfDown[t]:
-        prob += similar[t] == down[t], f"similar_down_{t}"
+# for t in T1:
+#     # CF direction is fixed, so similar motion reduces to:
+#     if CfUp[t]:
+#         prob += similar[t] == up[t], f"similar_up_{t}"
+#     elif CfDown[t]:
+#         prob += similar[t] == down[t], f"similar_down_{t}"
 
-# Hidden interval trigger: similar AND leap (i.e., not conjunct)
-hiddenTrigger = {t: LpVariable(f"hiddenTrig_{t}", cat=LpBinary) for t in T1}
+# # Hidden interval trigger: similar AND leap (i.e., not conjunct)
+# hiddenTrigger = {t: LpVariable(f"hiddenTrig_{t}", cat=LpBinary) for t in T1}
 
-for t in T1:
-    # hiddenTrigger[t] = similar[t] AND (1 - conjunct[t])
-    prob += hiddenTrigger[t] <= similar[t], f"hidTrig_le_sim_{t}"
-    prob += hiddenTrigger[t] <= 1 - conjunct[t], f"hidTrig_le_leap_{t}"
-    prob += hiddenTrigger[t] >= similar[t] + (1 - conjunct[t]) - 1, f"hidTrig_ge_{t}"
+# for t in T1:
+#     # hiddenTrigger[t] = similar[t] AND (1 - conjunct[t])
+#     prob += hiddenTrigger[t] <= similar[t], f"hidTrig_le_sim_{t}"
+#     prob += hiddenTrigger[t] <= 1 - conjunct[t], f"hidTrig_le_leap_{t}"
+#     prob += hiddenTrigger[t] >= similar[t] + (1 - conjunct[t]) - 1, f"hidTrig_ge_{t}"
 
-# Apply restriction: forbid perfect intervals only when triggered
-for t in T1:
-    for i in [0, 7, 12, 19, 24]:  # unison, fifth, octave
-        prob += h[t + 1, i] <= 1 - hiddenTrigger[t], f"no_hidden_{t}_{i}"
+# # Apply restriction: forbid perfect intervals only when triggered
+# for t in T1:
+#     for i in [0, 7, 12, 19, 24]:  # unison, fifth, octave
+#         prob += h[t + 1, i] <= 1 - hiddenTrigger[t], f"no_hidden_{t}_{i}"
 
 # --- Rule 3.4.4: No arpeggio of triads in one direction ---
 # FUX: "Avoid outlining a triad across three consecutive notes in one direction."
