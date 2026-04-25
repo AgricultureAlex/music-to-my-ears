@@ -1,3 +1,5 @@
+# TODO: Verify with a good cantus firmus
+
 """
 First Species Counterpoint — Integer Linear Program
 Based on: Tanaka (2022), SMC, "Formulating First Species Counterpoint with Integer Programming"
@@ -519,6 +521,12 @@ if LpStatus[prob.status] == "Optimal":
     print(f"Conjunct motions: {n_conjunct}/{T-1}")
     print(f"Turns:            {n_turns}/{T-2}")
     print(f"Climax at bar:    {climax_bar} (pitch={cp_pitches[climax_bar]})")
+
+    # --- Musical notation ---
+    import os, sys
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from translator import show_first_species
+    show_first_species(Cf, cp_pitches, "Invertible First Species Counterpoint")
 
 # =============================================================================
 # FUX COVERAGE SUMMARY

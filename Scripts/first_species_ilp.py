@@ -50,7 +50,7 @@ T4 = range(T - 4)  # bars with four successors (for pitch repetition window)
 #      perfect fifth(7), minor sixth(8), major sixth(9), octave(12).
 # NOTE: 5 (perfect fourth) is consonant only when CF is in the bass (standard
 # two-voice 1st species). Tanaka includes it; Fux allows it above the bass.
-H = [0, 3, 4, 5, 7, 8, 9, 12, 15, 16, 17, 19, 20, 21, 24]
+H = [0, 3, 4, 7, 8, 9, 12, 15, 16, 17, 19, 20, 21, 24]
 
 # Melodic intervals allowed in the counterpoint voice (semitones, signed).
 # Fux allows: semitone (1), whole tone (2), minor third (3), major third (4),
@@ -247,6 +247,22 @@ for t in T1:
 # STATUS: ✓ Correctly encodes Fux Rule 1.
 for t in range(1, T - 1):
     prob += h[t, 0] == 0, f"no_interior_unison_{t}"  # (19)
+
+# --- Rule 3.4.1a: Unisons or octaves ENFORCED at last bar ---
+# # Interval classes present in H (mod 12)
+IC = sorted(set(i % 12 for i in H))  # [0, 3, 4, 7, 8, 9]
+
+hClass = {(t, c): LpVariable(f"hClass_{t}_{c}", cat=LpBinary) for t in T0 for c in IC}
+
+# Link: hClass[t, c] = 1 iff any active h[t, i] has i % 12 == c
+for t in T0:
+    for c in IC:
+        members = [i for i in H if i % 12 == c]
+        prob += hClass[t, c] == lpSum(h[t, i] for i in members), f"hClass_def_{t}_{c}"
+
+# Final bar: unison or octave
+prob += hClass[T-1, 0] == 1, "final_perfect_unison_class"
+
 
 # --- Rule 3.4.2: No parallel fifths or octaves ---
 # FUX: "Parallel motion to a perfect consonance (fifth, octave, unison) is forbidden."
@@ -517,6 +533,12 @@ if LpStatus[prob.status] == "Optimal":
     print(f"Conjunct motions: {n_conjunct}/{T-1}")
     print(f"Turns:            {n_turns}/{T-2}")
     print(f"Climax at bar:    {climax_bar} (pitch={cp_pitches[climax_bar]})")
+
+    # --- Musical notation ---
+    import os, sys
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from translator import show_first_species
+    show_first_species(Cf, cp_pitches, "First Species Counterpoint")
 
 # =============================================================================
 # FUX COVERAGE SUMMARY

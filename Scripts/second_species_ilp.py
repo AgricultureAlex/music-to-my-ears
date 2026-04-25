@@ -410,3 +410,9 @@ if LpStatus[prob.status] == "Optimal":
     print(f"Contrary motions:  {n_contrary}/{len(moving_transitions)}")
     print(f"Turns:             {n_turns}/{S-2}")
     print(f"Climax at subbeat: {climax_bar} (pitch={cp_pitches[climax_bar]})")
+
+    # --- Musical notation ---
+    import os, sys
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from translator import show_second_species
+    show_second_species(Cf, cp_pitches, "Second Species Counterpoint")
