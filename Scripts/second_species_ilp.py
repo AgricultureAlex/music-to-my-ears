@@ -201,6 +201,24 @@ for s in Upbeats:
         prob += up[s - 1] - up[s] <= 1 - isDissonant[s], f"diss_same_dir_a_{s}"
         prob += up[s] - up[s - 1] <= 1 - isDissonant[s], f"diss_same_dir_b_{s}"
 
+# --- Rule [NEW] Opening interval: unison, fifth, or octave ---
+# Semantic: at s=0 (first downbeat), only h[0,0], h[0,7], or h[0,12] may be active.
+# Fux: the opening must be a perfect consonance.
+prob += (
+    h[0, 0] + h[0, 7] + h[0, 12] == 1,
+    "opening_perfect_consonance",
+)
+
+# --- Rule [NEW] Penultimate note: stepwise approach to final whole note ---
+# Semantic: the upbeat at s = S-2 is the CP note immediately before the final
+# whole note at s = S-1. Its melodic interval into the final must be ±1 or ±2.
+# Since ∑_i m[S-2, i] == 1 already, this simply restricts which interval is active.
+# Fux: the penultimate note approaches the final by step (leading tone or supertonic).
+prob += (
+    m[S - 2, -2] + m[S - 2, -1] + m[S - 2, 1] + m[S - 2, 2] == 1,
+    "penultimate_stepwise_approach",
+)
+
 # =============================================================================
 # COUNTERPOINT RULES
 # =============================================================================

@@ -460,6 +460,30 @@ for t in T0:
         f"climax_lower_{t}",
     )  # (49)
 
+# --- Rule [NEW] Opening interval: unison, fifth, or octave ---
+# FUX: "The first note must be a perfect consonance — unison, fifth, or octave."
+# Semantic: h[0, i] must be 0 for any interval not in {0, 7, 12}.
+#           Equivalently, h[0,0] + h[0,7] + h[0,12] == 1 (exactly one of these).
+# STATUS: ✓ Directly encodes Fux's opening rule.
+prob += (
+    h[0, 0] + h[0, 7] + h[0, 12] == 1,
+    "opening_perfect_consonance",
+)
+
+# --- Rule [NEW] Penultimate bar: stepwise approach to final note ---
+# FUX: "The penultimate note should approach the final by step (semitone or
+#       whole tone), typically from the leading tone below or the supertonic above."
+# Semantic: mInterval[T-2] ∈ {-2, -1, 1, 2}, i.e. exactly one of those four
+#           melodic-interval binary variables is active at bar T-2.
+#           m[T-2, -2] + m[T-2, -1] + m[T-2, 1] + m[T-2, 2] == 1
+#           Since ∑_i m[T-2, i] == 1 (one_melodic_interval constraint), this is
+#           equivalent to forbidding all non-step intervals at the penultimate bar.
+# STATUS: ✓ Correctly encodes Fux's cadential approach rule.
+prob += (
+    m[T - 2, -2] + m[T - 2, -1] + m[T - 2, 1] + m[T - 2, 2] == 1,
+    "penultimate_stepwise_approach",
+)
+
 # =============================================================================
 # OBJECTIVE FUNCTION (Section 3.5)
 # =============================================================================
