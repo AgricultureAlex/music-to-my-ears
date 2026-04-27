@@ -29,7 +29,7 @@ from pulp import (
 # Cantus firmus as semitone offsets from tonic (C=0).
 # Negative = below the soprano register reference pitch.
 # This is the example CF from the paper (D minor: D E F G A Bb C D E D).
-Cf = [0, -5, -7, -8, -7, -10, -5, -8, -10, -12]
+Cf = [0, 4, 2, 0, 5, 4, 7, 5, 4, 2, 0]
 T = len(Cf)  # number of bars
 
 # Precompute CF direction arrays
@@ -261,7 +261,7 @@ for t in T0:
         prob += hClass[t, c] == lpSum(h[t, i] for i in members), f"hClass_def_{t}_{c}"
 
 # Final bar: unison or octave
-prob += hClass[T-1, 0] == 1, "final_perfect_unison_class"
+prob += hClass[T - 1, 0] == 1, "final_perfect_unison_class"
 
 
 # --- Rule 3.4.2: No parallel fifths or octaves ---
@@ -536,8 +536,10 @@ if LpStatus[prob.status] == "Optimal":
 
     # --- Musical notation ---
     import os, sys
+
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     from translator import show_first_species
+
     show_first_species(Cf, cp_pitches, "First Species Counterpoint")
 
 # =============================================================================
