@@ -70,7 +70,81 @@ Cf_list =[
     [0, 5, 4, 7, 5, 4, 0]
 ]
 
+_M_SET = {1, 2, 3, 4, 5, 7, 8, 12, -1, -2, -3, -4, -5, -7, -8, -12}
+_STEPS = {1, 2}
+
+
+def validate_cf_for_invertible(cf):
+    """
+    Check that the CF satisfies every melodic rule that the ILP enforces on the
+    counterpoint voice.  Returns (True, []) on success, or (False, [reasons]).
+    """
+    violations = []
+    n = len(cf)
+    ivs = [cf[t + 1] - cf[t] for t in range(n - 1)]
+
+    # All intervals must be in the allowed melodic set (no repeated pitch, no augmented 2nd, etc.)
+    for t, d in enumerate(ivs):
+        if d not in _M_SET:
+            violations.append(f"interval {d:+d} at bar {t}→{t+1} not in M")
+
+    # Penultimate bar must approach final by step
+    if abs(ivs[-1]) not in _STEPS:
+        violations.append(f"final interval {ivs[-1]:+d} is not a step (need ±1 or ±2)")
+
+    # No two consecutive leaps in the same direction
+    for t in range(n - 2):
+        d0, d1 = ivs[t], ivs[t + 1]
+        if abs(d0) not in _STEPS and abs(d1) not in _STEPS and (d0 > 0) == (d1 > 0):
+            violations.append(f"consecutive same-direction leaps at bars {t}–{t+2}")
+
+    # No triadic arpeggio outlines
+    for t in range(n - 2):
+        d0, d1 = ivs[t], ivs[t + 1]
+        if (
+            (d0 in (3, 4)  and d1 in (3, 4))   or
+            (d0 in (-3,-4) and d1 in (-3,-4))   or
+            (d0 in (3, 4)  and d1 == 5)         or
+            (d0 == -5      and d1 in (-3,-4))   or
+            (d0 == 5       and d1 in (3, 4))    or
+            (d0 in (-3,-4) and d1 == -5)
+        ):
+            violations.append(f"triadic arpeggio at bars {t}–{t+2} (intervals {d0:+d},{d1:+d})")
+
+    # Minimum conjunct motion (≥ T//2 steps, matching the ILP threshold)
+    n_conj = sum(1 for d in ivs if abs(d) in _STEPS)
+    if n_conj < n // 2:
+        violations.append(f"too few steps: {n_conj}/{n-1} (need ≥ {n // 2})")
+
+    # Unique climax (highest pitch appears exactly once)
+    peak = max(cf)
+    if cf.count(peak) > 1:
+        violations.append(f"climax pitch {peak} appears {cf.count(peak)} times (must be unique)")
+
+    # No pitch repeated more than twice in any 5-bar window
+    if n >= 5:
+        for t in range(n - 4):
+            window = cf[t:t + 5]
+            for pitch in set(window):
+                if window.count(pitch) > 2:
+                    violations.append(
+                        f"pitch {pitch} appears {window.count(pitch)}× in bars {t}–{t+4}"
+                    )
+
+    return len(violations) == 0, violations
+
+
+results = []
+
 for Cf in Cf_list:
+    valid, violations = validate_cf_for_invertible(Cf)
+    if not valid:
+        print(f"\nSkipping CF {Cf} — fails melodic validation:")
+        for v in violations:
+            print(f"  • {v}")
+        results.append((Cf, None, None))
+        continue
+
     T = len(Cf)  # number of bars
 
     # Precompute CF direction arrays
@@ -92,8 +166,9 @@ for Cf in Cf_list:
     # NOTE: 5 (perfect fourth) is consonant only when CF is in the bass (standard
     # two-voice 1st species). Tanaka includes it; Fux allows it above the bass.
 
-    # Invertible consonances only (3rds and 6ths and their compounds)
-    H = [3, 4, 8, 9, 15, 16, 20, 21]
+    # Thirds and sixths for interior bars; unisons/octaves allowed at first/last.
+    # Fifths excluded: P5 inverts to P4 (dissonant in strict counterpoint).
+    H = [0, 3, 4, 8, 9, 12, 15, 16, 20, 21, 24]
 
     # Melodic intervals allowed in the counterpoint voice (semitones, signed).
     # Fux allows: semitone (1), whole tone (2), minor third (3), major third (4),
@@ -284,63 +359,38 @@ for Cf in Cf_list:
     # SECTION 3.4 — Rules of Counterpoint
     # =============================================================================
 
-    # --- Rule 3.4.1: Unisons only at first and last bar -> already impossible given our new H---
-    # FUX: "The unison is only permitted at the beginning or end." (Book I, Rule 1)
-    # Semantic: h[t,0]=0 forces no unison at interior bars.
-    # STATUS: ✓ Correctly encodes Fux Rule 1.
-    # for t in range(1, T - 1):
-    #     prob += h[t, 0] == 0, f"no_interior_unison_{t}"  # (19)
+    # --- Rule 3.4.1: No interior unisons or octaves ---
+    # Unisons and octaves are only permitted at the first and last bars.
+    for t in range(1, T - 1):
+        for i in [0, 12, 24]:
+            prob += h[t, i] == 0, f"no_interior_perfect_{t}_{i}"
 
-    # --- Rule 3.4.2: No parallel fifths or octaves -> NO FIFTHS OR OCTAVES LEFT TO BE PARALELL ---
-    # FUX: "Parallel motion to a perfect consonance (fifth, octave, unison) is forbidden."
-    # Semantic: if h[t,i1]=1 and h[t+1,i2]=1 where both are octave-class or fifth-class,
-    #           their sum would be 2, violating ≤1. This prohibits parallel perfect consonances.
-    # Octave-class intervals: 0 (unison), 12 (octave). [24 would be 2 octaves — not in H here]
-    # Fifth-class intervals: 7 (fifth), 19 (compound fifth — not in H here).
-    # NOTE: Since H only goes up to 12, intervals 19 and 24 cannot occur — those lines
-    #       in the paper are precautionary. With H={0..12}, pairs to block are:
-    #       octave-class: {0,12} × {0,12}; fifth-class: {7} × {7}.
-    # STATUS: ✓ Correct. Covers parallel P5 and P8 (and unison→unison).
-    # --- Rule 3.4.2: No parallel fifths or octaves (with compound intervals) ---
-    # for t in T1:
-    #     # Octave-class intervals (unison, octave, double octave)
-    #     for i1 in [0, 12, 24]:
-    #         for i2 in [0, 12, 24]:
-    #             prob += h[t, i1] + h[t + 1, i2] <= 1, f"no_par_octave_{t}_{i1}_{i2}"
+    # --- Rule 3.4.2: No parallel octaves ---
+    # Fifths are not in H so only octave-class pairs need blocking.
+    for t in T1:
+        for i1 in [0, 12, 24]:
+            for i2 in [0, 12, 24]:
+                prob += h[t, i1] + h[t + 1, i2] <= 1, f"no_par_octave_{t}_{i1}_{i2}"
 
-    #     # Fifth-class intervals (perfect fifth, compound fifth)
-    #     for i1 in [7, 19]:
-    #         for i2 in [7, 19]:
-    #             prob += h[t, i1] + h[t + 1, i2] <= 1, f"no_par_fifth_{t}_{i1}_{i2}"
+    # --- Rule 3.4.3: No hidden (direct) octaves ---
+    # Fifths not in H, so only block octave-class arrivals via similar motion + leap.
+    similar = {t: LpVariable(f"similar_{t}", cat=LpBinary) for t in T1}
+    for t in T1:
+        if CfUp[t]:
+            prob += similar[t] == up[t], f"similar_up_{t}"
+        elif CfDown[t]:
+            prob += similar[t] == down[t], f"similar_down_{t}"
+        else:
+            prob += similar[t] == 0, f"similar_static_{t}"
 
-    # --- Rule 3.4.3: No hidden (direct) fifths or octaves -> no fifths or octaves anymore ---
-    # Only forbid when:
-    #   - voices move in the same direction (similar motion)
-    #   - AND the counterpoint moves by leap (not stepwise)
-
-    # Similar motion variable
-    # similar = {t: LpVariable(f"similar_{t}", cat=LpBinary) for t in T1}
-
-    # for t in T1:
-    #     # CF direction is fixed, so similar motion reduces to:
-    #     if CfUp[t]:
-    #         prob += similar[t] == up[t], f"similar_up_{t}"
-    #     elif CfDown[t]:
-    #         prob += similar[t] == down[t], f"similar_down_{t}"
-
-    # # Hidden interval trigger: similar AND leap (i.e., not conjunct)
-    # hiddenTrigger = {t: LpVariable(f"hiddenTrig_{t}", cat=LpBinary) for t in T1}
-
-    # for t in T1:
-    #     # hiddenTrigger[t] = similar[t] AND (1 - conjunct[t])
-    #     prob += hiddenTrigger[t] <= similar[t], f"hidTrig_le_sim_{t}"
-    #     prob += hiddenTrigger[t] <= 1 - conjunct[t], f"hidTrig_le_leap_{t}"
-    #     prob += hiddenTrigger[t] >= similar[t] + (1 - conjunct[t]) - 1, f"hidTrig_ge_{t}"
-
-    # # Apply restriction: forbid perfect intervals only when triggered
-    # for t in T1:
-    #     for i in [0, 7, 12, 19, 24]:  # unison, fifth, octave
-    #         prob += h[t + 1, i] <= 1 - hiddenTrigger[t], f"no_hidden_{t}_{i}"
+    hiddenTrigger = {t: LpVariable(f"hiddenTrig_{t}", cat=LpBinary) for t in T1}
+    for t in T1:
+        prob += hiddenTrigger[t] <= similar[t], f"hidTrig_le_sim_{t}"
+        prob += hiddenTrigger[t] <= 1 - conjunct[t], f"hidTrig_le_leap_{t}"
+        prob += hiddenTrigger[t] >= similar[t] + (1 - conjunct[t]) - 1, f"hidTrig_ge_{t}"
+    for t in T1:
+        for i in [0, 12, 24]:
+            prob += h[t + 1, i] <= 1 - hiddenTrigger[t], f"no_hidden_{t}_{i}"
 
     # --- Rule 3.4.4: No arpeggio of triads in one direction ---
     # FUX: "Avoid outlining a triad across three consecutive notes in one direction."
@@ -490,6 +540,19 @@ for Cf in Cf_list:
             f"climax_lower_{t}",
         )  # (49)
 
+    # --- Rule: Opening interval must be unison or octave (no fifth in invertible) ---
+    IC = sorted(set(i % 12 for i in H))
+    hClass = {(t, c): LpVariable(f"hClass_{t}_{c}", cat=LpBinary) for t in T0 for c in IC}
+    for t in T0:
+        for c in IC:
+            members = [i for i in H if i % 12 == c]
+            prob += hClass[t, c] == lpSum(h[t, i] for i in members), f"hClass_def_{t}_{c}"
+
+    prob += hClass[0, 0] == 1, "opening_perfect_consonance"
+
+    # --- Rule: Final bar must be unison or octave ---
+    prob += hClass[T - 1, 0] == 1, "final_perfect_unison_class"
+
     # --- Rule [NEW] Penultimate bar: stepwise approach to final note ---
     # FUX: "The penultimate note should approach the final by step."
     prob += (
@@ -573,11 +636,11 @@ for Cf in Cf_list:
         print(f"Turns:            {n_turns}/{T-2}")
         print(f"Climax at bar:    {climax_bar} (pitch={cp_pitches[climax_bar]})")
 
-        # --- Musical notation ---
-        import os, sys
-        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from translator import show_first_species
-        show_first_species(Cf, cp_pitches, "Invertible First Species Counterpoint", solve_time=solve_time)
+        results.append((Cf, cp_pitches, solve_time))
+        results.append((cp_pitches, [p + 24 for p in Cf], None, "inverted"))
+
+    else:
+        results.append((Cf, None, solve_time))
 
     # =============================================================================
     # FUX COVERAGE SUMMARY
@@ -611,3 +674,8 @@ for Cf in Cf_list:
         often using the leading tone. Not encoded.)
     """
     )
+
+import os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from translator import show_combined_first_species
+show_combined_first_species(results, "Invertible First Species Counterpoint")

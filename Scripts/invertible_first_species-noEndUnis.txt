@@ -1,0 +1,2215 @@
+Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - /Users/alexma/Documents/Coding/Music-To-My-Ears/.venv/lib/python3.11/site-packages/pulp/apis/../solverdir/cbc/osx/i64/cbc /var/folders/h3/6xwgwylx75v6h8sv1tmn84dm0000gn/T/b4f3cfaf464047ad933148a5fe537a69-pulp.mps -sec 600 -timeMode elapsed -branch -printingOptions all -solution /var/folders/h3/6xwgwylx75v6h8sv1tmn84dm0000gn/T/b4f3cfaf464047ad933148a5fe537a69-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 480 COLUMNS
+At line 3781 RHS
+At line 4257 BOUNDS
+At line 4703 ENDATA
+Problem MODEL has 475 rows, 445 columns and 2386 elements
+Coin0008I MODEL read with 0 errors
+seconds was changed from 1e+100 to 600
+Option for timeMode changed from cpu to elapsed
+Continuous objective value is -13.8 - 0.00 seconds
+Cgl0003I 83 fixed, 7 tightened bounds, 216 strengthened rows, 16 substitutions
+Cgl0003I 38 fixed, 3 tightened bounds, 174 strengthened rows, 0 substitutions
+Cgl0003I 31 fixed, 10 tightened bounds, 127 strengthened rows, 4 substitutions
+Cgl0003I 17 fixed, 8 tightened bounds, 21 strengthened rows, 21 substitutions
+Cgl0003I 7 fixed, 1 tightened bounds, 105 strengthened rows, 48 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 93 strengthened rows, 5 substitutions
+Cgl0003I 11 fixed, 6 tightened bounds, 123 strengthened rows, 28 substitutions
+Cgl0003I 3 fixed, 0 tightened bounds, 80 strengthened rows, 2 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 48 strengthened rows, 2 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 56 strengthened rows, 4 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 40 strengthened rows, 2 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 32 strengthened rows, 2 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 27 strengthened rows, 2 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 15 strengthened rows, 2 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 7 strengthened rows, 2 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 4 strengthened rows, 0 substitutions
+Cgl0004I processed model has 185 rows, 175 columns (175 integer (165 of which binary)) and 1282 elements
+Cutoff increment increased from 1e-05 to 0.9999
+Cbc0038I Initial state - 36 integers unsatisfied sum - 6.31986
+Cbc0038I Pass   1: suminf.    5.46976 (37) obj. -12.8032 iterations 21
+Cbc0038I Pass   2: suminf.    8.19481 (48) obj. -11.9054 iterations 28
+Cbc0038I Pass   3: suminf.    7.11286 (46) obj. -11.8831 iterations 12
+Cbc0038I Pass   4: suminf.    6.85421 (24) obj. -10.3636 iterations 29
+Cbc0038I Pass   5: suminf.    5.34955 (24) obj. -9.63636 iterations 14
+Cbc0038I Pass   6: suminf.    5.85758 (24) obj. -9.63636 iterations 6
+Cbc0038I Pass   7: suminf.    8.19649 (30) obj. -8 iterations 47
+Cbc0038I Pass   8: suminf.    5.39431 (23) obj. -8 iterations 29
+Cbc0038I Pass   9: suminf.    6.55251 (42) obj. -7.94049 iterations 34
+Cbc0038I Pass  10: suminf.    7.13169 (40) obj. -7.86603 iterations 6
+Cbc0038I Pass  11: suminf.    5.15632 (21) obj. -8 iterations 31
+Cbc0038I Pass  12: suminf.    5.44354 (26) obj. -7.84234 iterations 29
+Cbc0038I Pass  13: suminf.    7.34622 (33) obj. -6.30435 iterations 42
+Cbc0038I Pass  14: suminf.    8.55885 (40) obj. -6.44828 iterations 15
+Cbc0038I Pass  15: suminf.    8.55885 (40) obj. -6.44828 iterations 6
+Cbc0038I Pass  16: suminf.    4.04697 (26) obj. -4.73636 iterations 43
+Cbc0038I Pass  17: suminf.    4.14167 (29) obj. -4.9 iterations 32
+Cbc0038I Pass  18: suminf.    9.86283 (42) obj. -4.54069 iterations 47
+Cbc0038I Pass  19: suminf.    4.29044 (27) obj. -4.9 iterations 41
+Cbc0038I Pass  20: suminf.    7.98823 (32) obj. -3.29032 iterations 50
+Cbc0038I Pass  21: suminf.    7.84351 (31) obj. -3.29032 iterations 23
+Cbc0038I Pass  22: suminf.    4.44643 (21) obj. -5 iterations 32
+Cbc0038I Pass  23: suminf.    4.15129 (17) obj. -5 iterations 35
+Cbc0038I Pass  24: suminf.    7.58476 (39) obj. -5.33333 iterations 38
+Cbc0038I Pass  25: suminf.    4.87264 (20) obj. -4.81469 iterations 22
+Cbc0038I Pass  26: suminf.    4.26971 (17) obj. -5 iterations 8
+Cbc0038I Pass  27: suminf.    3.42976 (16) obj. -5 iterations 13
+Cbc0038I Pass  28: suminf.    3.07522 (16) obj. -4.81818 iterations 7
+Cbc0038I Pass  29: suminf.    3.12351 (13) obj. -4 iterations 24
+Cbc0038I Pass  30: suminf.    3.12351 (13) obj. -4 iterations 22
+Cbc0038I No solution found this major pass
+Cbc0038I Before mini branch and bound, 81 integers at bound fixed and 0 continuous
+Cbc0038I Full problem 185 rows 175 columns, reduced to 150 rows 91 columns - too large
+Cbc0038I Mini branch and bound did not improve solution (0.09 seconds)
+Cbc0038I After 0.09 seconds - Feasibility pump exiting - took 0.02 seconds
+Cbc0031I 25 added rows had average density of 63.04
+Cbc0013I At root node, 25 cuts changed objective from -12.933333 to -8.3351665 in 100 passes
+Cbc0014I Cut generator 0 (Probing) - 533 row cuts average 3.0 elements, 11 column cuts (11 active)  in 0.079 seconds - new frequency is 1
+Cbc0014I Cut generator 1 (Gomory) - 2047 row cuts average 143.0 elements, 0 column cuts (0 active)  in 0.069 seconds - new frequency is 1
+Cbc0014I Cut generator 2 (Knapsack) - 58 row cuts average 6.7 elements, 0 column cuts (0 active)  in 0.055 seconds - new frequency is 1
+Cbc0014I Cut generator 3 (Clique) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.004 seconds - new frequency is -100
+Cbc0014I Cut generator 4 (MixedIntegerRounding2) - 45 row cuts average 21.4 elements, 0 column cuts (0 active)  in 0.014 seconds - new frequency is -100
+Cbc0014I Cut generator 5 (FlowCover) - 9 row cuts average 2.1 elements, 0 column cuts (0 active)  in 0.025 seconds - new frequency is -100
+Cbc0014I Cut generator 6 (TwoMirCuts) - 170 row cuts average 99.2 elements, 0 column cuts (0 active)  in 0.038 seconds - new frequency is 1
+Cbc0014I Cut generator 7 (ZeroHalf) - 97 row cuts average 15.2 elements, 0 column cuts (0 active)  in 0.321 seconds - new frequency is 1
+Cbc0010I After 0 nodes, 1 on tree, 1e+50 best solution, best possible -8.3351665 (1.05 seconds)
+Cbc0016I Integer solution of -5 found by strong branching after 6834 iterations and 15 nodes (1.44 seconds)
+Cbc0038I Full problem 185 rows 175 columns, reduced to 73 rows 36 columns
+Cbc0001I Search completed - best objective -5, took 8014 iterations and 31 nodes (1.60 seconds)
+Cbc0032I Strong branching done 608 times (18137 iterations), fathomed 1 nodes and fixed 3 variables
+Cbc0035I Maximum depth 11, 274 variables fixed on reduced cost
+Cuts at root node changed objective from -12.9333 to -8.33517
+Probing was tried 175 times and created 830 cuts of which 0 were active after adding rounds of cuts (0.095 seconds)
+Gomory was tried 164 times and created 2088 cuts of which 0 were active after adding rounds of cuts (0.081 seconds)
+Knapsack was tried 164 times and created 87 cuts of which 0 were active after adding rounds of cuts (0.086 seconds)
+Clique was tried 100 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.004 seconds)
+MixedIntegerRounding2 was tried 100 times and created 45 cuts of which 0 were active after adding rounds of cuts (0.014 seconds)
+FlowCover was tried 100 times and created 9 cuts of which 0 were active after adding rounds of cuts (0.025 seconds)
+TwoMirCuts was tried 164 times and created 367 cuts of which 0 were active after adding rounds of cuts (0.080 seconds)
+ZeroHalf was tried 164 times and created 126 cuts of which 0 were active after adding rounds of cuts (0.508 seconds)
+ImplicationCuts was tried 58 times and created 247 cuts of which 0 were active after adding rounds of cuts (0.005 seconds)
+
+Result - Optimal solution found
+
+Objective value:                -5.00000000
+Enumerated nodes:               31
+Total iterations:               8014
+Time (CPU seconds):             1.55
+Time (Wallclock seconds):       1.61
+
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       1.55   (Wallclock seconds):       1.61
+
+Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - /Users/alexma/Documents/Coding/Music-To-My-Ears/.venv/lib/python3.11/site-packages/pulp/apis/../solverdir/cbc/osx/i64/cbc /var/folders/h3/6xwgwylx75v6h8sv1tmn84dm0000gn/T/e720acf51ace43f99fb0ef15809fac64-pulp.mps -sec 600 -timeMode elapsed -branch -printingOptions all -solution /var/folders/h3/6xwgwylx75v6h8sv1tmn84dm0000gn/T/e720acf51ace43f99fb0ef15809fac64-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 478 COLUMNS
+At line 3775 RHS
+At line 4249 BOUNDS
+At line 4695 ENDATA
+Problem MODEL has 473 rows, 445 columns and 2382 elements
+Coin0008I MODEL read with 0 errors
+seconds was changed from 1e+100 to 600
+Option for timeMode changed from cpu to elapsed
+Continuous objective value is -14 - 0.00 seconds
+Cgl0003I 76 fixed, 6 tightened bounds, 227 strengthened rows, 12 substitutions
+Cgl0003I 38 fixed, 5 tightened bounds, 0 strengthened rows, 3 substitutions
+Cgl0003I 21 fixed, 5 tightened bounds, 173 strengthened rows, 9 substitutions
+Cgl0003I 11 fixed, 3 tightened bounds, 0 strengthened rows, 4 substitutions
+Cgl0003I 4 fixed, 0 tightened bounds, 119 strengthened rows, 2 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 109 strengthened rows, 0 substitutions
+Cgl0003I 2 fixed, 0 tightened bounds, 152 strengthened rows, 31 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 116 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 80 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 52 strengthened rows, 1 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 38 strengthened rows, 1 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 33 strengthened rows, 1 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 31 strengthened rows, 1 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 28 strengthened rows, 1 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 13 strengthened rows, 0 substitutions
+Cgl0004I processed model has 211 rows, 202 columns (202 integer (191 of which binary)) and 1469 elements
+Cutoff increment increased from 1e-05 to 0.9999
+Cbc0038I Initial state - 20 integers unsatisfied sum - 4.36234
+Cbc0038I Pass   1: suminf.    5.16827 (37) obj. -13.8076 iterations 41
+Cbc0038I Pass   2: suminf.    8.28543 (46) obj. -12.6842 iterations 52
+Cbc0038I Pass   3: suminf.    5.98507 (40) obj. -12.7522 iterations 18
+Cbc0038I Pass   4: suminf.   11.11707 (52) obj. -7.734 iterations 38
+Cbc0038I Pass   5: suminf.    6.75597 (53) obj. -7.43051 iterations 24
+Cbc0038I Pass   6: suminf.    7.57431 (45) obj. -7.32893 iterations 4
+Cbc0038I Pass   7: suminf.    7.15668 (25) obj. -6 iterations 56
+Cbc0038I Pass   8: suminf.    6.86414 (33) obj. -5.63462 iterations 30
+Cbc0038I Pass   9: suminf.    6.40260 (30) obj. -5.61538 iterations 14
+Cbc0038I Pass  10: suminf.   12.15662 (47) obj. -4.38128 iterations 51
+Cbc0038I Pass  11: suminf.    5.17183 (22) obj. -3 iterations 43
+Cbc0038I Pass  12: suminf.    5.21176 (23) obj. -3 iterations 27
+Cbc0038I Pass  13: suminf.    7.74432 (28) obj. -3 iterations 65
+Cbc0038I Pass  14: suminf.    6.29718 (32) obj. -3 iterations 41
+Cbc0038I Pass  15: suminf.    6.29718 (32) obj. -3 iterations 2
+Cbc0038I Pass  16: suminf.    5.99339 (31) obj. -3.06667 iterations 44
+Cbc0038I Pass  17: suminf.    5.45307 (27) obj. -3.06667 iterations 35
+Cbc0038I Pass  18: suminf.    4.73878 (26) obj. -3.06667 iterations 10
+Cbc0038I Pass  19: suminf.    4.61974 (26) obj. -3.06667 iterations 8
+Cbc0038I Pass  20: suminf.    8.41643 (30) obj. -3.3474 iterations 41
+Cbc0038I Pass  21: suminf.    5.70890 (25) obj. -3.34696 iterations 29
+Cbc0038I Pass  22: suminf.    5.70890 (25) obj. -3.34696 iterations 8
+Cbc0038I Pass  23: suminf.    7.55605 (27) obj. -3.42857 iterations 58
+Cbc0038I Pass  24: suminf.    5.85218 (27) obj. -3.1619 iterations 54
+Cbc0038I Pass  25: suminf.    5.28854 (27) obj. -3.01299 iterations 3
+Cbc0038I Pass  26: suminf.    5.02253 (27) obj. -3.90909 iterations 6
+Cbc0038I Pass  27: suminf.    6.69223 (33) obj. -5.69091 iterations 25
+Cbc0038I Pass  28: suminf.    6.10018 (31) obj. -5.65 iterations 14
+Cbc0038I Pass  29: suminf.    6.56600 (34) obj. -5.68 iterations 41
+Cbc0038I Pass  30: suminf.    6.29756 (35) obj. -6.03663 iterations 40
+Cbc0038I No solution found this major pass
+Cbc0038I Before mini branch and bound, 99 integers at bound fixed and 0 continuous of which 1 were internal integer and 0 internal continuous
+Cbc0038I Mini branch and bound did not improve solution (0.08 seconds)
+Cbc0038I After 0.08 seconds - Feasibility pump exiting - took 0.02 seconds
+Cbc0031I 16 added rows had average density of 52.125
+Cbc0013I At root node, 16 cuts changed objective from -14 to -10.000025 in 100 passes
+Cbc0014I Cut generator 0 (Probing) - 514 row cuts average 3.4 elements, 18 column cuts (18 active)  in 0.081 seconds - new frequency is 1
+Cbc0014I Cut generator 1 (Gomory) - 1570 row cuts average 145.2 elements, 0 column cuts (0 active)  in 0.055 seconds - new frequency is 1
+Cbc0014I Cut generator 2 (Knapsack) - 77 row cuts average 7.7 elements, 0 column cuts (0 active)  in 0.062 seconds - new frequency is 1
+Cbc0014I Cut generator 3 (Clique) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.004 seconds - new frequency is -100
+Cbc0014I Cut generator 4 (MixedIntegerRounding2) - 25 row cuts average 25.6 elements, 0 column cuts (0 active)  in 0.012 seconds - new frequency is -100
+Cbc0014I Cut generator 5 (FlowCover) - 42 row cuts average 3.2 elements, 0 column cuts (0 active)  in 0.020 seconds - new frequency is -100
+Cbc0014I Cut generator 6 (TwoMirCuts) - 244 row cuts average 53.6 elements, 0 column cuts (0 active)  in 0.032 seconds - new frequency is 1
+Cbc0014I Cut generator 7 (ZeroHalf) - 61 row cuts average 15.3 elements, 0 column cuts (0 active)  in 0.310 seconds - new frequency is -100
+Cbc0010I After 0 nodes, 1 on tree, 1e+50 best solution, best possible -10.000025 (0.98 seconds)
+Cbc0016I Integer solution of -3 found by strong branching after 14155 iterations and 45 nodes (1.67 seconds)
+Cbc0001I Search completed - best objective -3, took 14389 iterations and 46 nodes (1.68 seconds)
+Cbc0032I Strong branching done 1116 times (24913 iterations), fathomed 5 nodes and fixed 12 variables
+Cbc0035I Maximum depth 9, 39 variables fixed on reduced cost
+Cuts at root node changed objective from -14 to -10
+Probing was tried 273 times and created 1998 cuts of which 0 were active after adding rounds of cuts (0.133 seconds)
+Gomory was tried 270 times and created 1987 cuts of which 0 were active after adding rounds of cuts (0.089 seconds)
+Knapsack was tried 270 times and created 192 cuts of which 0 were active after adding rounds of cuts (0.153 seconds)
+Clique was tried 100 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.004 seconds)
+MixedIntegerRounding2 was tried 100 times and created 25 cuts of which 0 were active after adding rounds of cuts (0.012 seconds)
+FlowCover was tried 100 times and created 42 cuts of which 0 were active after adding rounds of cuts (0.020 seconds)
+TwoMirCuts was tried 270 times and created 548 cuts of which 0 were active after adding rounds of cuts (0.096 seconds)
+ZeroHalf was tried 100 times and created 61 cuts of which 0 were active after adding rounds of cuts (0.310 seconds)
+ImplicationCuts was tried 170 times and created 552 cuts of which 0 were active after adding rounds of cuts (0.012 seconds)
+
+Result - Optimal solution found
+
+Objective value:                -3.00000000
+Enumerated nodes:               46
+Total iterations:               14389
+Time (CPU seconds):             1.65
+Time (Wallclock seconds):       1.69
+
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       1.65   (Wallclock seconds):       1.69
+
+Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - /Users/alexma/Documents/Coding/Music-To-My-Ears/.venv/lib/python3.11/site-packages/pulp/apis/../solverdir/cbc/osx/i64/cbc /var/folders/h3/6xwgwylx75v6h8sv1tmn84dm0000gn/T/021b225f9f2f4a8b815f1aa1b34a9470-pulp.mps -sec 600 -timeMode elapsed -branch -printingOptions all -solution /var/folders/h3/6xwgwylx75v6h8sv1tmn84dm0000gn/T/021b225f9f2f4a8b815f1aa1b34a9470-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 362 COLUMNS
+At line 2877 RHS
+At line 3235 BOUNDS
+At line 3587 ENDATA
+Problem MODEL has 357 rows, 351 columns and 1794 elements
+Coin0008I MODEL read with 0 errors
+seconds was changed from 1e+100 to 600
+Option for timeMode changed from cpu to elapsed
+Continuous objective value is -10 - 0.00 seconds
+Cgl0003I 67 fixed, 7 tightened bounds, 162 strengthened rows, 14 substitutions
+Cgl0003I 29 fixed, 5 tightened bounds, 60 strengthened rows, 4 substitutions
+Cgl0003I 17 fixed, 3 tightened bounds, 124 strengthened rows, 11 substitutions
+Cgl0003I 7 fixed, 1 tightened bounds, 1 strengthened rows, 4 substitutions
+Cgl0003I 1 fixed, 0 tightened bounds, 79 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 75 strengthened rows, 2 substitutions
+Cgl0003I 2 fixed, 0 tightened bounds, 106 strengthened rows, 23 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 87 strengthened rows, 0 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 65 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 42 strengthened rows, 1 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 30 strengthened rows, 1 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 30 strengthened rows, 1 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 27 strengthened rows, 1 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 20 strengthened rows, 1 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 10 strengthened rows, 0 substitutions
+Cgl0004I processed model has 166 rows, 157 columns (157 integer (148 of which binary)) and 1161 elements
+Cutoff increment increased from 1e-05 to 0.9999
+Cbc0038I Initial state - 16 integers unsatisfied sum - 5.88519
+Cbc0038I Pass   1: suminf.    4.17604 (16) obj. -9.53247 iterations 31
+Cbc0038I Pass   2: suminf.    5.28708 (25) obj. -8.02122 iterations 35
+Cbc0038I Pass   3: suminf.    4.27049 (22) obj. -8.36364 iterations 18
+Cbc0038I Pass   4: suminf.    3.93740 (15) obj. -6 iterations 45
+Cbc0038I Pass   5: suminf.    3.93740 (15) obj. -6 iterations 23
+Cbc0038I Pass   6: suminf.    3.04646 (14) obj. -6 iterations 38
+Cbc0038I Pass   7: suminf.    3.04646 (14) obj. -6 iterations 36
+Cbc0038I Pass   8: suminf.    3.93740 (15) obj. -6 iterations 22
+Cbc0038I Pass   9: suminf.   11.25897 (29) obj. -5 iterations 62
+Cbc0038I Pass  10: suminf.    8.88060 (25) obj. -5 iterations 24
+Cbc0038I Pass  11: suminf.    5.56041 (22) obj. -4.23077 iterations 10
+Cbc0038I Pass  12: suminf.    5.31810 (21) obj. -4.15 iterations 10
+Cbc0038I Pass  13: suminf.    6.08425 (16) obj. -3.92308 iterations 35
+Cbc0038I Pass  14: suminf.    5.88515 (16) obj. -3.82353 iterations 12
+Cbc0038I Pass  15: suminf.    4.30476 (15) obj. -4.33333 iterations 30
+Cbc0038I Pass  16: suminf.    2.70769 (14) obj. -5 iterations 22
+Cbc0038I Pass  17: suminf.    2.70769 (14) obj. -5 iterations 5
+Cbc0038I Pass  18: suminf.   11.50989 (37) obj. -4.48571 iterations 44
+Cbc0038I Pass  19: suminf.    6.19703 (26) obj. -5 iterations 24
+Cbc0038I Pass  20: suminf.    4.04379 (19) obj. -4.8558 iterations 16
+Cbc0038I Pass  21: suminf.    3.00685 (15) obj. -4 iterations 35
+Cbc0038I Pass  22: suminf.    2.78078 (15) obj. -4 iterations 24
+Cbc0038I Pass  23: suminf.    6.72606 (27) obj. -4 iterations 23
+Cbc0038I Pass  24: suminf.    4.16674 (15) obj. -4 iterations 15
+Cbc0038I Pass  25: suminf.    2.78078 (15) obj. -4 iterations 25
+Cbc0038I Pass  26: suminf.    7.28419 (25) obj. -2.16667 iterations 35
+Cbc0038I Pass  27: suminf.    6.13371 (30) obj. -3 iterations 40
+Cbc0038I Pass  28: suminf.    5.43364 (20) obj. -3.72727 iterations 48
+Cbc0038I Pass  29: suminf.    5.33364 (20) obj. -3.72727 iterations 21
+Cbc0038I Pass  30: suminf.    6.77003 (23) obj. -3.4 iterations 35
+Cbc0038I No solution found this major pass
+Cbc0038I Before mini branch and bound, 73 integers at bound fixed and 0 continuous
+Cbc0038I Mini branch and bound did not improve solution (0.07 seconds)
+Cbc0038I After 0.07 seconds - Feasibility pump exiting - took 0.02 seconds
+Cbc0031I 19 added rows had average density of 72.894737
+Cbc0013I At root node, 19 cuts changed objective from -10 to -7.8847132 in 100 passes
+Cbc0014I Cut generator 0 (Probing) - 396 row cuts average 2.9 elements, 2 column cuts (2 active)  in 0.069 seconds - new frequency is 1
+Cbc0014I Cut generator 1 (Gomory) - 1258 row cuts average 134.8 elements, 0 column cuts (0 active)  in 0.049 seconds - new frequency is 1
+Cbc0014I Cut generator 2 (Knapsack) - 74 row cuts average 9.6 elements, 0 column cuts (0 active)  in 0.054 seconds - new frequency is 1
+Cbc0014I Cut generator 3 (Clique) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.003 seconds - new frequency is -100
+Cbc0014I Cut generator 4 (MixedIntegerRounding2) - 28 row cuts average 26.3 elements, 0 column cuts (0 active)  in 0.011 seconds - new frequency is -100
+Cbc0014I Cut generator 5 (FlowCover) - 28 row cuts average 2.7 elements, 0 column cuts (0 active)  in 0.020 seconds - new frequency is -100
+Cbc0014I Cut generator 6 (TwoMirCuts) - 193 row cuts average 54.3 elements, 0 column cuts (0 active)  in 0.025 seconds - new frequency is 1
+Cbc0014I Cut generator 7 (ZeroHalf) - 1 row cuts average 4.0 elements, 0 column cuts (0 active)  in 0.000 seconds - new frequency is -100
+Cbc0010I After 0 nodes, 1 on tree, 1e+50 best solution, best possible -7.8847132 (0.51 seconds)
+Cbc0016I Integer solution of -3 found by strong branching after 6761 iterations and 42 nodes (0.81 seconds)
+Cbc0038I Full problem 166 rows 157 columns, reduced to 77 rows 40 columns
+Cbc0016I Integer solution of -5 found by strong branching after 7885 iterations and 53 nodes (0.90 seconds)
+Cbc0001I Search completed - best objective -5, took 7963 iterations and 55 nodes (0.90 seconds)
+Cbc0032I Strong branching done 838 times (18098 iterations), fathomed 5 nodes and fixed 5 variables
+Cbc0035I Maximum depth 17, 46 variables fixed on reduced cost
+Cuts at root node changed objective from -10 to -7.88471
+Probing was tried 222 times and created 773 cuts of which 0 were active after adding rounds of cuts (0.091 seconds)
+Gomory was tried 214 times and created 1479 cuts of which 0 were active after adding rounds of cuts (0.065 seconds)
+Knapsack was tried 214 times and created 142 cuts of which 0 were active after adding rounds of cuts (0.103 seconds)
+Clique was tried 100 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.003 seconds)
+MixedIntegerRounding2 was tried 100 times and created 28 cuts of which 0 were active after adding rounds of cuts (0.011 seconds)
+FlowCover was tried 100 times and created 28 cuts of which 0 were active after adding rounds of cuts (0.020 seconds)
+TwoMirCuts was tried 214 times and created 235 cuts of which 0 were active after adding rounds of cuts (0.053 seconds)
+ZeroHalf was tried 1 times and created 1 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+ImplicationCuts was tried 102 times and created 306 cuts of which 0 were active after adding rounds of cuts (0.006 seconds)
+
+Result - Optimal solution found
+
+Objective value:                -5.00000000
+Enumerated nodes:               55
+Total iterations:               7963
+Time (CPU seconds):             0.88
+Time (Wallclock seconds):       0.90
+
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       0.89   (Wallclock seconds):       0.91
+
+Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - /Users/alexma/Documents/Coding/Music-To-My-Ears/.venv/lib/python3.11/site-packages/pulp/apis/../solverdir/cbc/osx/i64/cbc /var/folders/h3/6xwgwylx75v6h8sv1tmn84dm0000gn/T/9868f7b8d8614bb2a1febe8323f756f8-pulp.mps -sec 600 -timeMode elapsed -branch -printingOptions all -solution /var/folders/h3/6xwgwylx75v6h8sv1tmn84dm0000gn/T/9868f7b8d8614bb2a1febe8323f756f8-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 362 COLUMNS
+At line 2877 RHS
+At line 3235 BOUNDS
+At line 3587 ENDATA
+Problem MODEL has 357 rows, 351 columns and 1794 elements
+Coin0008I MODEL read with 0 errors
+seconds was changed from 1e+100 to 600
+Option for timeMode changed from cpu to elapsed
+Continuous objective value is -10 - 0.00 seconds
+Cgl0003I 60 fixed, 6 tightened bounds, 153 strengthened rows, 8 substitutions
+Cgl0003I 26 fixed, 1 tightened bounds, 9 strengthened rows, 0 substitutions
+Cgl0003I 17 fixed, 3 tightened bounds, 129 strengthened rows, 0 substitutions
+Cgl0003I 8 fixed, 3 tightened bounds, 0 strengthened rows, 2 substitutions
+Cgl0003I 3 fixed, 0 tightened bounds, 96 strengthened rows, 2 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 90 strengthened rows, 0 substitutions
+Cgl0003I 2 fixed, 0 tightened bounds, 123 strengthened rows, 32 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 102 strengthened rows, 2 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 62 strengthened rows, 6 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 38 strengthened rows, 0 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 32 strengthened rows, 0 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 22 strengthened rows, 0 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 19 strengthened rows, 0 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 16 strengthened rows, 0 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 9 strengthened rows, 0 substitutions
+Cgl0004I processed model has 168 rows, 167 columns (167 integer (158 of which binary)) and 1173 elements
+Cutoff increment increased from 1e-05 to 0.9999
+Cbc0038I Initial state - 16 integers unsatisfied sum - 3.89619
+Cbc0038I Pass   1: suminf.    2.50899 (16) obj. -9.76623 iterations 35
+Cbc0038I Pass   2: suminf.    3.50447 (18) obj. -10 iterations 30
+Cbc0038I Pass   3: suminf.    2.74709 (16) obj. -9.76623 iterations 21
+Cbc0038I Pass   4: suminf.    3.84701 (32) obj. -7.23846 iterations 61
+Cbc0038I Pass   5: suminf.    2.24051 (19) obj. -7.8 iterations 33
+Cbc0038I Pass   6: suminf.    4.21814 (17) obj. -5 iterations 36
+Cbc0038I Pass   7: suminf.    5.06550 (24) obj. -5 iterations 19
+Cbc0038I Pass   8: suminf.    7.42703 (29) obj. -3.49433 iterations 30
+Cbc0038I Pass   9: suminf.    7.25699 (26) obj. -3.08173 iterations 21
+Cbc0038I Pass  10: suminf.    7.25699 (26) obj. -3.08173 iterations 1
+Cbc0038I Pass  11: suminf.    7.92746 (34) obj. -1.84 iterations 39
+Cbc0038I Pass  12: suminf.    4.19867 (32) obj. -1.13333 iterations 31
+Cbc0038I Pass  13: suminf.    3.41333 (18) obj. -1 iterations 13
+Cbc0038I Pass  14: suminf.    3.41333 (18) obj. -1 iterations 5
+Cbc0038I Pass  15: suminf.    4.96889 (27) obj. -1 iterations 8
+Cbc0038I Pass  16: suminf.    6.16974 (28) obj. -1 iterations 21
+Cbc0038I Pass  17: suminf.    4.03450 (28) obj. -1 iterations 28
+Cbc0038I Pass  18: suminf.    8.40479 (28) obj. -1 iterations 40
+Cbc0038I Pass  19: suminf.    5.56034 (27) obj. -1 iterations 31
+Cbc0038I Pass  20: suminf.    7.42423 (30) obj. -1 iterations 24
+Cbc0038I Pass  21: suminf.    5.48038 (21) obj. -1 iterations 26
+Cbc0038I Pass  22: suminf.    4.47160 (22) obj. -1 iterations 16
+Cbc0038I Pass  23: suminf.    3.51467 (17) obj. -1 iterations 12
+Cbc0038I Pass  24: suminf.    4.00201 (17) obj. -1 iterations 19
+Cbc0038I Pass  25: suminf.    3.86312 (16) obj. -1 iterations 18
+Cbc0038I Pass  26: suminf.    3.86312 (16) obj. -1 iterations 2
+Cbc0038I Pass  27: suminf.    6.98785 (23) obj. -1 iterations 43
+Cbc0038I Pass  28: suminf.    4.53163 (17) obj. -1 iterations 33
+Cbc0038I Pass  29: suminf.    4.53163 (17) obj. -1 iterations 10
+Cbc0038I Pass  30: suminf.    8.85633 (25) obj. -1 iterations 36
+Cbc0038I No solution found this major pass
+Cbc0038I Before mini branch and bound, 72 integers at bound fixed and 0 continuous
+Cbc0038I Full problem 168 rows 167 columns, reduced to 129 rows 90 columns - too large
+Cbc0038I Mini branch and bound did not improve solution (0.06 seconds)
+Cbc0038I After 0.06 seconds - Feasibility pump exiting - took 0.01 seconds
+Cbc0031I 19 added rows had average density of 81.684211
+Cbc0013I At root node, 19 cuts changed objective from -10 to -5.229981 in 100 passes
+Cbc0014I Cut generator 0 (Probing) - 358 row cuts average 5.3 elements, 6 column cuts (6 active)  in 0.065 seconds - new frequency is 1
+Cbc0014I Cut generator 1 (Gomory) - 1680 row cuts average 122.6 elements, 0 column cuts (0 active)  in 0.049 seconds - new frequency is 1
+Cbc0014I Cut generator 2 (Knapsack) - 114 row cuts average 12.6 elements, 0 column cuts (0 active)  in 0.058 seconds - new frequency is 1
+Cbc0014I Cut generator 3 (Clique) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.003 seconds - new frequency is -100
+Cbc0014I Cut generator 4 (MixedIntegerRounding2) - 115 row cuts average 23.7 elements, 0 column cuts (0 active)  in 0.031 seconds - new frequency is 1
+Cbc0014I Cut generator 5 (FlowCover) - 24 row cuts average 3.4 elements, 0 column cuts (0 active)  in 0.017 seconds - new frequency is -100
+Cbc0014I Cut generator 6 (TwoMirCuts) - 182 row cuts average 52.9 elements, 0 column cuts (0 active)  in 0.025 seconds - new frequency is 1
+Cbc0014I Cut generator 7 (ZeroHalf) - 66 row cuts average 13.2 elements, 0 column cuts (0 active)  in 0.299 seconds - new frequency is -100
+Cbc0010I After 0 nodes, 1 on tree, 1e+50 best solution, best possible -5.229981 (0.89 seconds)
+Cbc0004I Integer solution of -4 found after 6909 iterations and 14 nodes (1.08 seconds)
+Cbc0038I Full problem 168 rows 167 columns, reduced to 95 rows 57 columns
+Cbc0001I Search completed - best objective -4, took 7672 iterations and 25 nodes (1.16 seconds)
+Cbc0032I Strong branching done 556 times (12014 iterations), fathomed 0 nodes and fixed 9 variables
+Cbc0035I Maximum depth 8, 132 variables fixed on reduced cost
+Cuts at root node changed objective from -10 to -5.22998
+Probing was tried 150 times and created 487 cuts of which 0 were active after adding rounds of cuts (0.075 seconds)
+Gomory was tried 146 times and created 1697 cuts of which 0 were active after adding rounds of cuts (0.058 seconds)
+Knapsack was tried 146 times and created 138 cuts of which 0 were active after adding rounds of cuts (0.081 seconds)
+Clique was tried 100 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.003 seconds)
+MixedIntegerRounding2 was tried 146 times and created 142 cuts of which 0 were active after adding rounds of cuts (0.045 seconds)
+FlowCover was tried 100 times and created 24 cuts of which 0 were active after adding rounds of cuts (0.017 seconds)
+TwoMirCuts was tried 146 times and created 247 cuts of which 0 were active after adding rounds of cuts (0.045 seconds)
+ZeroHalf was tried 100 times and created 66 cuts of which 0 were active after adding rounds of cuts (0.299 seconds)
+ImplicationCuts was tried 46 times and created 104 cuts of which 0 were active after adding rounds of cuts (0.002 seconds)
+
+Result - Optimal solution found
+
+Objective value:                -4.00000000
+Enumerated nodes:               25
+Total iterations:               7672
+Time (CPU seconds):             1.13
+Time (Wallclock seconds):       1.17
+
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       1.13   (Wallclock seconds):       1.17
+
+
+Status: Optimal
+Objective value: -5
+
+Cantus firmus (semitones): [0, -5, -7, -8, -7, -10, -5, -8, -10, -12]
+Counterpoint pitches (semitones): [9, 11, 14, 12, 9, 11, 4, 12, 11, 9]
+Harmonic intervals (semitones):   [9, 16, 21, 20, 16, 21, 9, 20, 21, 21]
+
+Bar-by-bar:
+ Bar   CF   CP  HInt  MInt  Up  Ctr  Cnj  Trn
+   0    0    9     9     2   1    1    1    0
+   1   -5   11    16     3   1    1    0    1
+   2   -7   14    21    -2   0    0    1    0
+   3   -8   12    20    -3   0    1    0    1
+   4   -7    9    16     2   1    1    1    1
+   5  -10   11    21    -7   0    1    0    1
+   6   -5    4     9     8   1    1    0    1
+   7   -8   12    20    -1   0    0    1    0
+   8  -10   11    21    -2   0    0    1    -
+   9  -12    9    21     -   -    -    -    -
+
+Contrary motions: 6/9
+Conjunct motions: 5/9
+Turns:            5/8
+Climax at bar:    2 (pitch=14)
+
+    === FUX FIRST SPECIES COVERAGE SUMMARY ===
+
+    RULE                                      TANAKA  STATUS
+    ---------------------------------------------------------
+    1. Only consonances                       H domain  ✓ (by variable domain)
+    2. Unisons at start/end only              3.4.1     ✓
+    3. No parallel perfect consonances        3.4.2     ✓ (P5, P8, P1)
+    4. No hidden fifths/octaves               3.4.3     ✓
+    5. No voice crossing                      3.4.9     ✓ (implicit via H ≥ 0)
+    6. Prefer contrary motion                 3.4.11    ✓ (soft + threshold)
+    7. Stepwise melody preferred              3.4.11    ✓ (soft + threshold)
+    8. Single climax                          3.4.11    ✓ (Big-M)
+    9. No consecutive leaps same direction    3.4.5     ✓
+    10. No triad arpeggios in one direction   3.4.4     ✓
+    11. ≤3 consecutive parallel 3rds/6ths    3.4.10    ✓
+    12. No large leap simultaneously both     3.4.7     ✓ (at CF large leaps)
+    13. Large leap → stepwise compensation   3.4.8     ⚠ NOT IMPLEMENTED
+        (Tanaka claims 3.4.5 covers this — it does not; see comment above)
+    14. Avoid pitch overuse                   3.4.6     ✓ (≤2 in any 5-bar window)
+    15. Begin/end on tonic or fifth           —         ✗ NOT IN TANAKA
+        (Fux: first and last notes should be unison, fifth, or octave
+        on the tonic. Tanaka's H allows any consonance at bar 0 and T-1.)
+    16. Penultimate bar: leading tone motion  —         ✗ NOT IN TANAKA
+        (Fux: the bar before the last should approach the final by step,
+        often using the leading tone. Not encoded.)
+    
+
+Status: Optimal
+Objective value: -3
+
+Cantus firmus (semitones): [0, 2, 4, 2, 5, 7, 5, 4, 2, 0]
+Counterpoint pitches (semitones): [9, 5, 7, 11, 9, 11, 14, 12, 17, 16]
+Harmonic intervals (semitones):   [9, 3, 3, 9, 4, 4, 9, 8, 15, 16]
+
+Bar-by-bar:
+ Bar   CF   CP  HInt  MInt  Up  Ctr  Cnj  Trn
+   0    0    9     9    -4   0    1    0    1
+   1    2    5     3     2   1    0    1    0
+   2    4    7     3     4   1    1    0    1
+   3    2   11     9    -2   0    1    1    1
+   4    5    9     4     2   1    0    1    0
+   5    7   11     4     3   1    1    0    1
+   6    5   14     9    -2   0    0    1    1
+   7    4   12     8     5   1    1    0    1
+   8    2   17    15    -1   0    0    1    -
+   9    0   16    16     -   -    -    -    -
+
+Contrary motions: 5/9
+Conjunct motions: 5/9
+Turns:            6/8
+Climax at bar:    8 (pitch=17)
+
+    === FUX FIRST SPECIES COVERAGE SUMMARY ===
+
+    RULE                                      TANAKA  STATUS
+    ---------------------------------------------------------
+    1. Only consonances                       H domain  ✓ (by variable domain)
+    2. Unisons at start/end only              3.4.1     ✓
+    3. No parallel perfect consonances        3.4.2     ✓ (P5, P8, P1)
+    4. No hidden fifths/octaves               3.4.3     ✓
+    5. No voice crossing                      3.4.9     ✓ (implicit via H ≥ 0)
+    6. Prefer contrary motion                 3.4.11    ✓ (soft + threshold)
+    7. Stepwise melody preferred              3.4.11    ✓ (soft + threshold)
+    8. Single climax                          3.4.11    ✓ (Big-M)
+    9. No consecutive leaps same direction    3.4.5     ✓
+    10. No triad arpeggios in one direction   3.4.4     ✓
+    11. ≤3 consecutive parallel 3rds/6ths    3.4.10    ✓
+    12. No large leap simultaneously both     3.4.7     ✓ (at CF large leaps)
+    13. Large leap → stepwise compensation   3.4.8     ⚠ NOT IMPLEMENTED
+        (Tanaka claims 3.4.5 covers this — it does not; see comment above)
+    14. Avoid pitch overuse                   3.4.6     ✓ (≤2 in any 5-bar window)
+    15. Begin/end on tonic or fifth           —         ✗ NOT IN TANAKA
+        (Fux: first and last notes should be unison, fifth, or octave
+        on the tonic. Tanaka's H allows any consonance at bar 0 and T-1.)
+    16. Penultimate bar: leading tone motion  —         ✗ NOT IN TANAKA
+        (Fux: the bar before the last should approach the final by step,
+        often using the leading tone. Not encoded.)
+    
+
+Status: Optimal
+Objective value: -5
+
+Cantus firmus (semitones): [0, 4, 5, 7, 4, 5, 2, 0]
+Counterpoint pitches (semitones): [9, 7, 9, 11, 12, 9, 11, 9]
+Harmonic intervals (semitones):   [9, 3, 4, 4, 8, 4, 9, 9]
+
+Bar-by-bar:
+ Bar   CF   CP  HInt  MInt  Up  Ctr  Cnj  Trn
+   0    0    9     9    -2   0    1    1    1
+   1    4    7     3     2   1    0    1    0
+   2    5    9     4     2   1    0    1    0
+   3    7   11     4     1   1    1    1    1
+   4    4   12     8    -3   0    1    0    1
+   5    5    9     4     2   1    1    1    1
+   6    2   11     9    -2   0    0    1    -
+   7    0    9     9     -   -    -    -    -
+
+Contrary motions: 4/7
+Conjunct motions: 6/7
+Turns:            4/6
+Climax at bar:    4 (pitch=12)
+
+    === FUX FIRST SPECIES COVERAGE SUMMARY ===
+
+    RULE                                      TANAKA  STATUS
+    ---------------------------------------------------------
+    1. Only consonances                       H domain  ✓ (by variable domain)
+    2. Unisons at start/end only              3.4.1     ✓
+    3. No parallel perfect consonances        3.4.2     ✓ (P5, P8, P1)
+    4. No hidden fifths/octaves               3.4.3     ✓
+    5. No voice crossing                      3.4.9     ✓ (implicit via H ≥ 0)
+    6. Prefer contrary motion                 3.4.11    ✓ (soft + threshold)
+    7. Stepwise melody preferred              3.4.11    ✓ (soft + threshold)
+    8. Single climax                          3.4.11    ✓ (Big-M)
+    9. No consecutive leaps same direction    3.4.5     ✓
+    10. No triad arpeggios in one direction   3.4.4     ✓
+    11. ≤3 consecutive parallel 3rds/6ths    3.4.10    ✓
+    12. No large leap simultaneously both     3.4.7     ✓ (at CF large leaps)
+    13. Large leap → stepwise compensation   3.4.8     ⚠ NOT IMPLEMENTED
+        (Tanaka claims 3.4.5 covers this — it does not; see comment above)
+    14. Avoid pitch overuse                   3.4.6     ✓ (≤2 in any 5-bar window)
+    15. Begin/end on tonic or fifth           —         ✗ NOT IN TANAKA
+        (Fux: first and last notes should be unison, fifth, or octave
+        on the tonic. Tanaka's H allows any consonance at bar 0 and T-1.)
+    16. Penultimate bar: leading tone motion  —         ✗ NOT IN TANAKA
+        (Fux: the bar before the last should approach the final by step,
+        often using the leading tone. Not encoded.)
+    
+
+Status: Optimal
+Objective value: -4
+
+Cantus firmus (semitones): [0, 2, 0, 4, 5, 4, 2, 0]
+Counterpoint pitches (semitones): [16, 17, 21, 19, 14, 12, 17, 16]
+Harmonic intervals (semitones):   [16, 15, 21, 15, 9, 8, 15, 16]
+
+Bar-by-bar:
+ Bar   CF   CP  HInt  MInt  Up  Ctr  Cnj  Trn
+   0    0   16    16     1   1    0    1    0
+   1    2   17    15     4   1    1    0    1
+   2    0   21    21    -2   0    1    1    0
+   3    4   19    15    -5   0    1    0    0
+   4    5   14     9    -2   0    0    1    1
+   5    4   12     8     5   1    1    0    1
+   6    2   17    15    -1   0    0    1    -
+   7    0   16    16     -   -    -    -    -
+
+Contrary motions: 4/7
+Conjunct motions: 4/7Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - /Users/alexma/Documents/Coding/Music-To-My-Ears/.venv/lib/python3.11/site-packages/pulp/apis/../solverdir/cbc/osx/i64/cbc /var/folders/h3/6xwgwylx75v6h8sv1tmn84dm0000gn/T/e4be29fe3a1f4c40b581ba9d65c97a16-pulp.mps -sec 600 -timeMode elapsed -branch -printingOptions all -solution /var/folders/h3/6xwgwylx75v6h8sv1tmn84dm0000gn/T/e4be29fe3a1f4c40b581ba9d65c97a16-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 363 COLUMNS
+At line 2880 RHS
+At line 3239 BOUNDS
+At line 3591 ENDATA
+Problem MODEL has 358 rows, 351 columns and 1796 elements
+Coin0008I MODEL read with 0 errors
+seconds was changed from 1e+100 to 600
+Option for timeMode changed from cpu to elapsed
+Continuous objective value is -11 - 0.00 seconds
+Cgl0003I 80 fixed, 6 tightened bounds, 171 strengthened rows, 10 substitutions
+Cgl0003I 21 fixed, 7 tightened bounds, 0 strengthened rows, 0 substitutions
+Cgl0003I 18 fixed, 9 tightened bounds, 10 strengthened rows, 19 substitutions
+Cgl0003I 20 fixed, 4 tightened bounds, 3 strengthened rows, 19 substitutions
+Cgl0003I 0 fixed, 1 tightened bounds, 86 strengthened rows, 5 substitutions
+Cgl0003I 2 fixed, 0 tightened bounds, 124 strengthened rows, 21 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 97 strengthened rows, 1 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 70 strengthened rows, 5 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 56 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 37 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 21 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 10 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 7 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 5 strengthened rows, 0 substitutions
+Cgl0004I processed model has 149 rows, 136 columns (136 integer (127 of which binary)) and 942 elements
+Cutoff increment increased from 1e-05 to 0.9999
+Cbc0038I Initial state - 40 integers unsatisfied sum - 5.28239
+Cbc0038I Pass   1: suminf.    3.16538 (19) obj. -10.6923 iterations 19
+Cbc0038I Pass   2: suminf.    3.16538 (19) obj. -10.6923 iterations 2
+Cbc0038I Pass   3: suminf.    4.97031 (15) obj. -7 iterations 36
+Cbc0038I Pass   4: suminf.    4.93184 (19) obj. -6.53846 iterations 10
+Cbc0038I Pass   5: suminf.    4.93184 (19) obj. -6.53846 iterations 0
+Cbc0038I Pass   6: suminf.    4.83590 (23) obj. -6.4 iterations 22
+Cbc0038I Pass   7: suminf.    3.96317 (18) obj. -6 iterations 9
+Cbc0038I Pass   8: suminf.    3.96317 (18) obj. -6 iterations 4
+Cbc0038I Pass   9: suminf.    7.42760 (25) obj. -6 iterations 24
+Cbc0038I Pass  10: suminf.    7.12350 (24) obj. -6 iterations 10
+Cbc0038I Pass  11: suminf.    5.41475 (15) obj. -6 iterations 25
+Cbc0038I Pass  12: suminf.    5.41475 (15) obj. -6 iterations 11
+Cbc0038I Pass  13: suminf.    5.41475 (15) obj. -6 iterations 8
+Cbc0038I Pass  14: suminf.    5.38178 (34) obj. -5.94583 iterations 41
+Cbc0038I Pass  15: suminf.    3.65264 (22) obj. -5.68421 iterations 16
+Cbc0038I Pass  16: suminf.    6.35604 (20) obj. -5.02857 iterations 28
+Cbc0038I Pass  17: suminf.    4.76219 (17) obj. -4.81429 iterations 17
+Cbc0038I Pass  18: suminf.    4.76219 (17) obj. -4.81429 iterations 2
+Cbc0038I Pass  19: suminf.    8.73514 (30) obj. -5.904 iterations 28
+Cbc0038I Pass  20: suminf.    8.73514 (30) obj. -5.904 iterations 1
+Cbc0038I Pass  21: suminf.    7.62998 (30) obj. -3.94764 iterations 44
+Cbc0038I Pass  22: suminf.    5.47687 (27) obj. -3.86222 iterations 12
+Cbc0038I Pass  23: suminf.    4.16095 (25) obj. -3.65201 iterations 10
+Cbc0038I Pass  24: suminf.    3.73788 (22) obj. -3.19048 iterations 2
+Cbc0038I Pass  25: suminf.    7.75729 (28) obj. -6.42017 iterations 51
+Cbc0038I Pass  26: suminf.    6.83762 (36) obj. -6.09502 iterations 16
+Cbc0038I Pass  27: suminf.    7.69956 (37) obj. -5.36667 iterations 12
+Cbc0038I Pass  28: suminf.    7.26719 (29) obj. -8.27179 iterations 30
+Cbc0038I Pass  29: suminf.    4.92372 (23) obj. -6.73846 iterations 20
+Cbc0038I Pass  30: suminf.    7.42565 (25) obj. -6 iterations 25
+Cbc0038I No solution found this major pass
+Cbc0038I Before mini branch and bound, 56 integers at bound fixed and 0 continuous
+Cbc0038I Mini branch and bound did not improve solution (0.05 seconds)
+Cbc0038I After 0.05 seconds - Feasibility pump exiting - took 0.01 seconds
+Cbc0031I 12 added rows had average density of 8.3333333
+Cbc0013I At root node, 70 cuts changed objective from -10.857143 to 48.291284 in 45 passes
+Cbc0014I Cut generator 0 (Probing) - 290 row cuts average 2.3 elements, 12 column cuts (12 active)  in 0.028 seconds - new frequency is 1
+Cbc0014I Cut generator 1 (Gomory) - 885 row cuts average 100.7 elements, 0 column cuts (0 active)  in 0.020 seconds - new frequency is 1
+Cbc0014I Cut generator 2 (Knapsack) - 32 row cuts average 6.6 elements, 0 column cuts (0 active)  in 0.022 seconds - new frequency is 1
+Cbc0014I Cut generator 3 (Clique) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.001 seconds - new frequency is -100
+Cbc0014I Cut generator 4 (MixedIntegerRounding2) - 16 row cuts average 22.1 elements, 0 column cuts (0 active)  in 0.005 seconds - new frequency is -100
+Cbc0014I Cut generator 5 (FlowCover) - 27 row cuts average 2.6 elements, 0 column cuts (0 active)  in 0.008 seconds - new frequency is -100
+Cbc0014I Cut generator 6 (TwoMirCuts) - 185 row cuts average 61.1 elements, 0 column cuts (0 active)  in 0.020 seconds - new frequency is -100
+Cbc0014I Cut generator 7 (ZeroHalf) - 57 row cuts average 11.9 elements, 0 column cuts (0 active)  in 0.145 seconds - new frequency is 1
+Cbc0001I Search completed - best objective 1e+50, took 1928 iterations and 0 nodes (0.40 seconds)
+Cbc0035I Maximum depth 0, 0 variables fixed on reduced cost
+Cuts at root node changed objective from -10.8571 to 48.2913
+Probing was tried 45 times and created 302 cuts of which 0 were active after adding rounds of cuts (0.028 seconds)
+Gomory was tried 45 times and created 885 cuts of which 0 were active after adding rounds of cuts (0.020 seconds)
+Knapsack was tried 45 times and created 32 cuts of which 0 were active after adding rounds of cuts (0.022 seconds)
+Clique was tried 45 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.001 seconds)
+MixedIntegerRounding2 was tried 45 times and created 16 cuts of which 0 were active after adding rounds of cuts (0.005 seconds)
+FlowCover was tried 45 times and created 27 cuts of which 0 were active after adding rounds of cuts (0.008 seconds)
+TwoMirCuts was tried 45 times and created 185 cuts of which 0 were active after adding rounds of cuts (0.020 seconds)
+ZeroHalf was tried 45 times and created 57 cuts of which 0 were active after adding rounds of cuts (0.145 seconds)
+
+Result - Problem proven infeasible
+
+No feasible solution found
+Enumerated nodes:               0
+Total iterations:               1928
+Time (CPU seconds):             0.38
+Time (Wallclock seconds):       0.40
+
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       0.38   (Wallclock seconds):       0.41
+
+Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - /Users/alexma/Documents/Coding/Music-To-My-Ears/.venv/lib/python3.11/site-packages/pulp/apis/../solverdir/cbc/osx/i64/cbc /var/folders/h3/6xwgwylx75v6h8sv1tmn84dm0000gn/T/175ad574a8114ecbaff2b5c4d7077799-pulp.mps -sec 600 -timeMode elapsed -branch -printingOptions all -solution /var/folders/h3/6xwgwylx75v6h8sv1tmn84dm0000gn/T/175ad574a8114ecbaff2b5c4d7077799-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 420 COLUMNS
+At line 3326 RHS
+At line 3742 BOUNDS
+At line 4141 ENDATA
+Problem MODEL has 415 rows, 398 columns and 2088 elements
+Coin0008I MODEL read with 0 errors
+seconds was changed from 1e+100 to 600
+Option for timeMode changed from cpu to elapsed
+Continuous objective value is -12 - 0.00 seconds
+Cgl0003I 79 fixed, 6 tightened bounds, 193 strengthened rows, 14 substitutions
+Cgl0003I 29 fixed, 6 tightened bounds, 47 strengthened rows, 3 substitutions
+Cgl0003I 20 fixed, 4 tightened bounds, 141 strengthened rows, 9 substitutions
+Cgl0003I 7 fixed, 1 tightened bounds, 101 strengthened rows, 1 substitutions
+Cgl0003I 0 fixed, 1 tightened bounds, 92 strengthened rows, 2 substitutions
+Cgl0003I 2 fixed, 0 tightened bounds, 125 strengthened rows, 23 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 91 strengthened rows, 0 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 65 strengthened rows, 7 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 41 strengthened rows, 1 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 30 strengthened rows, 1 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 25 strengthened rows, 1 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 16 strengthened rows, 1 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 11 strengthened rows, 1 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 6 strengthened rows, 0 substitutions
+Cgl0004I processed model has 182 rows, 180 columns (180 integer (170 of which binary)) and 1227 elements
+Cutoff increment increased from 1e-05 to 0.9999
+Cbc0038I Initial state - 19 integers unsatisfied sum - 5.67096
+Cbc0038I Pass   1: suminf.    6.86763 (37) obj. -11.5149 iterations 43
+Cbc0038I Pass   2: suminf.    4.70090 (25) obj. -11.3923 iterations 2
+Cbc0038I Pass   3: suminf.    6.30487 (37) obj. -10.1814 iterations 36
+Cbc0038I Pass   4: suminf.    7.98894 (35) obj. -10.2863 iterations 12
+Cbc0038I Pass   5: suminf.    6.55498 (39) obj. -10.4283 iterations 8
+Cbc0038I Pass   6: suminf.    7.68916 (38) obj. -10.3792 iterations 7
+Cbc0038I Pass   7: suminf.    6.59563 (43) obj. -10.2642 iterations 30
+Cbc0038I Pass   8: suminf.    7.70805 (34) obj. -10.312 iterations 16
+Cbc0038I Pass   9: suminf.    6.39074 (43) obj. -10.4323 iterations 8
+Cbc0038I Pass  10: suminf.   11.27914 (41) obj. -5.84706 iterations 54
+Cbc0038I Pass  11: suminf.    7.75364 (41) obj. -5.41974 iterations 31
+Cbc0038I Pass  12: suminf.    7.44060 (46) obj. -5.41919 iterations 5
+Cbc0038I Pass  13: suminf.    6.02341 (36) obj. -6.54118 iterations 20
+Cbc0038I Pass  14: suminf.    5.28812 (37) obj. -6.80392 iterations 16
+Cbc0038I Pass  15: suminf.    8.97085 (41) obj. -5.33282 iterations 51
+Cbc0038I Pass  16: suminf.    6.54346 (35) obj. -5.26352 iterations 44
+Cbc0038I Pass  17: suminf.    7.12946 (33) obj. -4.8 iterations 44
+Cbc0038I Pass  18: suminf.    5.59481 (33) obj. -4.8 iterations 6
+Cbc0038I Pass  19: suminf.    4.38482 (21) obj. -4.8 iterations 19
+Cbc0038I Pass  20: suminf.    5.00222 (18) obj. -3.6 iterations 38
+Cbc0038I Pass  21: suminf.    4.95094 (18) obj. -3.6 iterations 12
+Cbc0038I Pass  22: suminf.    6.12872 (18) obj. -3.33333 iterations 41
+Cbc0038I Pass  23: suminf.    6.12872 (18) obj. -3.33333 iterations 22
+Cbc0038I Pass  24: suminf.    6.12872 (18) obj. -3.33333 iterations 8
+Cbc0038I Pass  25: suminf.    6.12872 (18) obj. -3.33333 iterations 7
+Cbc0038I Pass  26: suminf.    6.00205 (18) obj. -3.33333 iterations 29
+Cbc0038I Pass  27: suminf.    6.00205 (18) obj. -3.33333 iterations 26
+Cbc0038I Pass  28: suminf.    5.96205 (18) obj. -3.33333 iterations 32
+Cbc0038I Pass  29: suminf.    5.96205 (18) obj. -3.33333 iterations 28
+Cbc0038I Pass  30: suminf.    6.64872 (18) obj. -3.33333 iterations 28
+Cbc0038I No solution found this major pass
+Cbc0038I Before mini branch and bound, 79 integers at bound fixed and 0 continuous
+Cbc0038I Full problem 182 rows 180 columns, reduced to 140 rows 94 columns - too large
+Cbc0038I Mini branch and bound did not improve solution (0.07 seconds)
+Cbc0038I After 0.07 seconds - Feasibility pump exiting - took 0.01 seconds
+Cbc0031I 25 added rows had average density of 35.8
+Cbc0013I At root node, 25 cuts changed objective from -12 to -7.1164176 in 100 passes
+Cbc0014I Cut generator 0 (Probing) - 614 row cuts average 3.3 elements, 12 column cuts (12 active)  in 0.073 seconds - new frequency is 1
+Cbc0014I Cut generator 1 (Gomory) - 1427 row cuts average 128.5 elements, 0 column cuts (0 active)  in 0.051 seconds - new frequency is 1
+Cbc0014I Cut generator 2 (Knapsack) - 93 row cuts average 7.8 elements, 0 column cuts (0 active)  in 0.060 seconds - new frequency is 1
+Cbc0014I Cut generator 3 (Clique) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.004 seconds - new frequency is -100
+Cbc0014I Cut generator 4 (MixedIntegerRounding2) - 63 row cuts average 24.0 elements, 0 column cuts (0 active)  in 0.026 seconds - new frequency is -100
+Cbc0014I Cut generator 5 (FlowCover) - 47 row cuts average 2.2 elements, 0 column cuts (0 active)  in 0.016 seconds - new frequency is -100
+Cbc0014I Cut generator 6 (TwoMirCuts) - 214 row cuts average 54.3 elements, 0 column cuts (0 active)  in 0.031 seconds - new frequency is 1
+Cbc0014I Cut generator 7 (ZeroHalf) - 93 row cuts average 18.1 elements, 0 column cuts (0 active)  in 0.306 seconds - new frequency is 1
+Cbc0010I After 0 nodes, 1 on tree, 1e+50 best solution, best possible -7.1164173 (0.91 seconds)
+Cbc0004I Integer solution of -2 found after 7328 iterations and 17 nodes (1.30 seconds)
+Cbc0038I Full problem 182 rows 180 columns, reduced to 123 rows 65 columns - 12 fixed gives 44, 23 - ok now
+Cbc0038I Full problem 182 rows 180 columns, reduced to 97 rows 53 columns
+Cbc0004I Integer solution of -3 found after 10250 iterations and 54 nodes (1.78 seconds)
+Cbc0004I Integer solution of -5 found after 10328 iterations and 58 nodes (1.82 seconds)
+Cbc0001I Search completed - best objective -5, took 10709 iterations and 63 nodes (1.85 seconds)
+Cbc0032I Strong branching done 868 times (17834 iterations), fathomed 4 nodes and fixed 24 variables
+Cbc0035I Maximum depth 15, 211 variables fixed on reduced cost
+Cuts at root node changed objective from -12 to -7.11642
+Probing was tried 262 times and created 1638 cuts of which 0 were active after adding rounds of cuts (0.105 seconds)
+Gomory was tried 247 times and created 1570 cuts of which 0 were active after adding rounds of cuts (0.073 seconds)
+Knapsack was tried 247 times and created 170 cuts of which 0 were active after adding rounds of cuts (0.125 seconds)
+Clique was tried 100 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.004 seconds)
+MixedIntegerRounding2 was tried 100 times and created 63 cuts of which 0 were active after adding rounds of cuts (0.026 seconds)
+FlowCover was tried 100 times and created 47 cuts of which 0 were active after adding rounds of cuts (0.016 seconds)
+TwoMirCuts was tried 247 times and created 386 cuts of which 0 were active after adding rounds of cuts (0.071 seconds)
+ZeroHalf was tried 247 times and created 250 cuts of which 0 were active after adding rounds of cuts (0.704 seconds)
+ImplicationCuts was tried 107 times and created 305 cuts of which 0 were active after adding rounds of cuts (0.007 seconds)
+
+Result - Optimal solution found
+
+Objective value:                -5.00000000
+Enumerated nodes:               63
+Total iterations:               10709
+Time (CPU seconds):             1.81
+Time (Wallclock seconds):       1.85
+
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       1.81   (Wallclock seconds):       1.86
+
+Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - /Users/alexma/Documents/Coding/Music-To-My-Ears/.venv/lib/python3.11/site-packages/pulp/apis/../solverdir/cbc/osx/i64/cbc /var/folders/h3/6xwgwylx75v6h8sv1tmn84dm0000gn/T/9db7705070a8470bad99f9887065ef85-pulp.mps -sec 600 -timeMode elapsed -branch -printingOptions all -solution /var/folders/h3/6xwgwylx75v6h8sv1tmn84dm0000gn/T/9db7705070a8470bad99f9887065ef85-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 478 COLUMNS
+At line 3775 RHS
+At line 4249 BOUNDS
+At line 4695 ENDATA
+Problem MODEL has 473 rows, 445 columns and 2382 elements
+Coin0008I MODEL read with 0 errors
+seconds was changed from 1e+100 to 600
+Option for timeMode changed from cpu to elapsed
+Continuous objective value is -14 - 0.00 seconds
+Cgl0003I 92 fixed, 7 tightened bounds, 236 strengthened rows, 10 substitutions
+Cgl0003I 43 fixed, 5 tightened bounds, 8 strengthened rows, 0 substitutions
+Cgl0003I 15 fixed, 8 tightened bounds, 133 strengthened rows, 11 substitutions
+Cgl0003I 10 fixed, 2 tightened bounds, 0 strengthened rows, 26 substitutions
+Cgl0003I 2 fixed, 0 tightened bounds, 103 strengthened rows, 1 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 89 strengthened rows, 0 substitutions
+Cgl0003I 1 fixed, 0 tightened bounds, 138 strengthened rows, 25 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 102 strengthened rows, 0 substitutions
+Cgl0003I 1 fixed, 0 tightened bounds, 71 strengthened rows, 9 substitutions
+Cgl0003I 1 fixed, 0 tightened bounds, 44 strengthened rows, 0 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 35 strengthened rows, 0 substitutions
+Cgl0003I 1 fixed, 0 tightened bounds, 29 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 25 strengthened rows, 0 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 19 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 11 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 4 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 3 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 2 strengthened rows, 0 substitutions
+Cgl0004I processed model has 195 rows, 184 columns (184 integer (173 of which binary)) and 1274 elements
+Cutoff increment increased from 1e-05 to 0.9999
+Cbc0038I Initial state - 13 integers unsatisfied sum - 3.55
+Cbc0038I Pass   1: suminf.    2.26320 (10) obj. -13.6234 iterations 25
+Cbc0038I Pass   2: suminf.    3.02043 (15) obj. -12.1129 iterations 34
+Cbc0038I Pass   3: suminf.    2.65606 (12) obj. -12.1591 iterations 31
+Cbc0038I Pass   4: suminf.    2.35556 (8) obj. -9 iterations 37
+Cbc0038I Pass   5: suminf.    2.35556 (8) obj. -9 iterations 23
+Cbc0038I Pass   6: suminf.    8.59216 (37) obj. -7.82353 iterations 51
+Cbc0038I Pass   7: suminf.    3.77857 (24) obj. -7.53571 iterations 44
+Cbc0038I Pass   8: suminf.    3.65238 (25) obj. -7.52381 iterations 11
+Cbc0038I Pass   9: suminf.    4.80733 (18) obj. -5.40659 iterations 42
+Cbc0038I Pass  10: suminf.    4.50623 (21) obj. -5.50549 iterations 22
+Cbc0038I Pass  11: suminf.    3.79116 (21) obj. -5.37755 iterations 4
+Cbc0038I Pass  12: suminf.    3.75442 (22) obj. -5.38163 iterations 8
+Cbc0038I Pass  13: suminf.    6.92821 (18) obj. -4 iterations 38
+Cbc0038I Pass  14: suminf.    4.98667 (17) obj. -4.42 iterations 23
+Cbc0038I Pass  15: suminf.    4.26667 (15) obj. -4 iterations 6
+Cbc0038I Pass  16: suminf.    3.45185 (15) obj. -4 iterations 6
+Cbc0038I Pass  17: suminf.    3.05926 (15) obj. -4 iterations 40
+Cbc0038I Pass  18: suminf.    4.28352 (15) obj. -5.42857 iterations 26
+Cbc0038I Pass  19: suminf.    4.28352 (15) obj. -5.42857 iterations 10
+Cbc0038I Pass  20: suminf.    4.45018 (16) obj. -5.42857 iterations 30
+Cbc0038I Pass  21: suminf.    4.45018 (16) obj. -5.42857 iterations 24
+Cbc0038I Pass  22: suminf.    6.54069 (28) obj. -5.89241 iterations 48
+Cbc0038I Pass  23: suminf.    3.03810 (14) obj. -4.71429 iterations 20
+Cbc0038I Pass  24: suminf.    2.50667 (17) obj. -4.12 iterations 10
+Cbc0038I Pass  25: suminf.    6.03843 (29) obj. -4.60521 iterations 34
+Cbc0038I Pass  26: suminf.    3.21709 (12) obj. -4 iterations 20
+Cbc0038I Pass  27: suminf.    3.21709 (12) obj. -4 iterations 7
+Cbc0038I Pass  28: suminf.    6.21691 (30) obj. -4.01266 iterations 30
+Cbc0038I Pass  29: suminf.    6.21691 (30) obj. -4.01266 iterations 6
+Cbc0038I Pass  30: suminf.    6.44201 (29) obj. -4.11111 iterations 28
+Cbc0038I No solution found this major pass
+Cbc0038I Before mini branch and bound, 94 integers at bound fixed and 0 continuous of which 1 were internal integer and 0 internal continuous
+Cbc0038I Mini branch and bound did not improve solution (0.08 seconds)
+Cbc0038I After 0.08 seconds - Feasibility pump exiting - took 0.02 seconds
+Cbc0031I 24 added rows had average density of 53.333333
+Cbc0013I At root node, 24 cuts changed objective from -14 to -7.1921523 in 100 passes
+Cbc0014I Cut generator 0 (Probing) - 671 row cuts average 3.5 elements, 13 column cuts (13 active)  in 0.082 seconds - new frequency is 1
+Cbc0014I Cut generator 1 (Gomory) - 1910 row cuts average 155.6 elements, 0 column cuts (0 active)  in 0.077 seconds - new frequency is 1
+Cbc0014I Cut generator 2 (Knapsack) - 100 row cuts average 7.7 elements, 0 column cuts (0 active)  in 0.062 seconds - new frequency is 1
+Cbc0014I Cut generator 3 (Clique) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.004 seconds - new frequency is -100
+Cbc0014I Cut generator 4 (MixedIntegerRounding2) - 50 row cuts average 15.4 elements, 0 column cuts (0 active)  in 0.014 seconds - new frequency is -100
+Cbc0014I Cut generator 5 (FlowCover) - 50 row cuts average 2.6 elements, 0 column cuts (0 active)  in 0.023 seconds - new frequency is -100
+Cbc0014I Cut generator 6 (TwoMirCuts) - 227 row cuts average 51.8 elements, 0 column cuts (0 active)  in 0.035 seconds - new frequency is 1
+Cbc0010I After 0 nodes, 1 on tree, 1e+50 best solution, best possible -7.1921523 (0.69 seconds)
+Cbc0004I Integer solution of -4 found after 7313 iterations and 27 nodes (1.00 seconds)
+Cbc0001I Search completed - best objective -4, took 7945 iterations and 35 nodes (1.03 seconds)
+Cbc0032I Strong branching done 546 times (13894 iterations), fathomed 2 nodes and fixed 8 variables
+Cbc0035I Maximum depth 13, 61 variables fixed on reduced cost
+Cuts at root node changed objective from -14 to -7.19215
+Probing was tried 175 times and created 1089 cuts of which 0 were active after adding rounds of cuts (0.101 seconds)
+Gomory was tried 168 times and created 1957 cuts of which 0 were active after adding rounds of cuts (0.092 seconds)
+Knapsack was tried 168 times and created 141 cuts of which 0 were active after adding rounds of cuts (0.099 seconds)
+Clique was tried 100 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.004 seconds)
+MixedIntegerRounding2 was tried 100 times and created 50 cuts of which 0 were active after adding rounds of cuts (0.014 seconds)
+FlowCover was tried 100 times and created 50 cuts of which 0 were active after adding rounds of cuts (0.023 seconds)
+TwoMirCuts was tried 168 times and created 425 cuts of which 0 were active after adding rounds of cuts (0.084 seconds)
+ZeroHalf was tried 1 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+ImplicationCuts was tried 56 times and created 181 cuts of which 0 were active after adding rounds of cuts (0.004 seconds)
+
+Result - Optimal solution found
+
+Objective value:                -4.00000000
+Enumerated nodes:               35
+Total iterations:               7945
+Time (CPU seconds):             1.02
+Time (Wallclock seconds):       1.04
+
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       1.02   (Wallclock seconds):       1.04
+
+
+Turns:            3/6
+Climax at bar:    2 (pitch=21)
+
+    === FUX FIRST SPECIES COVERAGE SUMMARY ===
+
+    RULE                                      TANAKA  STATUS
+    ---------------------------------------------------------
+    1. Only consonances                       H domain  ✓ (by variable domain)
+    2. Unisons at start/end only              3.4.1     ✓
+    3. No parallel perfect consonances        3.4.2     ✓ (P5, P8, P1)
+    4. No hidden fifths/octaves               3.4.3     ✓
+    5. No voice crossing                      3.4.9     ✓ (implicit via H ≥ 0)
+    6. Prefer contrary motion                 3.4.11    ✓ (soft + threshold)
+    7. Stepwise melody preferred              3.4.11    ✓ (soft + threshold)
+    8. Single climax                          3.4.11    ✓ (Big-M)
+    9. No consecutive leaps same direction    3.4.5     ✓
+    10. No triad arpeggios in one direction   3.4.4     ✓
+    11. ≤3 consecutive parallel 3rds/6ths    3.4.10    ✓
+    12. No large leap simultaneously both     3.4.7     ✓ (at CF large leaps)
+    13. Large leap → stepwise compensation   3.4.8     ⚠ NOT IMPLEMENTED
+        (Tanaka claims 3.4.5 covers this — it does not; see comment above)
+    14. Avoid pitch overuse                   3.4.6     ✓ (≤2 in any 5-bar window)
+    15. Begin/end on tonic or fifth           —         ✗ NOT IN TANAKA
+        (Fux: first and last notes should be unison, fifth, or octave
+        on the tonic. Tanaka's H allows any consonance at bar 0 and T-1.)
+    16. Penultimate bar: leading tone motion  —         ✗ NOT IN TANAKA
+        (Fux: the bar before the last should approach the final by step,
+        often using the leading tone. Not encoded.)
+    
+
+Status: Infeasible
+Objective value: -11
+
+
+    === FUX FIRST SPECIES COVERAGE SUMMARY ===
+
+    RULE                                      TANAKA  STATUS
+    ---------------------------------------------------------
+    1. Only consonances                       H domain  ✓ (by variable domain)
+    2. Unisons at start/end only              3.4.1     ✓
+    3. No parallel perfect consonances        3.4.2     ✓ (P5, P8, P1)
+    4. No hidden fifths/octaves               3.4.3     ✓
+    5. No voice crossing                      3.4.9     ✓ (implicit via H ≥ 0)
+    6. Prefer contrary motion                 3.4.11    ✓ (soft + threshold)
+    7. Stepwise melody preferred              3.4.11    ✓ (soft + threshold)
+    8. Single climax                          3.4.11    ✓ (Big-M)
+    9. No consecutive leaps same direction    3.4.5     ✓
+    10. No triad arpeggios in one direction   3.4.4     ✓
+    11. ≤3 consecutive parallel 3rds/6ths    3.4.10    ✓
+    12. No large leap simultaneously both     3.4.7     ✓ (at CF large leaps)
+    13. Large leap → stepwise compensation   3.4.8     ⚠ NOT IMPLEMENTED
+        (Tanaka claims 3.4.5 covers this — it does not; see comment above)
+    14. Avoid pitch overuse                   3.4.6     ✓ (≤2 in any 5-bar window)
+    15. Begin/end on tonic or fifth           —         ✗ NOT IN TANAKA
+        (Fux: first and last notes should be unison, fifth, or octave
+        on the tonic. Tanaka's H allows any consonance at bar 0 and T-1.)
+    16. Penultimate bar: leading tone motion  —         ✗ NOT IN TANAKA
+        (Fux: the bar before the last should approach the final by step,
+        often using the leading tone. Not encoded.)
+    
+
+Status: Optimal
+Objective value: -5
+
+Cantus firmus (semitones): [0, 2, 5, 4, 7, 5, 4, 2, 0]
+Counterpoint pitches (semitones): [16, 11, 9, 12, 11, 9, 12, 11, 9]
+Harmonic intervals (semitones):   [16, 9, 4, 8, 4, 4, 8, 9, 9]
+
+Bar-by-bar:
+ Bar   CF   CP  HInt  MInt  Up  Ctr  Cnj  Trn
+   0    0   16    16    -5   0    1    0    0
+   1    2   11     9    -2   0    1    1    1
+   2    5    9     4     3   1    1    0    1
+   3    4   12     8    -1   0    1    1    0
+   4    7   11     4    -2   0    0    1    1
+   5    5    9     4     3   1    1    0    1
+   6    4   12     8    -1   0    0    1    0
+   7    2   11     9    -2   0    0    1    -
+   8    0    9     9     -   -    -    -    -
+
+Contrary motions: 5/8
+Conjunct motions: 5/8
+Turns:            4/7
+Climax at bar:    0 (pitch=16)
+
+    === FUX FIRST SPECIES COVERAGE SUMMARY ===
+
+    RULE                                      TANAKA  STATUS
+    ---------------------------------------------------------
+    1. Only consonances                       H domain  ✓ (by variable domain)
+    2. Unisons at start/end only              3.4.1     ✓
+    3. No parallel perfect consonances        3.4.2     ✓ (P5, P8, P1)
+    4. No hidden fifths/octaves               3.4.3     ✓
+    5. No voice crossing                      3.4.9     ✓ (implicit via H ≥ 0)
+    6. Prefer contrary motion                 3.4.11    ✓ (soft + threshold)
+    7. Stepwise melody preferred              3.4.11    ✓ (soft + threshold)
+    8. Single climax                          3.4.11    ✓ (Big-M)
+    9. No consecutive leaps same direction    3.4.5     ✓
+    10. No triad arpeggios in one direction   3.4.4     ✓
+    11. ≤3 consecutive parallel 3rds/6ths    3.4.10    ✓
+    12. No large leap simultaneously both     3.4.7     ✓ (at CF large leaps)
+    13. Large leap → stepwise compensation   3.4.8     ⚠ NOT IMPLEMENTED
+        (Tanaka claims 3.4.5 covers this — it does not; see comment above)
+    14. Avoid pitch overuse                   3.4.6     ✓ (≤2 in any 5-bar window)
+    15. Begin/end on tonic or fifth           —         ✗ NOT IN TANAKA
+        (Fux: first and last notes should be unison, fifth, or octave
+        on the tonic. Tanaka's H allows any consonance at bar 0 and T-1.)
+    16. Penultimate bar: leading tone motion  —         ✗ NOT IN TANAKA
+        (Fux: the bar before the last should approach the final by step,
+        often using the leading tone. Not encoded.)
+    
+
+Status: Optimal
+Objective value: -4
+
+Cantus firmus (semitones): [0, 4, 2, 5, 7, 9, 7, 5, 2, 0]
+Counterpoint pitches (semitones): [9, 7, 11, 9, 11, 12, 16, 9, 11, 9]
+Harmonic intervals (semitones):   [9, 3, 9, 4, 4, 3, 9, 4, 9, 9]
+
+Bar-by-bar:
+ Bar   CF   CP  HInt  MInt  Up  Ctr  Cnj  Trn
+   0    0    9     9    -2   0    1    1    1
+   1    4    7     3     4   1    1    0    1
+   2    2   11     9    -2   0    1    1    1
+   3    5    9     4     2   1    0    1    0
+   4    7   11     4     1   1    0    1    0
+   5    9   12     3     4   1    1    0    1
+   6    7   16     9    -7   0    0    0    1
+   7    5    9     4     2   1    1    1    1
+   8    2   11     9    -2   0    0    1    -
+   9    0    9     9     -   -    -    -    -
+
+Contrary motions: 5/9
+Conjunct motions: 6/9
+Turns:            6/8
+Climax at bar:    6 (pitch=16)
+
+    === FUX FIRST SPECIES COVERAGE SUMMARY ===
+
+    RULE                                      TANAKA  STATUS
+    ---------------------------------------------------------
+    1. Only consonances                       H domain  ✓ (by variable domain)
+    2. Unisons at start/end only              3.4.1     ✓
+    3. No parallel perfect consonances        3.4.2     ✓ (P5, P8, P1)
+    4. No hidden fifths/octaves               3.4.3     ✓
+    5. No voice crossing                      3.4.9     ✓ (implicit via H ≥ 0)
+    6. Prefer contrary motion                 3.4.11    ✓ (soft + threshold)
+    7. Stepwise melody preferred              3.4.11    ✓ (soft + threshold)
+    8. Single climax                          3.4.11    ✓ (Big-M)
+    9. No consecutive leaps same direction    3.4.5     ✓
+    10. No triad arpeggios in one direction   3.4.4     ✓
+    11. ≤3 consecutive parallel 3rds/6ths    3.4.10    ✓
+    12. No large leap simultaneously both     3.4.7     ✓ (at CF large leaps)
+    13. Large leap → stepwise compensation   3.4.8     ⚠ NOT IMPLEMENTED
+        (Tanaka claims 3.4.5 covers this — it does not; see comment above)
+    14. Avoid pitch overuse                   3.4.6     ✓ (≤2 in any 5-bar window)
+    15. Begin/end on tonic or fifth           —         ✗ NOT IN TANAKA
+        (Fux: first and last notes should be unison, fifth, or octave
+        on the tonic. Tanaka's H allows any consonance at bar 0 and T-1.)
+    16. Penultimate bar: leading tone motion  —         ✗ NOT IN TANAKA
+        (Fux: the bar before the last should approach the final by step,
+        often using the leading tone. Not encoded.)
+    Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - /Users/alexma/Documents/Coding/Music-To-My-Ears/.venv/lib/python3.11/site-packages/pulp/apis/../solverdir/cbc/osx/i64/cbc /var/folders/h3/6xwgwylx75v6h8sv1tmn84dm0000gn/T/f0745b90f1604365bf039f6524fecb1e-pulp.mps -sec 600 -timeMode elapsed -branch -printingOptions all -solution /var/folders/h3/6xwgwylx75v6h8sv1tmn84dm0000gn/T/f0745b90f1604365bf039f6524fecb1e-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 478 COLUMNS
+At line 3775 RHS
+At line 4249 BOUNDS
+At line 4695 ENDATA
+Problem MODEL has 473 rows, 445 columns and 2382 elements
+Coin0008I MODEL read with 0 errors
+seconds was changed from 1e+100 to 600
+Option for timeMode changed from cpu to elapsed
+Continuous objective value is -15 - 0.00 seconds
+Cgl0003I 88 fixed, 7 tightened bounds, 236 strengthened rows, 12 substitutions
+Cgl0003I 37 fixed, 6 tightened bounds, 10 strengthened rows, 3 substitutions
+Cgl0003I 17 fixed, 7 tightened bounds, 149 strengthened rows, 16 substitutions
+Cgl0003I 15 fixed, 3 tightened bounds, 1 strengthened rows, 17 substitutions
+Cgl0003I 3 fixed, 1 tightened bounds, 97 strengthened rows, 2 substitutions
+Cgl0003I 1 fixed, 0 tightened bounds, 89 strengthened rows, 0 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 72 strengthened rows, 0 substitutions
+Cgl0003I 2 fixed, 0 tightened bounds, 122 strengthened rows, 25 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 83 strengthened rows, 0 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 60 strengthened rows, 7 substitutions
+Cgl0003I 2 fixed, 0 tightened bounds, 47 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 30 strengthened rows, 0 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 29 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 27 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 17 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 14 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 10 strengthened rows, 0 substitutions
+Cgl0004I processed model has 196 rows, 185 columns (185 integer (174 of which binary)) and 1315 elements
+Cutoff increment increased from 1e-05 to 0.9999
+Cbc0038I Initial state - 39 integers unsatisfied sum - 4.85595
+Cbc0038I Pass   1: suminf.    3.52253 (22) obj. -14.6923 iterations 30
+Cbc0038I Pass   2: suminf.    5.35929 (36) obj. -14.7436 iterations 30
+Cbc0038I Pass   3: suminf.    4.58846 (21) obj. -14.6923 iterations 22
+Cbc0038I Pass   4: suminf.    4.18034 (14) obj. -11 iterations 37
+Cbc0038I Pass   5: suminf.    4.03034 (17) obj. -11 iterations 25
+Cbc0038I Pass   6: suminf.    5.48359 (17) obj. -11 iterations 28
+Cbc0038I Pass   7: suminf.    4.71160 (18) obj. -10.5714 iterations 28
+Cbc0038I Pass   8: suminf.    7.14451 (25) obj. -10 iterations 32
+Cbc0038I Pass   9: suminf.    3.76844 (17) obj. -11 iterations 8
+Cbc0038I Pass  10: suminf.    3.76844 (17) obj. -11 iterations 16
+Cbc0038I Pass  11: suminf.    5.04041 (18) obj. -11 iterations 32
+Cbc0038I Pass  12: suminf.    4.39432 (17) obj. -10.5714 iterations 32
+Cbc0038I Pass  13: suminf.    4.10051 (22) obj. -10 iterations 32
+Cbc0038I Pass  14: suminf.    4.10051 (22) obj. -10 iterations 7
+Cbc0038I Pass  15: suminf.    5.67564 (17) obj. -10 iterations 42
+Cbc0038I Pass  16: suminf.    5.67564 (17) obj. -10 iterations 18
+Cbc0038I Pass  17: suminf.    4.96136 (17) obj. -10 iterations 3
+Cbc0038I Pass  18: suminf.    4.96136 (17) obj. -10 iterations 3
+Cbc0038I Pass  19: suminf.    6.43231 (17) obj. -10 iterations 31
+Cbc0038I Pass  20: suminf.    5.31951 (17) obj. -10 iterations 35
+Cbc0038I Pass  21: suminf.    4.60523 (17) obj. -10 iterations 13
+Cbc0038I Pass  22: suminf.    4.60523 (17) obj. -10 iterations 3
+Cbc0038I Pass  23: suminf.    5.67564 (17) obj. -10 iterations 38
+Cbc0038I Pass  24: suminf.    5.67564 (17) obj. -10 iterations 29
+Cbc0038I Pass  25: suminf.    6.43231 (17) obj. -10 iterations 31
+Cbc0038I Pass  26: suminf.    4.60523 (17) obj. -10 iterations 33
+Cbc0038I Pass  27: suminf.    4.60523 (17) obj. -10 iterations 18
+Cbc0038I Pass  28: suminf.    5.31951 (17) obj. -10 iterations 33
+Cbc0038I Pass  29: suminf.    5.31951 (17) obj. -10 iterations 23
+Cbc0038I Pass  30: suminf.    4.60523 (17) obj. -10 iterations 5
+Cbc0038I No solution found this major pass
+Cbc0038I Before mini branch and bound, 122 integers at bound fixed and 0 continuous of which 2 were internal integer and 0 internal continuous
+Cbc0038I Mini branch and bound did not improve solution (0.08 seconds)
+Cbc0038I After 0.08 seconds - Feasibility pump exiting - took 0.01 seconds
+Cbc0031I 30 added rows had average density of 26.8
+Cbc0013I At root node, 30 cuts changed objective from -14.857143 to -8.2949999 in 28 passes
+Cbc0014I Cut generator 0 (Probing) - 207 row cuts average 3.0 elements, 19 column cuts (19 active)  in 0.022 seconds - new frequency is 1
+Cbc0014I Cut generator 1 (Gomory) - 451 row cuts average 101.1 elements, 0 column cuts (0 active)  in 0.014 seconds - new frequency is 1
+Cbc0014I Cut generator 2 (Knapsack) - 11 row cuts average 9.8 elements, 0 column cuts (0 active)  in 0.016 seconds - new frequency is 1
+Cbc0014I Cut generator 3 (Clique) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.001 seconds - new frequency is -100
+Cbc0014I Cut generator 4 (MixedIntegerRounding2) - 12 row cuts average 20.2 elements, 0 column cuts (0 active)  in 0.005 seconds - new frequency is -100
+Cbc0014I Cut generator 5 (FlowCover) - 4 row cuts average 3.0 elements, 0 column cuts (0 active)  in 0.005 seconds - new frequency is -100
+Cbc0014I Cut generator 6 (TwoMirCuts) - 218 row cuts average 63.7 elements, 0 column cuts (0 active)  in 0.020 seconds - new frequency is 1
+Cbc0014I Cut generator 7 (ZeroHalf) - 19 row cuts average 20.4 elements, 0 column cuts (0 active)  in 0.090 seconds - new frequency is -100
+Cbc0010I After 0 nodes, 1 on tree, 1e+50 best solution, best possible -8.2949999 (0.35 seconds)
+Cbc0001I Search completed - best objective 1e+50, took 2946 iterations and 16 nodes (0.65 seconds)
+Cbc0032I Strong branching done 524 times (12987 iterations), fathomed 7 nodes and fixed 2 variables
+Cbc0035I Maximum depth 4, 0 variables fixed on reduced cost
+Cuts at root node changed objective from -14.8571 to -8.295
+Probing was tried 82 times and created 463 cuts of which 0 were active after adding rounds of cuts (0.035 seconds)
+Gomory was tried 81 times and created 487 cuts of which 0 were active after adding rounds of cuts (0.026 seconds)
+Knapsack was tried 81 times and created 48 cuts of which 0 were active after adding rounds of cuts (0.042 seconds)
+Clique was tried 28 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.001 seconds)
+MixedIntegerRounding2 was tried 28 times and created 12 cuts of which 0 were active after adding rounds of cuts (0.005 seconds)
+FlowCover was tried 28 times and created 4 cuts of which 0 were active after adding rounds of cuts (0.005 seconds)
+TwoMirCuts was tried 81 times and created 682 cuts of which 0 were active after adding rounds of cuts (0.073 seconds)
+ZeroHalf was tried 28 times and created 19 cuts of which 0 were active after adding rounds of cuts (0.090 seconds)
+ImplicationCuts was tried 53 times and created 169 cuts of which 0 were active after adding rounds of cuts (0.002 seconds)
+
+Result - Problem proven infeasible
+
+No feasible solution found
+Enumerated nodes:               16
+Total iterations:               2946
+Time (CPU seconds):             0.63
+Time (Wallclock seconds):       0.65
+
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       0.63   (Wallclock seconds):       0.65
+
+Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - /Users/alexma/Documents/Coding/Music-To-My-Ears/.venv/lib/python3.11/site-packages/pulp/apis/../solverdir/cbc/osx/i64/cbc /var/folders/h3/6xwgwylx75v6h8sv1tmn84dm0000gn/T/670447552a10407ea9942254b8f56bbc-pulp.mps -sec 600 -timeMode elapsed -branch -printingOptions all -solution /var/folders/h3/6xwgwylx75v6h8sv1tmn84dm0000gn/T/670447552a10407ea9942254b8f56bbc-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 421 COLUMNS
+At line 3329 RHS
+At line 3746 BOUNDS
+At line 4145 ENDATA
+Problem MODEL has 416 rows, 398 columns and 2090 elements
+Coin0008I MODEL read with 0 errors
+seconds was changed from 1e+100 to 600
+Option for timeMode changed from cpu to elapsed
+Continuous objective value is -12 - 0.00 seconds
+Cgl0003I 88 fixed, 8 tightened bounds, 200 strengthened rows, 10 substitutions
+Cgl0003I 29 fixed, 7 tightened bounds, 9 strengthened rows, 15 substitutions
+Cgl0003I 27 fixed, 6 tightened bounds, 128 strengthened rows, 30 substitutions
+Cgl0003I 5 fixed, 2 tightened bounds, 1 strengthened rows, 24 substitutions
+Cgl0003I 2 fixed, 0 tightened bounds, 82 strengthened rows, 25 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 66 strengthened rows, 18 substitutions
+Cgl0003I 1 fixed, 0 tightened bounds, 119 strengthened rows, 21 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 92 strengthened rows, 1 substitutions
+Cgl0003I 1 fixed, 0 tightened bounds, 67 strengthened rows, 9 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 41 strengthened rows, 0 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 31 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 24 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 18 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 15 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 3 strengthened rows, 3 substitutions
+Cgl0004I processed model has 168 rows, 160 columns (160 integer (150 of which binary)) and 1078 elements
+Cutoff increment increased from 1e-05 to 0.9999
+Cbc0038I Initial state - 35 integers unsatisfied sum - 6.16743
+Cbc0038I Pass   1: suminf.    4.15917 (27) obj. -11.8333 iterations 43
+Cbc0038I Pass   2: suminf.    7.18956 (35) obj. -6.83036 iterations 49
+Cbc0038I Pass   3: suminf.    3.14067 (15) obj. -6 iterations 33
+Cbc0038I Pass   4: suminf.    3.14067 (15) obj. -6 iterations 11
+Cbc0038I Pass   5: suminf.    3.14500 (14) obj. -6 iterations 27
+Cbc0038I Pass   6: suminf.    2.77490 (14) obj. -6 iterations 25
+Cbc0038I Pass   7: suminf.    2.73490 (14) obj. -6 iterations 25
+Cbc0038I Pass   8: suminf.    2.73490 (14) obj. -6 iterations 23
+Cbc0038I Pass   9: suminf.    3.18431 (14) obj. -6 iterations 20
+Cbc0038I Pass  10: suminf.    2.77490 (14) obj. -6 iterations 24
+Cbc0038I Pass  11: suminf.    2.77490 (14) obj. -6 iterations 22
+Cbc0038I Pass  12: suminf.    2.77490 (14) obj. -6 iterations 21
+Cbc0038I Pass  13: suminf.    2.73490 (14) obj. -6 iterations 23
+Cbc0038I Pass  14: suminf.    2.73490 (14) obj. -6 iterations 19
+Cbc0038I Pass  15: suminf.    2.77490 (14) obj. -6 iterations 21
+Cbc0038I Pass  16: suminf.    2.77490 (14) obj. -6 iterations 21
+Cbc0038I Pass  17: suminf.    2.77490 (14) obj. -6 iterations 20
+Cbc0038I Pass  18: suminf.    2.77490 (14) obj. -6 iterations 20
+Cbc0038I Pass  19: suminf.    2.73490 (14) obj. -6 iterations 21
+Cbc0038I Pass  20: suminf.    2.73490 (14) obj. -6 iterations 20
+Cbc0038I Pass  21: suminf.    2.77490 (14) obj. -6 iterations 20
+Cbc0038I Pass  22: suminf.    2.77490 (14) obj. -6 iterations 17
+Cbc0038I Pass  23: suminf.    2.77490 (14) obj. -6 iterations 16
+Cbc0038I Pass  24: suminf.    2.77490 (14) obj. -6 iterations 22
+Cbc0038I Pass  25: suminf.    2.73490 (14) obj. -6 iterations 23
+Cbc0038I Pass  26: suminf.    2.73490 (14) obj. -6 iterations 19
+Cbc0038I Pass  27: suminf.    2.77490 (14) obj. -6 iterations 21
+Cbc0038I Pass  28: suminf.    2.77490 (14) obj. -6 iterations 23
+Cbc0038I Pass  29: suminf.    2.77490 (14) obj. -6 iterations 23
+Cbc0038I Pass  30: suminf.    2.77490 (14) obj. -6 iterations 22
+Cbc0038I No solution found this major pass
+Cbc0038I Before mini branch and bound, 99 integers at bound fixed and 0 continuous
+Cbc0038I Mini branch and bound did not improve solution (0.13 seconds)
+Cbc0038I After 0.13 seconds - Feasibility pump exiting - took 0.08 seconds
+Cbc0031I 25 added rows had average density of 51.32
+Cbc0013I At root node, 25 cuts changed objective from -11.933333 to -6.6643136 in 100 passes
+Cbc0014I Cut generator 0 (Probing) - 504 row cuts average 2.8 elements, 13 column cuts (13 active)  in 0.073 seconds - new frequency is 1
+Cbc0014I Cut generator 1 (Gomory) - 1476 row cuts average 122.6 elements, 0 column cuts (0 active)  in 0.054 seconds - new frequency is 1
+Cbc0014I Cut generator 2 (Knapsack) - 47 row cuts average 8.7 elements, 0 column cuts (0 active)  in 0.049 seconds - new frequency is 1
+Cbc0014I Cut generator 3 (Clique) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.003 seconds - new frequency is -100
+Cbc0014I Cut generator 4 (MixedIntegerRounding2) - 19 row cuts average 33.6 elements, 0 column cuts (0 active)  in 0.012 seconds - new frequency is -100
+Cbc0014I Cut generator 5 (FlowCover) - 25 row cuts average 2.7 elements, 0 column cuts (0 active)  in 0.019 seconds - new frequency is -100
+Cbc0014I Cut generator 6 (TwoMirCuts) - 208 row cuts average 57.8 elements, 0 column cuts (0 active)  in 0.027 seconds - new frequency is 1
+Cbc0014I Cut generator 7 (ZeroHalf) - 1 row cuts average 12.0 elements, 0 column cuts (0 active)  in 0.000 seconds - new frequency is -100
+Cbc0010I After 0 nodes, 1 on tree, 1e+50 best solution, best possible -6.637165 (0.59 seconds)
+Cbc0016I Integer solution of -3 found by strong branching after 5235 iterations and 2 nodes (0.65 seconds)
+Cbc0038I Full problem 168 rows 160 columns, reduced to 48 rows 22 columns
+Cbc0016I Integer solution of -5 found by strong branching after 5470 iterations and 5 nodes (0.69 seconds)
+Cbc0001I Search completed - best objective -5, took 5561 iterations and 7 nodes (0.69 seconds)
+Cbc0032I Strong branching done 274 times (6444 iterations), fathomed 2 nodes and fixed 8 variables
+Cbc0035I Maximum depth 3, 7 variables fixed on reduced cost
+Cuts at root node changed objective from -11.9333 to -6.63716
+Probing was tried 126 times and created 608 cuts of which 0 were active after adding rounds of cuts (0.078 seconds)
+Gomory was tried 126 times and created 1483 cuts of which 0 were active after adding rounds of cuts (0.058 seconds)
+Knapsack was tried 126 times and created 68 cuts of which 0 were active after adding rounds of cuts (0.060 seconds)
+Clique was tried 100 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.003 seconds)
+MixedIntegerRounding2 was tried 100 times and created 19 cuts of which 0 were active after adding rounds of cuts (0.012 seconds)
+FlowCover was tried 100 times and created 25 cuts of which 0 were active after adding rounds of cuts (0.019 seconds)
+TwoMirCuts was tried 126 times and created 376 cuts of which 0 were active after adding rounds of cuts (0.052 seconds)
+ZeroHalf was tried 1 times and created 1 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+ImplicationCuts was tried 26 times and created 69 cuts of which 0 were active after adding rounds of cuts (0.002 seconds)
+
+Result - Optimal solution found
+
+Objective value:                -5.00000000
+Enumerated nodes:               7
+Total iterations:               5561
+Time (CPU seconds):             0.69
+Time (Wallclock seconds):       0.70
+
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       0.69   (Wallclock seconds):       0.70
+
+Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - /Users/alexma/Documents/Coding/Music-To-My-Ears/.venv/lib/python3.11/site-packages/pulp/apis/../solverdir/cbc/osx/i64/cbc /var/folders/h3/6xwgwylx75v6h8sv1tmn84dm0000gn/T/e66522d08f8647b883161c0af5547e36-pulp.mps -sec 600 -timeMode elapsed -branch -printingOptions all -solution /var/folders/h3/6xwgwylx75v6h8sv1tmn84dm0000gn/T/e66522d08f8647b883161c0af5547e36-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 478 COLUMNS
+At line 3775 RHS
+At line 4249 BOUNDS
+At line 4695 ENDATA
+Problem MODEL has 473 rows, 445 columns and 2382 elements
+Coin0008I MODEL read with 0 errors
+seconds was changed from 1e+100 to 600
+Option for timeMode changed from cpu to elapsed
+Continuous objective value is -15 - 0.00 seconds
+Cgl0003I 85 fixed, 6 tightened bounds, 229 strengthened rows, 12 substitutions
+Cgl0003I 42 fixed, 4 tightened bounds, 17 strengthened rows, 1 substitutions
+Cgl0003I 14 fixed, 6 tightened bounds, 154 strengthened rows, 7 substitutions
+Cgl0003I 12 fixed, 2 tightened bounds, 1 strengthened rows, 17 substitutions
+Cgl0003I 2 fixed, 1 tightened bounds, 110 strengthened rows, 1 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 99 strengthened rows, 0 substitutions
+Cgl0003I 2 fixed, 0 tightened bounds, 146 strengthened rows, 28 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 107 strengthened rows, 1 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 73 strengthened rows, 6 substitutions
+Cgl0003I 1 fixed, 0 tightened bounds, 49 strengthened rows, 2 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 35 strengthened rows, 0 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 29 strengthened rows, 2 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 26 strengthened rows, 2 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 23 strengthened rows, 2 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 15 strengthened rows, 2 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 4 strengthened rows, 0 substitutions
+Cgl0004I processed model has 197 rows, 194 columns (194 integer (183 of which binary)) and 1336 elements
+Cutoff increment increased from 1e-05 to 0.9999
+Cbc0038I Initial state - 41 integers unsatisfied sum - 5.12886
+Cbc0038I Pass   1: suminf.    3.66055 (22) obj. -14.6923 iterations 29
+Cbc0038I Pass   2: suminf.    6.26453 (18) obj. -11 iterations 60
+Cbc0038I Pass   3: suminf.    6.22607 (22) obj. -10.5385 iterations 27
+Cbc0038I Pass   4: suminf.    5.95256 (25) obj. -10.7692 iterations 27
+Cbc0038I Pass   5: suminf.    4.84145 (16) obj. -10 iterations 22
+Cbc0038I Pass   6: suminf.    4.84145 (16) obj. -10 iterations 10
+Cbc0038I Pass   7: suminf.    4.08947 (16) obj. -10 iterations 36
+Cbc0038I Pass   8: suminf.    4.08947 (16) obj. -10 iterations 28
+Cbc0038I Pass   9: suminf.    4.84145 (16) obj. -10 iterations 37
+Cbc0038I Pass  10: suminf.   10.19547 (30) obj. -3.5 iterations 66
+Cbc0038I Pass  11: suminf.    9.05363 (37) obj. -3.86975 iterations 38
+Cbc0038I Pass  12: suminf.    8.82463 (32) obj. -3.875 iterations 16
+Cbc0038I Pass  13: suminf.    7.01630 (25) obj. -4.66667 iterations 12
+Cbc0038I Pass  14: suminf.    5.99297 (28) obj. -5.86667 iterations 33
+Cbc0038I Pass  15: suminf.    4.83773 (18) obj. -6 iterations 10
+Cbc0038I Pass  16: suminf.    6.13554 (21) obj. -5.90931 iterations 41
+Cbc0038I Pass  17: suminf.    5.33829 (17) obj. -6 iterations 20
+Cbc0038I Pass  18: suminf.    7.96486 (21) obj. -6 iterations 36
+Cbc0038I Pass  19: suminf.    7.25057 (20) obj. -6 iterations 11
+Cbc0038I Pass  20: suminf.    7.25057 (20) obj. -6 iterations 2
+Cbc0038I Pass  21: suminf.    7.59417 (20) obj. -6 iterations 28
+Cbc0038I Pass  22: suminf.    7.03914 (19) obj. -6 iterations 17
+Cbc0038I Pass  23: suminf.    6.92659 (19) obj. -6 iterations 19
+Cbc0038I Pass  24: suminf.    6.92659 (19) obj. -6 iterations 26
+Cbc0038I Pass  25: suminf.    7.96486 (21) obj. -6 iterations 31
+Cbc0038I Pass  26: suminf.    7.25057 (20) obj. -6 iterations 21
+Cbc0038I Pass  27: suminf.    7.25057 (20) obj. -6 iterations 0
+Cbc0038I Pass  28: suminf.    7.19718 (19) obj. -6 iterations 32
+Cbc0038I Pass  29: suminf.    6.92659 (19) obj. -6 iterations 31
+Cbc0038I Pass  30: suminf.    6.92659 (19) obj. -6 iterations 8
+Cbc0038I No solution found this major pass
+Cbc0038I Before mini branch and bound, 99 integers at bound fixed and 0 continuous
+Cbc0038I Mini branch and bound did not improve solution (0.08 seconds)
+Cbc0038I After 0.08 seconds - Feasibility pump exiting - took 0.01 seconds
+Cbc0031I 29 added rows had average density of 45.482759
+Cbc0013I At root node, 29 cuts changed objective from -14.857143 to -9.9182952 in 95 passes
+Cbc0014I Cut generator 0 (Probing) - 433 row cuts average 2.3 elements, 14 column cuts (14 active)  in 0.076 seconds - new frequency is 1
+Cbc0014I Cut generator 1 (Gomory) - 1716 row cuts average 134.9 elements, 0 column cuts (0 active)  in 0.067 seconds - new frequency is 1
+Cbc0014I Cut generator 2 (Knapsack) - 26 row cuts average 8.8 elements, 0 column cuts (0 active)  in 0.053 seconds - new frequency is 1
+Cbc0014I Cut generator 3 (Clique) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.004 seconds - new frequency is -100
+Cbc0014I Cut generator 4 (MixedIntegerRounding2) - 8 row cuts average 26.8 elements, 0 column cuts (0 active)  in 0.012 seconds - new frequency is -100
+Cbc0014I Cut generator 5 (FlowCover) - 21 row cuts average 2.8 elements, 0 column cuts (0 active)  in 0.026 seconds - new frequency is -100
+Cbc0014I Cut generator 6 (TwoMirCuts) - 206 row cuts average 71.3 elements, 0 column cuts (0 active)  in 0.036 seconds - new frequency is 1
+Cbc0014I Cut generator 7 (ZeroHalf) - 60 row cuts average 19.2 elements, 0 column cuts (0 active)  in 0.294 seconds - new frequency is -100
+Cbc0010I After 0 nodes, 1 on tree, 1e+50 best solution, best possible -9.9182952 (0.94 seconds)
+Cbc0016I Integer solution of -3 found by strong branching after 7618 iterations and 38 nodes (1.40 seconds)
+Cbc0001I Search completed - best objective -3, took 7857 iterations and 44 nodes (1.42 seconds)
+Cbc0032I Strong branching done 844 times (18096 iterations), fathomed 5 nodes and fixed 18 variables
+Cbc0035I Maximum depth 11, 116 variables fixed on reduced cost
+Cuts at root node changed objective from -14.8571 to -9.9183
+Probing was tried 221 times and created 1092 cuts of which 0 were active after adding rounds of cuts (0.107 seconds)
+Gomory was tried 211 times and created 1917 cuts of which 0 were active after adding rounds of cuts (0.091 seconds)
+Knapsack was tried 211 times and created 99 cuts of which 0 were active after adding rounds of cuts (0.114 seconds)
+Clique was tried 95 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.004 seconds)
+MixedIntegerRounding2 was tried 95 times and created 8 cuts of which 0 were active after adding rounds of cuts (0.012 seconds)
+FlowCover was tried 95 times and created 21 cuts of which 0 were active after adding rounds of cuts (0.026 seconds)
+TwoMirCuts was tried 211 times and created 414 cuts of which 0 were active after adding rounds of cuts (0.089 seconds)
+ZeroHalf was tried 95 times and created 60 cuts of which 0 were active after adding rounds of cuts (0.294 seconds)
+ImplicationCuts was tried 105 times and created 276 cuts of which 0 were active after adding rounds of cuts (0.007 seconds)
+
+Result - Optimal solution found
+
+Objective value:                -3.00000000
+Enumerated nodes:               44
+Total iterations:               7857
+Time (CPU seconds):             1.39
+Time (Wallclock seconds):       1.43
+
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       1.39   (Wallclock seconds):       1.43
+
+Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - /Users/alexma/Documents/Coding/Music-To-My-Ears/.venv/lib/python3.11/site-packages/pulp/apis/../solverdir/cbc/osx/i64/cbc /var/folders/h3/6xwgwylx75v6h8sv1tmn84dm0000gn/T/bd7ac995705346bb8e820fb795d53bd8-pulp.mps -sec 600 -timeMode elapsed -branch -printingOptions all -solution /var/folders/h3/6xwgwylx75v6h8sv1tmn84dm0000gn/T/bd7ac995705346bb8e820fb795d53bd8-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 652 COLUMNS
+At line 5122 RHS
+At line 5770 BOUNDS
+At line 6357 ENDATA
+Problem MODEL has 647 rows, 586 columns and 3264 elements
+Coin0008I MODEL read with 0 errors
+seconds was changed from 1e+100 to 600
+Option for timeMode changed from cpu to elapsed
+Continuous objective value is -20 - 0.00 seconds
+Cgl0003I 113 fixed, 10 tightened bounds, 322 strengthened rows, 16 substitutions
+Cgl0003I 42 fixed, 3 tightened bounds, 72 strengthened rows, 8 substitutions
+Cgl0003I 20 fixed, 5 tightened bounds, 213 strengthened rows, 4 substitutions
+Cgl0003I 18 fixed, 6 tightened bounds, 4 strengthened rows, 10 substitutions
+Cgl0003I 9 fixed, 1 tightened bounds, 153 strengthened rows, 11 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 131 strengthened rows, 1 substitutions
+Cgl0003I 2 fixed, 0 tightened bounds, 182 strengthened rows, 43 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 134 strengthened rows, 1 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 93 strengthened rows, 7 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 67 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 54 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 46 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 41 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 34 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 28 strengthened rows, 0 substitutions
+Cgl0004I processed model has 271 rows, 257 columns (257 integer (243 of which binary)) and 1899 elements
+Cutoff increment increased from 1e-05 to 0.9999
+Cbc0038I Initial state - 62 integers unsatisfied sum - 8.72016
+Cbc0038I Pass   1: suminf.    5.98335 (39) obj. -19.5105 iterations 41
+Cbc0038I Pass   2: suminf.    5.48781 (40) obj. -19.5105 iterations 10
+Cbc0038I Pass   3: suminf.   12.20390 (48) obj. -15.6736 iterations 45
+Cbc0038I Pass   4: suminf.   10.74711 (50) obj. -14.9567 iterations 20
+Cbc0038I Pass   5: suminf.    9.00365 (40) obj. -15.4322 iterations 30
+Cbc0038I Pass   6: suminf.    9.96019 (59) obj. -14.9231 iterations 24
+Cbc0038I Pass   7: suminf.    9.39526 (39) obj. -15.1538 iterations 34
+Cbc0038I Pass   8: suminf.    7.03986 (35) obj. -14.4056 iterations 26
+Cbc0038I Pass   9: suminf.    7.03986 (35) obj. -14.4056 iterations 15
+Cbc0038I Pass  10: suminf.    8.24680 (45) obj. -14.4755 iterations 35
+Cbc0038I Pass  11: suminf.    8.57558 (53) obj. -14.3846 iterations 28
+Cbc0038I Pass  12: suminf.    8.51197 (29) obj. -12.7923 iterations 39
+Cbc0038I Pass  13: suminf.    8.10345 (34) obj. -12.9182 iterations 39
+Cbc0038I Pass  14: suminf.    8.10345 (34) obj. -12.9182 iterations 8
+Cbc0038I Pass  15: suminf.   11.00602 (44) obj. -10.2453 iterations 79
+Cbc0038I Pass  16: suminf.    6.66891 (36) obj. -8.96932 iterations 83
+Cbc0038I Pass  17: suminf.    7.29273 (34) obj. -8.5625 iterations 67
+Cbc0038I Pass  18: suminf.    7.87255 (42) obj. -8.30135 iterations 35
+Cbc0038I Pass  19: suminf.    7.52202 (37) obj. -8.15636 iterations 33
+Cbc0038I Pass  20: suminf.    7.32422 (38) obj. -7.95856 iterations 14
+Cbc0038I Pass  21: suminf.   13.53841 (42) obj. -6.6875 iterations 52
+Cbc0038I Pass  22: suminf.   12.87070 (42) obj. -6.9375 iterations 27
+Cbc0038I Pass  23: suminf.   12.87070 (42) obj. -6.9375 iterations 4
+Cbc0038I Pass  24: suminf.   11.61933 (41) obj. -6.98611 iterations 4
+Cbc0038I Pass  25: suminf.    9.55412 (35) obj. -6.86667 iterations 25
+Cbc0038I Pass  26: suminf.    7.19112 (36) obj. -4.96813 iterations 33
+Cbc0038I Pass  27: suminf.    5.86132 (31) obj. -5.23846 iterations 14
+Cbc0038I Pass  28: suminf.    5.86132 (31) obj. -5.23846 iterations 8
+Cbc0038I Pass  29: suminf.    7.13825 (36) obj. -3.17778 iterations 53
+Cbc0038I Pass  30: suminf.    6.78127 (41) obj. -3.05731 iterations 33
+Cbc0038I No solution found this major pass
+Cbc0038I Before mini branch and bound, 123 integers at bound fixed and 0 continuous
+Cbc0038I Mini branch and bound did not improve solution (0.11 seconds)
+Cbc0038I After 0.11 seconds - Feasibility pump exiting - took 0.02 seconds
+Cbc0031I 36 added rows had average density of 29.166667
+Cbc0013I At root node, 36 cuts changed objective from -19.746032 to -13.684103 in 48 passes
+Cbc0014I Cut generator 0 (Probing) - 300 row cuts average 3.5 elements, 14 column cuts (14 active)  in 0.054 seconds - new frequency is 1
+Cbc0014I Cut generator 1 (Gomory) - 785 row cuts average 163.4 elements, 0 column cuts (0 active)  in 0.049 seconds - new frequency is 1
+Cbc0014I Cut generator 2 (Knapsack) - 57 row cuts average 10.6 elements, 0 column cuts (0 active)  in 0.040 seconds - new frequency is 1
+Cbc0014I Cut generator 3 (Clique) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.003 seconds - new frequency is -100
+Cbc0014I Cut generator 4 (MixedIntegerRounding2) - 49 row cuts average 25.7 elements, 0 column cuts (0 active)  in 0.012 seconds - new frequency is 1
+Cbc0014I Cut generator 5 (FlowCover) - 7 row cuts average 3.6 elements, 0 column cuts (0 active)  in 0.013 seconds - new frequency is -100
+Cbc0014I Cut generator 6 (TwoMirCuts) - 218 row cuts average 93.7 elements, 0 column cuts (0 active)  in 0.044 seconds - new frequency is 1
+Cbc0014I Cut generator 7 (ZeroHalf) - 17 row cuts average 16.1 elements, 0 column cuts (0 active)  in 0.175 seconds - new frequency is -100
+Cbc0010I After 0 nodes, 1 on tree, 1e+50 best solution, best possible -13.684103 (0.76 seconds)
+Cbc0004I Integer solution of -1 found after 5310 iterations and 30 nodes (1.27 seconds)
+Cbc0038I Full problem 271 rows 257 columns, reduced to 172 rows 89 columns - 16 fixed gives 19, 10 - ok now
+Cbc0016I Integer solution of -4 found by strong branching after 6819 iterations and 44 nodes (1.42 seconds)
+Cbc0004I Integer solution of -5 found after 7001 iterations and 49 nodes (1.43 seconds)
+Cbc0038I Full problem 271 rows 257 columns, reduced to 170 rows 91 columns - 15 fixed gives 86, 48 - ok now
+Cbc0004I Integer solution of -6 found after 11804 iterations and 101 nodes (1.87 seconds)
+Cbc0001I Search completed - best objective -6, took 15794 iterations and 130 nodes (2.27 seconds)
+Cbc0032I Strong branching done 1868 times (43819 iterations), fathomed 15 nodes and fixed 23 variables
+Cbc0035I Maximum depth 18, 809 variables fixed on reduced cost
+Cuts at root node changed objective from -19.746 to -13.6841
+Probing was tried 353 times and created 3680 cuts of which 0 were active after adding rounds of cuts (0.161 seconds)
+Gomory was tried 328 times and created 1219 cuts of which 0 were active after adding rounds of cuts (0.118 seconds)
+Knapsack was tried 328 times and created 276 cuts of which 0 were active after adding rounds of cuts (0.216 seconds)
+Clique was tried 48 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.003 seconds)
+MixedIntegerRounding2 was tried 328 times and created 368 cuts of which 0 were active after adding rounds of cuts (0.066 seconds)
+FlowCover was tried 48 times and created 7 cuts of which 0 were active after adding rounds of cuts (0.013 seconds)
+TwoMirCuts was tried 328 times and created 442 cuts of which 0 were active after adding rounds of cuts (0.157 seconds)
+ZeroHalf was tried 48 times and created 17 cuts of which 0 were active after adding rounds of cuts (0.175 seconds)
+ImplicationCuts was tried 155 times and created 453 cuts of which 0 were active after adding rounds of cuts (0.008 seconds)
+
+Result - Optimal solution found
+
+Objective value:                -6.00000000
+Enumerated nodes:               130
+Total iterations:               15794
+Time (CPU seconds):             2.23
+Time (Wallclock seconds):       2.28
+
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       2.23   (Wallclock seconds):       2.29
+
+
+
+Status: Infeasible
+Objective value: -15
+
+
+    === FUX FIRST SPECIES COVERAGE SUMMARY ===
+
+    RULE                                      TANAKA  STATUS
+    ---------------------------------------------------------
+    1. Only consonances                       H domain  ✓ (by variable domain)
+    2. Unisons at start/end only              3.4.1     ✓
+    3. No parallel perfect consonances        3.4.2     ✓ (P5, P8, P1)
+    4. No hidden fifths/octaves               3.4.3     ✓
+    5. No voice crossing                      3.4.9     ✓ (implicit via H ≥ 0)
+    6. Prefer contrary motion                 3.4.11    ✓ (soft + threshold)
+    7. Stepwise melody preferred              3.4.11    ✓ (soft + threshold)
+    8. Single climax                          3.4.11    ✓ (Big-M)
+    9. No consecutive leaps same direction    3.4.5     ✓
+    10. No triad arpeggios in one direction   3.4.4     ✓
+    11. ≤3 consecutive parallel 3rds/6ths    3.4.10    ✓
+    12. No large leap simultaneously both     3.4.7     ✓ (at CF large leaps)
+    13. Large leap → stepwise compensation   3.4.8     ⚠ NOT IMPLEMENTED
+        (Tanaka claims 3.4.5 covers this — it does not; see comment above)
+    14. Avoid pitch overuse                   3.4.6     ✓ (≤2 in any 5-bar window)
+    15. Begin/end on tonic or fifth           —         ✗ NOT IN TANAKA
+        (Fux: first and last notes should be unison, fifth, or octave
+        on the tonic. Tanaka's H allows any consonance at bar 0 and T-1.)
+    16. Penultimate bar: leading tone motion  —         ✗ NOT IN TANAKA
+        (Fux: the bar before the last should approach the final by step,
+        often using the leading tone. Not encoded.)
+    
+
+Status: Optimal
+Objective value: -5
+
+Cantus firmus (semitones): [0, 5, 7, 9, 7, 4, 5, 2, 0]
+Counterpoint pitches (semitones): [16, 14, 11, 12, 11, 12, 14, 17, 16]
+Harmonic intervals (semitones):   [16, 9, 4, 3, 4, 8, 9, 15, 16]
+
+Bar-by-bar:
+ Bar   CF   CP  HInt  MInt  Up  Ctr  Cnj  Trn
+   0    0   16    16    -2   0    1    1    0
+   1    5   14     9    -3   0    1    0    1
+   2    7   11     4     1   1    0    1    1
+   3    9   12     3    -1   0    0    1    1
+   4    7   11     4     1   1    1    1    0
+   5    4   12     8     2   1    0    1    0
+   6    5   14     9     3   1    1    0    1
+   7    2   17    15    -1   0    0    1    -
+   8    0   16    16     -   -    -    -    -
+
+Contrary motions: 4/8
+Conjunct motions: 6/8
+Turns:            4/7
+Climax at bar:    7 (pitch=17)
+
+    === FUX FIRST SPECIES COVERAGE SUMMARY ===
+
+    RULE                                      TANAKA  STATUS
+    ---------------------------------------------------------
+    1. Only consonances                       H domain  ✓ (by variable domain)
+    2. Unisons at start/end only              3.4.1     ✓
+    3. No parallel perfect consonances        3.4.2     ✓ (P5, P8, P1)
+    4. No hidden fifths/octaves               3.4.3     ✓
+    5. No voice crossing                      3.4.9     ✓ (implicit via H ≥ 0)
+    6. Prefer contrary motion                 3.4.11    ✓ (soft + threshold)
+    7. Stepwise melody preferred              3.4.11    ✓ (soft + threshold)
+    8. Single climax                          3.4.11    ✓ (Big-M)
+    9. No consecutive leaps same direction    3.4.5     ✓
+    10. No triad arpeggios in one direction   3.4.4     ✓
+    11. ≤3 consecutive parallel 3rds/6ths    3.4.10    ✓
+    12. No large leap simultaneously both     3.4.7     ✓ (at CF large leaps)
+    13. Large leap → stepwise compensation   3.4.8     ⚠ NOT IMPLEMENTED
+        (Tanaka claims 3.4.5 covers this — it does not; see comment above)
+    14. Avoid pitch overuse                   3.4.6     ✓ (≤2 in any 5-bar window)
+    15. Begin/end on tonic or fifth           —         ✗ NOT IN TANAKA
+        (Fux: first and last notes should be unison, fifth, or octave
+        on the tonic. Tanaka's H allows any consonance at bar 0 and T-1.)
+    16. Penultimate bar: leading tone motion  —         ✗ NOT IN TANAKA
+        (Fux: the bar before the last should approach the final by step,
+        often using the leading tone. Not encoded.)
+    
+
+Status: Optimal
+Objective value: -3
+
+Cantus firmus (semitones): [0, 2, 4, 5, 9, 7, 5, 4, 2, 0]
+Counterpoint pitches (semitones): [21, 17, 19, 14, 12, 16, 14, 19, 17, 16]
+Harmonic intervals (semitones):   [21, 15, 15, 9, 3, 9, 9, 15, 15, 16]
+
+Bar-by-bar:
+ Bar   CF   CP  HInt  MInt  Up  Ctr  Cnj  Trn
+   0    0   21    21    -4   0    1    0    1
+   1    2   17    15     2   1    0    1    1
+   2    4   19    15    -5   0    1    0    0
+   3    5   14     9    -2   0    1    1    1
+   4    9   12     3     4   1    1    0    1
+   5    7   16     9    -2   0    0    1    1
+   6    5   14     9     5   1    1    0    1
+   7    4   19    15    -2   0    0    1    0
+   8    2   17    15    -1   0    0    1    -
+   9    0   16    16     -   -    -    -    -
+
+Contrary motions: 5/9
+Conjunct motions: 5/9
+Turns:            6/8
+Climax at bar:    0 (pitch=21)
+
+    === FUX FIRST SPECIES COVERAGE SUMMARY ===
+
+    RULE                                      TANAKA  STATUS
+    ---------------------------------------------------------
+    1. Only consonances                       H domain  ✓ (by variable domain)
+    2. Unisons at start/end only              3.4.1     ✓
+    3. No parallel perfect consonances        3.4.2     ✓ (P5, P8, P1)
+    4. No hidden fifths/octaves               3.4.3     ✓
+    5. No voice crossing                      3.4.9     ✓ (implicit via H ≥ 0)
+    6. Prefer contrary motion                 3.4.11    ✓ (soft + threshold)
+    7. Stepwise melody preferred              3.4.11    ✓ (soft + threshold)
+    8. Single climax                          3.4.11    ✓ (Big-M)
+    9. No consecutive leaps same direction    3.4.5     ✓
+    10. No triad arpeggios in one direction   3.4.4     ✓
+    11. ≤3 consecutive parallel 3rds/6ths    3.4.10    ✓
+    12. No large leap simultaneously both     3.4.7     ✓ (at CF large leaps)
+    13. Large leap → stepwise compensation   3.4.8     ⚠ NOT IMPLEMENTED
+        (Tanaka claims 3.4.5 covers this — it does not; see comment above)
+    14. Avoid pitch overuse                   3.4.6     ✓ (≤2 in any 5-bar window)
+    15. Begin/end on tonic or fifth           —         ✗ NOT IN TANAKA
+        (Fux: first and last notes should be unison, fifth, or octave
+        on the tonic. Tanaka's H allows any consonance at bar 0 and T-1.)
+    16. Penultimate bar: leading tone motion  —         ✗ NOT IN TANAKA
+        (Fux: the bar before the last should approach the final by step,
+        often using the leading tone. Not encoded.)
+    
+
+Status: Optimal
+Objective value: -6
+
+Cantus firmus (semitones): [0, 2, 4, 5, 7, 4, 5, 9, 7, 5, 4, 2, 0]
+Counterpoint pitches (semitones): [16, 11, 12, 9, 11, 19, 14, 12, 11, 9, 12, 11, 9]
+Harmonic intervals (semitones):   [16, 9, 8, 4, 4, 15, 9, 3, 4, 4, 8, 9, 9]
+
+Bar-by-bar:
+ Bar   CF   CP  HInt  MInt  Up  Ctr  Cnj  Trn
+   0    0   16    16    -5   0    1    0    1
+   1    2   11     9     1   1    0    1    1
+   2    4   12     8    -3   0    1    0    1
+   3    5    9     4     2   1    0    1    0
+   4    7   11     4     8   1    1    0    1
+   5    4   19    15    -5   0    1    0    0
+   6    5   14     9    -2   0    1    1    0
+   7    9   12     3    -1   0    0    1    0
+   8    7   11     4    -2   0    0    1    1
+   9    5    9     4     3   1    1    0    1
+  10    4   12     8    -1   0    0    1    0
+  11    2   11     9    -2   0    0    1    -
+  12    0    9     9     -   -    -    -    -
+
+Contrary motions: 6/12
+Conjunct motions: 7/12
+Turns:            6/11
+Climax at bar:    5 (pitch=19)
+
+    === FUX FIRST SPECIES COVERAGE SUMMARY ===
+
+    RULE                                      TANAKA  STATUS
+    ---------------------------------------------------------
+    1. Only consonances                       H domain  ✓ (by variable domain)
+    2. Unisons at start/end only              3.4.1     ✓
+    3. No parallel perfect consonances        3.4.2     ✓ (P5, P8, P1)
+    4. No hidden fifths/octaves               3.4.3     ✓
+    5. No voice crossing                      3.4.9     ✓ (implicit via H ≥ 0)
+    6. Prefer contrary motion                 3.4.11    ✓ (soft + threshold)
+    7. Stepwise melody preferred              3.4.11    ✓ (soft + threshold)
+    8. Single climax                          3.4.11    ✓ (Big-M)
+    9. No consecutive leaps same direction    3.4.5     ✓
+    10. No triad arpeggios in one direction   3.4.4     ✓
+    11. ≤3 consecutive parallel 3rds/6ths    3.4.10    ✓
+    12. No large leap simultaneously both     3.4.7     ✓ (at CF large leaps)
+    13. Large leap → stepwise compensation   3.4.8     ⚠ NOT IMPLEMENTED
+        (Tanaka claims 3.4.5 covers this — it does not; see comment above)
+    14. Avoid pitch overuse                   3.4.6     ✓ (≤2 in any 5-bar window)
+    15. Begin/end on tonic or fifth           —         ✗ NOT IN TANAKA
+        (Fux: first and last notes should be unison, fifth, or octave
+        on the tonic. Tanaka's H allows any consonance at bar 0 and T-1.)
+    16. Penultimate bar: leading tone motion  —         ✗ NOT IN TANAKA
+        (Fux: the bar before the last should approach the final by step,
+        often using the leading tone. Not encoded.)
+    Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - /Users/alexma/Documents/Coding/Music-To-My-Ears/.venv/lib/python3.11/site-packages/pulp/apis/../solverdir/cbc/osx/i64/cbc /var/folders/h3/6xwgwylx75v6h8sv1tmn84dm0000gn/T/9c325027b7dd4b368f929061230d70d3-pulp.mps -sec 600 -timeMode elapsed -branch -printingOptions all -solution /var/folders/h3/6xwgwylx75v6h8sv1tmn84dm0000gn/T/9c325027b7dd4b368f929061230d70d3-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 594 COLUMNS
+At line 4673 RHS
+At line 5263 BOUNDS
+At line 5803 ENDATA
+Problem MODEL has 589 rows, 539 columns and 2970 elements
+Coin0008I MODEL read with 0 errors
+seconds was changed from 1e+100 to 600
+Option for timeMode changed from cpu to elapsed
+Continuous objective value is -18 - 0.00 seconds
+Cgl0003I 106 fixed, 6 tightened bounds, 294 strengthened rows, 14 substitutions
+Cgl0003I 32 fixed, 6 tightened bounds, 15 strengthened rows, 0 substitutions
+Cgl0003I 26 fixed, 10 tightened bounds, 196 strengthened rows, 13 substitutions
+Cgl0003I 19 fixed, 3 tightened bounds, 2 strengthened rows, 21 substitutions
+Cgl0003I 7 fixed, 0 tightened bounds, 118 strengthened rows, 2 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 107 strengthened rows, 0 substitutions
+Cgl0003I 2 fixed, 0 tightened bounds, 180 strengthened rows, 35 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 141 strengthened rows, 2 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 98 strengthened rows, 7 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 63 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 48 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 43 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 39 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 29 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 23 strengthened rows, 0 substitutions
+Cgl0004I processed model has 249 rows, 232 columns (232 integer (219 of which binary)) and 1714 elements
+Cutoff increment increased from 1e-05 to 0.9999
+Cbc0038I Initial state - 54 integers unsatisfied sum - 10.7666
+Cbc0038I Pass   1: suminf.    8.76852 (42) obj. -17.3947 iterations 34
+Cbc0038I Pass   2: suminf.    8.22673 (41) obj. -17.3934 iterations 1
+Cbc0038I Pass   3: suminf.    5.73152 (23) obj. -12.5879 iterations 46
+Cbc0038I Pass   4: suminf.    4.86889 (22) obj. -12.2 iterations 20
+Cbc0038I Pass   5: suminf.    4.93960 (22) obj. -12 iterations 11
+Cbc0038I Pass   6: suminf.    4.30228 (29) obj. -12.0455 iterations 43
+Cbc0038I Pass   7: suminf.    4.18570 (30) obj. -12.0755 iterations 20
+Cbc0038I Pass   8: suminf.    8.05256 (29) obj. -13.6 iterations 40
+Cbc0038I Pass   9: suminf.    8.03974 (35) obj. -13.6 iterations 17
+Cbc0038I Pass  10: suminf.    7.15317 (26) obj. -13.2727 iterations 31
+Cbc0038I Pass  11: suminf.    5.82742 (34) obj. -13.0943 iterations 26
+Cbc0038I Pass  12: suminf.    6.26908 (28) obj. -12.8 iterations 30
+Cbc0038I Pass  13: suminf.   15.09706 (57) obj. -6.34823 iterations 68
+Cbc0038I Pass  14: suminf.   11.15094 (55) obj. -6.48315 iterations 51
+Cbc0038I Pass  15: suminf.   10.39856 (45) obj. -6.81034 iterations 10
+Cbc0038I Pass  16: suminf.    8.77187 (45) obj. -6.79365 iterations 35
+Cbc0038I Pass  17: suminf.   10.26376 (52) obj. -6.7055 iterations 26
+Cbc0038I Pass  18: suminf.   12.64823 (70) obj. -6.26821 iterations 64
+Cbc0038I Pass  19: suminf.    8.64778 (45) obj. -5.82857 iterations 18
+Cbc0038I Pass  20: suminf.    6.76952 (36) obj. -5.37143 iterations 36
+Cbc0038I Pass  21: suminf.    6.76952 (36) obj. -5.37143 iterations 3
+Cbc0038I Pass  22: suminf.    4.95824 (18) obj. -5 iterations 53
+Cbc0038I Pass  23: suminf.    4.01625 (19) obj. -5 iterations 30
+Cbc0038I Pass  24: suminf.    3.40110 (15) obj. -4.9 iterations 17
+Cbc0038I Pass  25: suminf.    4.60110 (18) obj. -4 iterations 50
+Cbc0038I Pass  26: suminf.    4.60110 (18) obj. -4 iterations 29
+Cbc0038I Pass  27: suminf.    4.26777 (20) obj. -4 iterations 43
+Cbc0038I Pass  28: suminf.    4.39610 (19) obj. -4 iterations 35
+Cbc0038I Pass  29: suminf.    6.56201 (34) obj. -4.47619 iterations 53
+Cbc0038I Pass  30: suminf.    3.78205 (20) obj. -4.19048 iterations 33
+Cbc0038I No solution found this major pass
+Cbc0038I Before mini branch and bound, 97 integers at bound fixed and 0 continuous
+Cbc0038I Full problem 249 rows 232 columns, reduced to 204 rows 130 columns - too large
+Cbc0038I Mini branch and bound did not improve solution (0.11 seconds)
+Cbc0038I After 0.11 seconds - Feasibility pump exiting - took 0.02 seconds
+Cbc0031I 20 added rows had average density of 81.45
+Cbc0013I At root node, 20 cuts changed objective from -17.614458 to -11.938418 in 100 passes
+Cbc0014I Cut generator 0 (Probing) - 523 row cuts average 2.8 elements, 9 column cuts (9 active)  in 0.102 seconds - new frequency is 1
+Cbc0014I Cut generator 1 (Gomory) - 1700 row cuts average 162.7 elements, 0 column cuts (0 active)  in 0.097 seconds - new frequency is 1
+Cbc0014I Cut generator 2 (Knapsack) - 44 row cuts average 9.7 elements, 0 column cuts (0 active)  in 0.071 seconds - new frequency is 1
+Cbc0014I Cut generator 3 (Clique) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.004 seconds - new frequency is -100
+Cbc0014I Cut generator 4 (MixedIntegerRounding2) - 39 row cuts average 31.8 elements, 0 column cuts (0 active)  in 0.017 seconds - new frequency is -100
+Cbc0014I Cut generator 5 (FlowCover) - 15 row cuts average 2.9 elements, 0 column cuts (0 active)  in 0.017 seconds - new frequency is -100
+Cbc0014I Cut generator 6 (TwoMirCuts) - 304 row cuts average 67.2 elements, 0 column cuts (0 active)  in 0.048 seconds - new frequency is 1
+Cbc0014I Cut generator 7 (ZeroHalf) - 1 row cuts average 11.0 elements, 0 column cuts (0 active)  in 0.001 seconds - new frequency is -100
+Cbc0010I After 0 nodes, 1 on tree, 1e+50 best solution, best possible -11.93837 (0.81 seconds)
+Cbc0016I Integer solution of -5 found by strong branching after 11525 iterations and 70 nodes (1.56 seconds)
+Cbc0001I Search completed - best objective -5, took 12939 iterations and 84 nodes (1.70 seconds)
+Cbc0032I Strong branching done 1354 times (27031 iterations), fathomed 11 nodes and fixed 32 variables
+Cbc0035I Maximum depth 15, 201 variables fixed on reduced cost
+Cuts at root node changed objective from -17.6145 to -11.9384
+Probing was tried 342 times and created 2529 cuts of which 0 were active after adding rounds of cuts (0.175 seconds)
+Gomory was tried 323 times and created 2225 cuts of which 0 were active after adding rounds of cuts (0.146 seconds)
+Knapsack was tried 323 times and created 160 cuts of which 0 were active after adding rounds of cuts (0.199 seconds)
+Clique was tried 100 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.004 seconds)
+MixedIntegerRounding2 was tried 100 times and created 39 cuts of which 0 were active after adding rounds of cuts (0.017 seconds)
+FlowCover was tried 100 times and created 15 cuts of which 0 were active after adding rounds of cuts (0.017 seconds)
+TwoMirCuts was tried 323 times and created 492 cuts of which 0 were active after adding rounds of cuts (0.120 seconds)
+ZeroHalf was tried 1 times and created 1 cuts of which 0 were active after adding rounds of cuts (0.001 seconds)
+ImplicationCuts was tried 174 times and created 823 cuts of which 0 were active after adding rounds of cuts (0.019 seconds)
+
+Result - Optimal solution found
+
+Objective value:                -5.00000000
+Enumerated nodes:               84
+Total iterations:               12939
+Time (CPU seconds):             1.68
+Time (Wallclock seconds):       1.71
+
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       1.68   (Wallclock seconds):       1.71
+
+Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - /Users/alexma/Documents/Coding/Music-To-My-Ears/.venv/lib/python3.11/site-packages/pulp/apis/../solverdir/cbc/osx/i64/cbc /var/folders/h3/6xwgwylx75v6h8sv1tmn84dm0000gn/T/363f654a8b44463686f6d51c76126618-pulp.mps -sec 600 -timeMode elapsed -branch -printingOptions all -solution /var/folders/h3/6xwgwylx75v6h8sv1tmn84dm0000gn/T/363f654a8b44463686f6d51c76126618-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 478 COLUMNS
+At line 3775 RHS
+At line 4249 BOUNDS
+At line 4695 ENDATA
+Problem MODEL has 473 rows, 445 columns and 2382 elements
+Coin0008I MODEL read with 0 errors
+seconds was changed from 1e+100 to 600
+Option for timeMode changed from cpu to elapsed
+Continuous objective value is -14 - 0.00 seconds
+Cgl0003I 93 fixed, 7 tightened bounds, 224 strengthened rows, 10 substitutions
+Cgl0003I 33 fixed, 8 tightened bounds, 17 strengthened rows, 6 substitutions
+Cgl0003I 17 fixed, 5 tightened bounds, 163 strengthened rows, 22 substitutions
+Cgl0003I 12 fixed, 3 tightened bounds, 0 strengthened rows, 9 substitutions
+Cgl0003I 5 fixed, 0 tightened bounds, 95 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 85 strengthened rows, 0 substitutions
+Cgl0003I 2 fixed, 0 tightened bounds, 143 strengthened rows, 27 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 110 strengthened rows, 1 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 81 strengthened rows, 5 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 53 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 40 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 33 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 27 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 18 strengthened rows, 3 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 10 strengthened rows, 0 substitutions
+Cgl0004I processed model has 201 rows, 188 columns (188 integer (177 of which binary)) and 1347 elements
+Cutoff increment increased from 1e-05 to 0.9999
+Cbc0038I Initial state - 24 integers unsatisfied sum - 7.07048
+Cbc0038I Pass   1: suminf.    3.92210 (23) obj. -13.5556 iterations 28
+Cbc0038I Pass   2: suminf.    3.92210 (23) obj. -13.5556 iterations 2
+Cbc0038I Pass   3: suminf.    5.12851 (25) obj. -10.5352 iterations 52
+Cbc0038I Pass   4: suminf.    5.06617 (29) obj. -10.5233 iterations 22
+Cbc0038I Pass   5: suminf.    4.09385 (22) obj. -8.20833 iterations 37
+Cbc0038I Pass   6: suminf.    3.93688 (19) obj. -8.18182 iterations 24
+Cbc0038I Pass   7: suminf.    5.23795 (17) obj. -8.11111 iterations 38
+Cbc0038I Pass   8: suminf.    5.28756 (25) obj. -9 iterations 17
+Cbc0038I Pass   9: suminf.    8.28086 (29) obj. -9.18649 iterations 37
+Cbc0038I Pass  10: suminf.    3.92923 (17) obj. -8.66667 iterations 22
+Cbc0038I Pass  11: suminf.    3.92923 (17) obj. -8.66667 iterations 2
+Cbc0038I Pass  12: suminf.    5.95115 (22) obj. -8.47059 iterations 21
+Cbc0038I Pass  13: suminf.    5.95115 (22) obj. -8.47059 iterations 18
+Cbc0038I Pass  14: suminf.    3.92923 (17) obj. -8.66667 iterations 17
+Cbc0038I Pass  15: suminf.   10.65456 (51) obj. -5.27131 iterations 75
+Cbc0038I Pass  16: suminf.    7.19017 (35) obj. -5.27184 iterations 30
+Cbc0038I Pass  17: suminf.    6.19017 (32) obj. -5.27184 iterations 15
+Cbc0038I Pass  18: suminf.    6.19017 (32) obj. -5.27184 iterations 3
+Cbc0038I Pass  19: suminf.    6.84615 (22) obj. -3.64111 iterations 38
+Cbc0038I Pass  20: suminf.    6.79853 (28) obj. -3.68296 iterations 33
+Cbc0038I Pass  21: suminf.    6.13187 (22) obj. -3.64111 iterations 2
+Cbc0038I Pass  22: suminf.    6.46497 (20) obj. -3.66667 iterations 28
+Cbc0038I Pass  23: suminf.    6.07906 (20) obj. -3.65 iterations 28
+Cbc0038I Pass  24: suminf.   10.27381 (27) obj. -2.71429 iterations 55
+Cbc0038I Pass  25: suminf.    7.23402 (23) obj. -2.78095 iterations 48
+Cbc0038I Pass  26: suminf.    5.91868 (24) obj. -2.62338 iterations 10
+Cbc0038I Pass  27: suminf.    5.30547 (24) obj. -2.62338 iterations 2
+Cbc0038I Pass  28: suminf.    5.68870 (26) obj. -2.1875 iterations 24
+Cbc0038I Pass  29: suminf.    4.46232 (20) obj. -2 iterations 32
+Cbc0038I Pass  30: suminf.    4.28772 (15) obj. -2 iterations 38
+Cbc0038I No solution found this major pass
+Cbc0038I Before mini branch and bound, 82 integers at bound fixed and 0 continuous of which 1 were internal integer and 0 internal continuous
+Cbc0038I Full problem 201 rows 188 columns, reduced to 134 rows 95 columns - too large
+Cbc0038I Mini branch and bound did not improve solution (0.07 seconds)
+Cbc0038I After 0.07 seconds - Feasibility pump exiting - took 0.01 seconds
+Cbc0031I 21 added rows had average density of 47.428571
+Cbc0013I At root node, 21 cuts changed objective from -14 to -9.4534998 in 100 passes
+Cbc0014I Cut generator 0 (Probing) - 537 row cuts average 2.9 elements, 17 column cuts (17 active)  in 0.082 seconds - new frequency is 1
+Cbc0014I Cut generator 1 (Gomory) - 1740 row cuts average 149.9 elements, 0 column cuts (0 active)  in 0.068 seconds - new frequency is 1
+Cbc0014I Cut generator 2 (Knapsack) - 38 row cuts average 14.3 elements, 0 column cuts (0 active)  in 0.055 seconds - new frequency is 1
+Cbc0014I Cut generator 3 (Clique) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.004 seconds - new frequency is -100
+Cbc0014I Cut generator 4 (MixedIntegerRounding2) - 37 row cuts average 25.3 elements, 0 column cuts (0 active)  in 0.013 seconds - new frequency is -100
+Cbc0014I Cut generator 5 (FlowCover) - 12 row cuts average 2.8 elements, 0 column cuts (0 active)  in 0.024 seconds - new frequency is -100
+Cbc0014I Cut generator 6 (TwoMirCuts) - 199 row cuts average 63.3 elements, 0 column cuts (0 active)  in 0.035 seconds - new frequency is 1
+Cbc0014I Cut generator 7 (ZeroHalf) - 77 row cuts average 16.3 elements, 0 column cuts (0 active)  in 0.312 seconds - new frequency is 1
+Cbc0010I After 0 nodes, 1 on tree, 1e+50 best solution, best possible -9.4534998 (0.98 seconds)
+Cbc0004I Integer solution of -2 found after 8188 iterations and 41 nodes (1.79 seconds)
+Cbc0038I Full problem 201 rows 188 columns, reduced to 129 rows 66 columns - 12 fixed gives 6, 6 - ok now
+Cbc0004I Integer solution of -7 found after 8429 iterations and 46 nodes (1.87 seconds)
+Cbc0001I Search completed - best objective -7, took 8648 iterations and 50 nodes (1.89 seconds)
+Cbc0032I Strong branching done 978 times (22238 iterations), fathomed 6 nodes and fixed 9 variables
+Cbc0035I Maximum depth 11, 5 variables fixed on reduced cost
+Cuts at root node changed objective from -14 to -9.4535
+Probing was tried 237 times and created 1166 cuts of which 0 were active after adding rounds of cuts (0.117 seconds)
+Gomory was tried 229 times and created 1903 cuts of which 0 were active after adding rounds of cuts (0.092 seconds)
+Knapsack was tried 229 times and created 71 cuts of which 0 were active after adding rounds of cuts (0.115 seconds)
+Clique was tried 100 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.004 seconds)
+MixedIntegerRounding2 was tried 100 times and created 37 cuts of which 0 were active after adding rounds of cuts (0.013 seconds)
+FlowCover was tried 100 times and created 12 cuts of which 0 were active after adding rounds of cuts (0.024 seconds)
+TwoMirCuts was tried 229 times and created 383 cuts of which 0 were active after adding rounds of cuts (0.089 seconds)
+ZeroHalf was tried 229 times and created 175 cuts of which 0 were active after adding rounds of cuts (0.677 seconds)
+ImplicationCuts was tried 117 times and created 193 cuts of which 0 were active after adding rounds of cuts (0.007 seconds)
+
+Result - Optimal solution found
+
+Objective value:                -7.00000000
+Enumerated nodes:               50
+Total iterations:               8648
+Time (CPU seconds):             1.86
+Time (Wallclock seconds):       1.90
+
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       1.86   (Wallclock seconds):       1.90
+
+Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - /Users/alexma/Documents/Coding/Music-To-My-Ears/.venv/lib/python3.11/site-packages/pulp/apis/../solverdir/cbc/osx/i64/cbc /var/folders/h3/6xwgwylx75v6h8sv1tmn84dm0000gn/T/fbade4db2aeb4f4ba1c83643fc96507e-pulp.mps -sec 600 -timeMode elapsed -branch -printingOptions all -solution /var/folders/h3/6xwgwylx75v6h8sv1tmn84dm0000gn/T/fbade4db2aeb4f4ba1c83643fc96507e-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 421 COLUMNS
+At line 3329 RHS
+At line 3746 BOUNDS
+At line 4145 ENDATA
+Problem MODEL has 416 rows, 398 columns and 2090 elements
+Coin0008I MODEL read with 0 errors
+seconds was changed from 1e+100 to 600
+Option for timeMode changed from cpu to elapsed
+Continuous objective value is -13 - 0.00 seconds
+Cgl0003I 77 fixed, 6 tightened bounds, 212 strengthened rows, 10 substitutions
+Cgl0003I 32 fixed, 5 tightened bounds, 12 strengthened rows, 3 substitutions
+Cgl0003I 15 fixed, 2 tightened bounds, 145 strengthened rows, 9 substitutions
+Cgl0003I 7 fixed, 1 tightened bounds, 0 strengthened rows, 1 substitutions
+Cgl0003I 0 fixed, 1 tightened bounds, 104 strengthened rows, 1 substitutions
+Cgl0003I 2 fixed, 0 tightened bounds, 151 strengthened rows, 29 substitutions
+Cgl0003I 1 fixed, 0 tightened bounds, 128 strengthened rows, 1 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 87 strengthened rows, 0 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 67 strengthened rows, 5 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 39 strengthened rows, 1 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 37 strengthened rows, 1 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 25 strengthened rows, 1 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 19 strengthened rows, 1 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 13 strengthened rows, 1 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 6 strengthened rows, 0 substitutions
+Cgl0004I processed model has 190 rows, 185 columns (185 integer (175 of which binary)) and 1323 elements
+Cutoff increment increased from 1e-05 to 0.9999
+Cbc0038I Initial state - 18 integers unsatisfied sum - 5.50671
+Cbc0038I Pass   1: suminf.    5.11281 (19) obj. -13 iterations 34
+Cbc0038I Pass   2: suminf.    6.38158 (19) obj. -13 iterations 35
+Cbc0038I Pass   3: suminf.    5.77472 (20) obj. -13 iterations 36
+Cbc0038I Pass   4: suminf.    8.17272 (27) obj. -11.2571 iterations 42
+Cbc0038I Pass   5: suminf.    7.85780 (25) obj. -11.5143 iterations 14
+Cbc0038I Pass   6: suminf.    7.85780 (25) obj. -11.5143 iterations 8
+Cbc0038I Pass   7: suminf.    5.32781 (21) obj. -9 iterations 36
+Cbc0038I Pass   8: suminf.    4.75414 (20) obj. -8.89286 iterations 36
+Cbc0038I Pass   9: suminf.    4.75414 (20) obj. -8.89286 iterations 0
+Cbc0038I Pass  10: suminf.    4.02328 (17) obj. -8 iterations 47
+Cbc0038I Pass  11: suminf.    4.52877 (24) obj. -7.88889 iterations 18
+Cbc0038I Pass  12: suminf.    4.52877 (24) obj. -7.88889 iterations 3
+Cbc0038I Pass  13: suminf.    4.03810 (13) obj. -8 iterations 38
+Cbc0038I Pass  14: suminf.    3.97172 (16) obj. -8 iterations 10
+Cbc0038I Pass  15: suminf.    4.01977 (16) obj. -8 iterations 34
+Cbc0038I Pass  16: suminf.    4.36778 (24) obj. -7.88889 iterations 20
+Cbc0038I Pass  17: suminf.    3.97172 (16) obj. -8 iterations 32
+Cbc0038I Pass  18: suminf.    3.97172 (16) obj. -8 iterations 24
+Cbc0038I Pass  19: suminf.    3.97172 (16) obj. -8 iterations 14
+Cbc0038I Pass  20: suminf.    3.97172 (16) obj. -8 iterations 5
+Cbc0038I Pass  21: suminf.   10.37038 (43) obj. -3.42308 iterations 59
+Cbc0038I Pass  22: suminf.    6.10000 (27) obj. -3.23077 iterations 29
+Cbc0038I Pass  23: suminf.    8.51020 (29) obj. -2 iterations 26
+Cbc0038I Pass  24: suminf.    7.74454 (26) obj. -2 iterations 20
+Cbc0038I Pass  25: suminf.    5.01289 (20) obj. -3.11765 iterations 14
+Cbc0038I Pass  26: suminf.    5.01289 (20) obj. -3.11765 iterations 1
+Cbc0038I Pass  27: suminf.    5.01289 (20) obj. -3.11765 iterations 0
+Cbc0038I Pass  28: suminf.    8.90484 (37) obj. -1.99142 iterations 43
+Cbc0038I Pass  29: suminf.    8.42117 (37) obj. -2 iterations 21
+Cbc0038I Pass  30: suminf.    7.76738 (34) obj. -1.29394 iterations 9
+Cbc0038I No solution found this major pass
+Cbc0038I Before mini branch and bound, 88 integers at bound fixed and 0 continuous of which 1 were internal integer and 0 internal continuous
+Cbc0038I Mini branch and bound did not improve solution (0.07 seconds)
+Cbc0038I After 0.07 seconds - Feasibility pump exiting - took 0.01 seconds
+Cbc0031I 19 added rows had average density of 71.526316
+Cbc0013I At root node, 19 cuts changed objective from -13 to -8.9997641 in 100 passes
+Cbc0014I Cut generator 0 (Probing) - 485 row cuts average 3.1 elements, 14 column cuts (14 active)  in 0.080 seconds - new frequency is 1
+Cbc0014I Cut generator 1 (Gomory) - 1530 row cuts average 131.7 elements, 0 column cuts (0 active)  in 0.066 seconds - new frequency is 1
+Cbc0014I Cut generator 2 (Knapsack) - 47 row cuts average 9.0 elements, 0 column cuts (0 active)  in 0.057 seconds - new frequency is 1
+Cbc0014I Cut generator 3 (Clique) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.004 seconds - new frequency is -100
+Cbc0014I Cut generator 4 (MixedIntegerRounding2) - 32 row cuts average 14.6 elements, 0 column cuts (0 active)  in 0.013 seconds - new frequency is -100
+Cbc0014I Cut generator 5 (FlowCover) - 10 row cuts average 4.2 elements, 0 column cuts (0 active)  in 0.021 seconds - new frequency is -100
+Cbc0014I Cut generator 6 (TwoMirCuts) - 226 row cuts average 52.4 elements, 0 column cuts (0 active)  in 0.030 seconds - new frequency is 1
+Cbc0014I Cut generator 7 (ZeroHalf) - 114 row cuts average 22.9 elements, 0 column cuts (0 active)  in 0.311 seconds - new frequency is 1
+Cbc0010I After 0 nodes, 1 on tree, 1e+50 best solution, best possible -8.9920408 (0.95 seconds)
+Cbc0004I Integer solution of -4 found after 7087 iterations and 28 nodes (1.43 seconds)
+Cbc0038I Full problem 190 rows 185 columns, reduced to 95 rows 50 columns
+Cbc0038I Full problem 190 rows 185 columns, reduced to 85 rows 42 columns
+Cbc0001I Search completed - best objective -4, took 9001 iterations and 48 nodes (1.71 seconds)
+Cbc0032I Strong branching done 708 times (16072 iterations), fathomed 4 nodes and fixed 16 variables
+Cbc0035I Maximum depth 17, 216 variables fixed on reduced cost
+Cuts at root node changed objective from -13 to -8.99204
+Probing was tried 227 times and created 1150 cuts of which 0 were active after adding rounds of cuts (0.108 seconds)
+Gomory was tried 214 times and created 1695 cuts of which 0 were active after adding rounds of cuts (0.086 seconds)
+Knapsack was tried 214 times and created 85 cuts of which 0 were active after adding rounds of cuts (0.110 seconds)
+Clique was tried 100 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.004 seconds)
+MixedIntegerRounding2 was tried 100 times and created 32 cuts of which 0 were active after adding rounds of cuts (0.013 seconds)
+FlowCover was tried 100 times and created 10 cuts of which 0 were active after adding rounds of cuts (0.021 seconds)
+TwoMirCuts was tried 214 times and created 644 cuts of which 0 were active after adding rounds of cuts (0.081 seconds)
+ZeroHalf was tried 214 times and created 213 cuts of which 0 were active after adding rounds of cuts (0.622 seconds)
+ImplicationCuts was tried 68 times and created 210 cuts of which 0 were active after adding rounds of cuts (0.005 seconds)
+
+Result - Optimal solution found
+
+Objective value:                -4.00000000
+Enumerated nodes:               48
+Total iterations:               9001
+Time (CPU seconds):             1.67
+Time (Wallclock seconds):       1.72
+
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       1.68   (Wallclock seconds):       1.72
+
+
+
+Status: Optimal
+Objective value: -5
+
+Cantus firmus (semitones): [0, 4, 5, 7, 9, 7, 5, 4, 2, 4, 2, 0]
+Counterpoint pitches (semitones): [21, 19, 14, 16, 12, 11, 14, 12, 17, 12, 11, 9]
+Harmonic intervals (semitones):   [21, 15, 9, 9, 3, 4, 9, 8, 15, 8, 9, 9]
+
+Bar-by-bar:
+ Bar   CF   CP  HInt  MInt  Up  Ctr  Cnj  Trn
+   0    0   21    21    -2   0    1    1    0
+   1    4   19    15    -5   0    1    0    1
+   2    5   14     9     2   1    0    1    1
+   3    7   16     9    -4   0    1    0    0
+   4    9   12     3    -1   0    0    1    1
+   5    7   11     4     3   1    1    0    1
+   6    5   14     9    -2   0    0    1    1
+   7    4   12     8     5   1    1    0    1
+   8    2   17    15    -5   0    1    0    0
+   9    4   12     8    -1   0    0    1    0
+  10    2   11     9    -2   0    0    1    -
+  11    0    9     9     -   -    -    -    -
+
+Contrary motions: 6/11
+Conjunct motions: 6/11
+Turns:            6/10
+Climax at bar:    0 (pitch=21)
+
+    === FUX FIRST SPECIES COVERAGE SUMMARY ===
+
+    RULE                                      TANAKA  STATUS
+    ---------------------------------------------------------
+    1. Only consonances                       H domain  ✓ (by variable domain)
+    2. Unisons at start/end only              3.4.1     ✓
+    3. No parallel perfect consonances        3.4.2     ✓ (P5, P8, P1)
+    4. No hidden fifths/octaves               3.4.3     ✓
+    5. No voice crossing                      3.4.9     ✓ (implicit via H ≥ 0)
+    6. Prefer contrary motion                 3.4.11    ✓ (soft + threshold)
+    7. Stepwise melody preferred              3.4.11    ✓ (soft + threshold)
+    8. Single climax                          3.4.11    ✓ (Big-M)
+    9. No consecutive leaps same direction    3.4.5     ✓
+    10. No triad arpeggios in one direction   3.4.4     ✓
+    11. ≤3 consecutive parallel 3rds/6ths    3.4.10    ✓
+    12. No large leap simultaneously both     3.4.7     ✓ (at CF large leaps)
+    13. Large leap → stepwise compensation   3.4.8     ⚠ NOT IMPLEMENTED
+        (Tanaka claims 3.4.5 covers this — it does not; see comment above)
+    14. Avoid pitch overuse                   3.4.6     ✓ (≤2 in any 5-bar window)
+    15. Begin/end on tonic or fifth           —         ✗ NOT IN TANAKA
+        (Fux: first and last notes should be unison, fifth, or octave
+        on the tonic. Tanaka's H allows any consonance at bar 0 and T-1.)
+    16. Penultimate bar: leading tone motion  —         ✗ NOT IN TANAKA
+        (Fux: the bar before the last should approach the final by step,
+        often using the leading tone. Not encoded.)
+    
+
+Status: Optimal
+Objective value: -7
+
+Cantus firmus (semitones): [0, 2, 5, 7, 9, 5, 7, 4, 2, 0]
+Counterpoint pitches (semitones): [16, 11, 9, 11, 12, 14, 11, 12, 17, 16]
+Harmonic intervals (semitones):   [16, 9, 4, 4, 3, 9, 4, 8, 15, 16]
+
+Bar-by-bar:
+ Bar   CF   CP  HInt  MInt  Up  Ctr  Cnj  Trn
+   0    0   16    16    -5   0    1    0    0
+   1    2   11     9    -2   0    1    1    1
+   2    5    9     4     2   1    0    1    0
+   3    7   11     4     1   1    0    1    0
+   4    9   12     3     2   1    1    1    1
+   5    5   14     9    -3   0    1    0    1
+   6    7   11     4     1   1    1    1    0
+   7    4   12     8     5   1    1    0    1
+   8    2   17    15    -1   0    0    1    -
+   9    0   16    16     -   -    -    -    -
+
+Contrary motions: 6/9
+Conjunct motions: 6/9
+Turns:            4/8
+Climax at bar:    8 (pitch=17)
+
+    === FUX FIRST SPECIES COVERAGE SUMMARY ===
+
+    RULE                                      TANAKA  STATUS
+    ---------------------------------------------------------
+    1. Only consonances                       H domain  ✓ (by variable domain)
+    2. Unisons at start/end only              3.4.1     ✓
+    3. No parallel perfect consonances        3.4.2     ✓ (P5, P8, P1)
+    4. No hidden fifths/octaves               3.4.3     ✓
+    5. No voice crossing                      3.4.9     ✓ (implicit via H ≥ 0)
+    6. Prefer contrary motion                 3.4.11    ✓ (soft + threshold)
+    7. Stepwise melody preferred              3.4.11    ✓ (soft + threshold)
+    8. Single climax                          3.4.11    ✓ (Big-M)
+    9. No consecutive leaps same direction    3.4.5     ✓
+    10. No triad arpeggios in one direction   3.4.4     ✓
+    11. ≤3 consecutive parallel 3rds/6ths    3.4.10    ✓
+    12. No large leap simultaneously both     3.4.7     ✓ (at CF large leaps)
+    13. Large leap → stepwise compensation   3.4.8     ⚠ NOT IMPLEMENTED
+        (Tanaka claims 3.4.5 covers this — it does not; see comment above)
+    14. Avoid pitch overuse                   3.4.6     ✓ (≤2 in any 5-bar window)
+    15. Begin/end on tonic or fifth           —         ✗ NOT IN TANAKA
+        (Fux: first and last notes should be unison, fifth, or octave
+        on the tonic. Tanaka's H allows any consonance at bar 0 and T-1.)
+    16. Penultimate bar: leading tone motion  —         ✗ NOT IN TANAKA
+        (Fux: the bar before the last should approach the final by step,
+        often using the leading tone. Not encoded.)
+    
+
+Status: Optimal
+Objective value: -4
+
+Cantus firmus (semitones): [0, 2, 4, 5, 7, 5, 4, -1, 0]
+Counterpoint pitches (semitones): [16, 17, 12, 14, 11, 9, 12, 14, 16]
+Harmonic intervals (semitones):   [16, 15, 8, 9, 4, 4, 8, 15, 16]
+
+Bar-by-bar:
+ Bar   CF   CP  HInt  MInt  Up  Ctr  Cnj  Trn
+   0    0   16    16     1   1    0    1    1
+   1    2   17    15    -5   0    1    0    1
+   2    4   12     8     2   1    0    1    1
+   3    5   14     9    -3   0    1    0    0
+   4    7   11     4    -2   0    0    1    1
+   5    5    9     4     3   1    1    0    0
+   6    4   12     8     2   1    1    1    0
+   7   -1   14    15     2   1    0    1    -
+   8    0   16    16     -   -    -    -    -
+
+Contrary motions: 4/8
+Conjunct motions: 5/8
+Turns:            4/7
+Climax at bar:    1 (pitch=17)
+
+    === FUX FIRST SPECIES COVERAGE SUMMARY ===
+
+    RULE                                      TANAKA  STATUS
+    ---------------------------------------------------------
+    1. Only consonances                       H domain  ✓ (by variable domain)
+    2. Unisons at start/end only              3.4.1     ✓
+    3. No parallel perfect consonances        3.4.2     ✓ (P5, P8, P1)
+    4. No hidden fifths/octaves               3.4.3     ✓
+    5. No voice crossing                      3.4.9     ✓ (implicit via H ≥ 0)
+    6. Prefer contrary motion                 3.4.11    ✓ (soft + threshold)
+    7. Stepwise melody preferred              3.4.11    ✓ (soft + threshold)
+    8. Single climax                          3.4.11    ✓ (Big-M)
+    9. No consecutive leaps same direction    3.4.5     ✓
+    10. No triad arpeggios in one direction   3.4.4     ✓
+    11. ≤3 consecutive parallel 3rds/6ths    3.4.10    ✓
+    12. No large leap simultaneously both     3.4.7     ✓ (at CF large leaps)
+    13. Large leap → stepwise compensation   3.4.8     ⚠ NOT IMPLEMENTED
+        (Tanaka claims 3.4.5 covers this — it does not; see comment above)
+    14. Avoid pitch overuse                   3.4.6     ✓ (≤2 in any 5-bar window)
+    15. Begin/end on tonic or fifth           —         ✗ NOT IN TANAKA
+        (Fux: first and last notes should be unison, fifth, or octave
+        on the tonic. Tanaka's H allows any consonance at bar 0 and T-1.)
+    16. Penultimate bar: leading tone motion  —         ✗ NOT IN TANAKA
+        (Fux: the bar before the last should approach the final by step,
+        often using the leading tone. Not encoded.)
+    
+
+Skipping CF [0, 4, 5, 7, 9, 7, 5, -1, 0] — fails melodic validation:
+  • interval -6 at bar 6→7 not in M
+
+Skipping CF [0, 2, 5, 7, 4, 5, -1, 0] — fails melodic validation:
+  • interval -6 at bar 5→6 not in M
+
+Skipping CF [0, 2, 4, 5, 7, 5, 4, 0] — fails melodic validation:
+  • final interval -4 is not a step (need ±1 or ±2)
+
+Skipping CF [0, 4, 7, 5, 4, 0] — fails melodic validation:
+  • final interval -4 is not a step (need ±1 or ±2)
+  • consecutive same-direction leaps at bars 0–2
+  • triadic arpeggio at bars 0–2 (intervals +4,+3)
+  • too few steps: 2/5 (need ≥ 3)
+
+Skipping CF [0, 2, 4, 7, 5, 4, 0] — fails melodic validation:
+  • final interval -4 is not a step (need ±1 or ±2)
+
+Skipping CF [0, 2, 4, 5, 9, 7, 5, 4, 0] — fails melodic validation:
+  • final interval -4 is not a step (need ±1 or ±2)
+
+Skipping CF [0, 5, 7, 9, 7, 5, 4, 0] — fails melodic validation:
+  • final interval -4 is not a step (need ±1 or ±2)
+
+Skipping CF [0, 2, 5, 7, 5, 4, 0] — fails melodic validation:
+  • final interval -4 is not a step (need ±1 or ±2)
+
+Skipping CF [0, 4, 5, 7, 9, 5, 4, 0] — fails melodic validation:
+  • final interval -4 is not a step (need ±1 or ±2)
+
+Skipping CF [0, 2, 4, 7, 9, 7, 4, 0] — fails melodic validation:
+  • final interval -4 is not a step (need ±1 or ±2)
+  • consecutive same-direction leaps at bars 5–7
+  • triadic arpeggio at bars 5–7 (intervals -3,-4)
+
+Skipping CF [0, 5, 4, 7, 5, 4, 0] — fails melodic validation:
+  • final interval -4 is not a step (need ±1 or ±2)

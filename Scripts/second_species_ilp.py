@@ -64,6 +64,8 @@ Cf_list =[
     [0, 5, 4, 7, 5, 4, 0]
 ]
 
+results = []
+
 for Cf in Cf_list:
     N = len(Cf)
 
@@ -496,8 +498,12 @@ for Cf in Cf_list:
         print(f"Turns:             {n_turns}/{S-2}")
         print(f"Climax at subbeat: {climax_bar} (pitch={cp_pitches[climax_bar]})")
 
-        # --- Musical notation ---
-        import os, sys
-        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from translator import show_second_species
-        show_second_species(Cf, cp_pitches, "Second Species Counterpoint", solve_time=solve_time)
+        results.append((Cf, cp_pitches, solve_time))
+
+    else:
+        results.append((Cf, None, solve_time))
+
+import os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from translator import show_combined_second_species
+show_combined_second_species(results, "Second Species Counterpoint")

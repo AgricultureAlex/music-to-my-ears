@@ -135,7 +135,9 @@ def build_combined_first_species_score(
     cf_part = stream.Part(id="CF")
     cf_part.partName = "CF"
 
-    for section_idx, (cf, cp, solve_time) in enumerate(results):
+    for section_idx, entry in enumerate(results):
+        cf, cp, solve_time = entry[:3]
+        tag = entry[3] if len(entry) > 3 else None
         n = len(cf)
         for i in range(n):
             cp_m = stream.Measure()
@@ -150,9 +152,15 @@ def build_combined_first_species_score(
 
             if i == 0:
                 if cp is None:
-                    cp_m.insert(0, expressions.TextExpression("no solution"))
+                    label = "no solution"
+                elif tag is not None:
+                    label = tag
                 elif solve_time is not None:
-                    cp_m.insert(0, expressions.TextExpression(f"solved in {solve_time:.2f}s"))
+                    label = f"solved in {solve_time:.2f}s"
+                else:
+                    label = None
+                if label is not None:
+                    cp_m.insert(0, expressions.TextExpression(label))
 
             if cp is not None:
                 cp_m.append(_make_note(cp[i], "whole"))
@@ -180,6 +188,76 @@ def show_combined_first_species(
     title: str = "First Species Counterpoint",
 ):
     build_combined_first_species_score(results, title).show()
+
+
+def build_combined_second_species_score(
+    results: list[tuple[list[int], list[int] | None, float | None]],
+    title: str = "Second Species Counterpoint",
+) -> stream.Score:
+    """
+    results : list of (cf, cp, solve_time)
+              cf  : N semitone offsets (one per bar)
+              cp  : 2*N-1 semitone offsets (half notes, last is whole), or None
+    """
+    score = stream.Score()
+    score.metadata = metadata.Metadata()
+    score.metadata.title = title
+
+    cp_part = stream.Part(id="CTP")
+    cp_part.partName = "CTP"
+
+    cf_part = stream.Part(id="CF")
+    cf_part.partName = "CF"
+
+    for section_idx, (cf, cp, solve_time) in enumerate(results):
+        n = len(cf)
+        for i in range(n):
+            cp_m = stream.Measure()
+            cf_m = stream.Measure()
+
+            if section_idx == 0 and i == 0:
+                cp_m.insert(0, meter.TimeSignature("4/4"))
+                cf_m.insert(0, meter.TimeSignature("4/4"))
+
+            if section_idx > 0 and i == 0:
+                cp_m.insert(0, layout.SystemLayout(isNew=True))
+
+            if i == 0:
+                if cp is None:
+                    cp_m.insert(0, expressions.TextExpression("no solution"))
+                elif solve_time is not None:
+                    cp_m.insert(0, expressions.TextExpression(f"solved in {solve_time:.2f}s"))
+
+            if cp is not None:
+                if i < n - 1:
+                    cp_m.append(_make_note(cp[2 * i], "half"))
+                    cp_m.append(_make_note(cp[2 * i + 1], "half"))
+                else:
+                    cp_m.append(_make_note(cp[2 * i], "whole"))
+            else:
+                r = note.Rest()
+                r.duration.type = "whole"
+                cp_m.append(r)
+
+            cf_m.append(_make_note(cf[i], "whole"))
+
+            if i == n - 1:
+                cp_m.rightBarline = bar.Barline("double")
+                cf_m.rightBarline = bar.Barline("double")
+
+            cp_part.append(cp_m)
+            cf_part.append(cf_m)
+
+    score.append(cp_part)
+    score.append(cf_part)
+    return score
+
+
+def show_combined_second_species(
+    results: list[tuple[list[int], list[int] | None, float | None]],
+    title: str = "Second Species Counterpoint",
+):
+    build_combined_second_species_score(results, title).show()
 
 
 def show_second_species(
