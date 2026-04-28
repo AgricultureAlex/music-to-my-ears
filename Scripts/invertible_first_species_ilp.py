@@ -444,11 +444,14 @@ for Cf in Cf_list:
             lpSum(h[s, 8] + h[s, 9] for s in range(t, t + 4)) <= 3,
             f"no_4par_sixths_{t}",
         )  # (42)
-        # Tanaka also adds compound versions (15,16 = 10th; 20,21 = 13th):
-        # These are outside the range of H={0..12}, so these constraints are vacuous
-        # with this H definition. Included for completeness per the paper.
-        # prob += lpSum(h[s,15]+h[s,16] for s in range(t,t+4)) <= 3  # (43) — vacuous
-        # prob += lpSum(h[s,20]+h[s,21] for s in range(t,t+4)) <= 3  # (44) — vacuous
+        prob += (
+            lpSum(h[s, 15] + h[s, 16] for s in range(t, t + 4)) <= 3,
+            f"no_4par_tenths_{t}",
+        )  # (43)
+        prob += (
+            lpSum(h[s, 20] + h[s, 21] for s in range(t, t + 4)) <= 3,
+            f"no_4par_thirteenths_{t}",
+        )  # (44)
 
     # --- Rules 3.4.11: Soft/global melodic quality constraints ---
     # FUX: "Contrary motion is preferred. Stepwise motion gives the melody flow.
@@ -484,6 +487,13 @@ for Cf in Cf_list:
             maxP <= (Cf[t] + hInterval[t]) + Width * (1 - climax[t]),
             f"climax_lower_{t}",
         )  # (49)
+
+    # --- Rule [NEW] Penultimate bar: stepwise approach to final note ---
+    # FUX: "The penultimate note should approach the final by step."
+    prob += (
+        m[T - 2, -2] + m[T - 2, -1] + m[T - 2, 1] + m[T - 2, 2] == 1,
+        "penultimate_stepwise_approach",
+    )
 
     # =============================================================================
     # OBJECTIVE FUNCTION (Section 3.5)

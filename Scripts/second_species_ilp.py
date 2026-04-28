@@ -8,6 +8,8 @@ Run:
     python second_species_ilp.py
 """
 
+import time
+
 from pulp import (
     LpProblem,
     LpMinimize,
@@ -28,7 +30,7 @@ from pulp import (
 # Cf = [0, -5, -7, -8, -7, -10, -5, -8, -10, -12]
 Cf_list =[
     [0, -5, -7, -8, -7, -10, -5, -8, -10, -12],
-    
+
     [0, 2, 4, 2, 5, 7, 5, 4, 2, 0],
     [0, 4, 5, 7, 4, 5, 2, 0],
     [0, 2, 0, 4, 5, 4, 2, 0],
@@ -89,7 +91,7 @@ for Cf in Cf_list:
     CfDown = [1 if CfStep[s] < 0 else 0 for s in S1]
 
     # Harmonic intervals
-    H_CONS = [0, 3, 4, 5, 7, 8, 9, 12, 15, 16, 17, 19, 20, 21, 24]
+    H_CONS = [0, 3, 4, 7, 8, 9, 12, 15, 16, 19, 20, 21, 24]
     H_DISS = [1, 2, 6, 10, 11, 13, 14, 18, 22, 23]
     H = sorted(set(H_CONS + H_DISS))
 
@@ -279,6 +281,19 @@ for Cf in Cf_list:
             for i2 in [7, 19]:
                 prob += h[s, i1] + h[nxt, i2] <= 1, f"no_par_fifth_{s}_{nxt}_{i1}_{i2}"
 
+    # No parallel fifths/octaves across the barline (upbeat → next downbeat).
+    for b in range(N - 1):
+        upbeat = 2 * b + 1
+        nxt = 2 * (b + 1)
+
+        for i1 in [0, 12, 24]:
+            for i2 in [0, 12, 24]:
+                prob += h[upbeat, i1] + h[nxt, i2] <= 1, f"no_par_octave_up_db_{b}_{i1}_{i2}"
+
+        for i1 in [7, 19]:
+            for i2 in [7, 19]:
+                prob += h[upbeat, i1] + h[nxt, i2] <= 1, f"no_par_fifth_up_db_{b}_{i1}_{i2}"
+
     # No hidden fifths/octaves into downbeats when CP leaps in similar motion.
     similarDownbeat = {
         b: LpVariable(f"similarDownbeat_{b}", cat=LpBinary)
@@ -372,6 +387,18 @@ for Cf in Cf_list:
         prob += cp_pitch + (1 - climax[s]) <= maxP, f"climax_upper_{s}"
         prob += maxP <= cp_pitch + Width * (1 - climax[s]), f"climax_lower_{s}"
 
+    # --- Rule 3.4.1a: Unison or octave ENFORCED at last bar ---
+    IC = sorted(set(i % 12 for i in H))
+
+    hClass = {(s, c): LpVariable(f"hClass_{s}_{c}", cat=LpBinary) for s in S0 for c in IC}
+
+    for s in S0:
+        for c in IC:
+            members = [i for i in H if i % 12 == c]
+            prob += hClass[s, c] == lpSum(h[s, i] for i in members), f"hClass_def_{s}_{c}"
+
+    prob += hClass[S - 1, 0] == 1, "final_perfect_unison_class"
+
     # =============================================================================
     # OBJECTIVE
     # =============================================================================
@@ -387,8 +414,11 @@ for Cf in Cf_list:
     # SOLVE
     # =============================================================================
 
-    solver = PULP_CBC_CMD(msg=1)
+    print(f"\nSolving CF: {Cf}")
+    solver = PULP_CBC_CMD(msg=1, timeLimit=600)
+    t0 = time.time()
     prob.solve(solver)
+    solve_time = time.time() - t0
 
     # =============================================================================
     # OUTPUT
@@ -470,4 +500,4 @@ for Cf in Cf_list:
         import os, sys
         sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
         from translator import show_second_species
-        show_second_species(Cf, cp_pitches, "Second Species Counterpoint")
+        show_second_species(Cf, cp_pitches, "Second Species Counterpoint", solve_time=solve_time)

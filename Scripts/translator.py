@@ -20,7 +20,7 @@ Usage as a script (demo with hardcoded CF):
     python translator.py
 """
 
-from music21 import stream, note, meter, metadata
+from music21 import stream, note, meter, metadata, expressions
 
 _MIDI_BASE = 60  # C4
 
@@ -48,14 +48,14 @@ def build_first_species_score(
     score.metadata = metadata.Metadata()
     score.metadata.title = title
 
-    cp_part = stream.Part(id="Counterpoint")
-    cp_part.partName = "Counterpoint"
+    cp_part = stream.Part(id="CTP")
+    cp_part.partName = "CTP"
     cp_part.insert(0, meter.TimeSignature("4/4"))
     for offset in cp:
         cp_part.append(_make_note(offset, "whole"))
 
-    cf_part = stream.Part(id="Cantus Firmus")
-    cf_part.partName = "Cantus Firmus"
+    cf_part = stream.Part(id="CF")
+    cf_part.partName = "CF"
     cf_part.insert(0, meter.TimeSignature("4/4"))
     for offset in cf:
         cf_part.append(_make_note(offset, "whole"))
@@ -69,6 +69,7 @@ def build_second_species_score(
     cf: list[int],
     cp: list[int],
     title: str = "Second Species Counterpoint",
+    solve_time: float | None = None,
 ) -> stream.Score:
     """
     cf : semitone offsets for CF, one per bar (N values)
@@ -84,15 +85,18 @@ def build_second_species_score(
     score.metadata = metadata.Metadata()
     score.metadata.title = title
 
-    cp_part = stream.Part(id="Counterpoint")
-    cp_part.partName = "Counterpoint"
+    cp_part = stream.Part(id="CTP")
+    cp_part.partName = "CTP"
     cp_part.insert(0, meter.TimeSignature("4/4"))
+    if solve_time is not None:
+        te = expressions.TextExpression(f"solved in {solve_time:.2f}s")
+        cp_part.insert(0, te)
     for i, offset in enumerate(cp):
         dur = "whole" if i == len(cp) - 1 else "half"
         cp_part.append(_make_note(offset, dur))
 
-    cf_part = stream.Part(id="Cantus Firmus")
-    cf_part.partName = "Cantus Firmus"
+    cf_part = stream.Part(id="CF")
+    cf_part.partName = "CF"
     cf_part.insert(0, meter.TimeSignature("4/4"))
     for offset in cf:
         cf_part.append(_make_note(offset, "whole"))
@@ -102,12 +106,17 @@ def build_second_species_score(
     return score
 
 
-def show_first_species(cf: list[int], cp: list[int], title: str = "First Species Counterpoint"):
+def show_first_species(
+    cf: list[int], cp: list[int], title: str = "First Species Counterpoint"
+):
     build_first_species_score(cf, cp, title).show()
 
 
-def show_second_species(cf: list[int], cp: list[int], title: str = "Second Species Counterpoint"):
-    build_second_species_score(cf, cp, title).show()
+def show_second_species(
+    cf: list[int], cp: list[int], title: str = "Second Species Counterpoint",
+    solve_time: float | None = None,
+):
+    build_second_species_score(cf, cp, title, solve_time).show()
 
 
 def _print_score(score: stream.Score):
