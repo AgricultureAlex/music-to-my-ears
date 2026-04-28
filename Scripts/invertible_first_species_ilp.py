@@ -12,6 +12,8 @@ All rules are numbered to match the paper's Section 3 numbering.
 Fux coverage notes are inline. Deviations from Fux are flagged with [FUX-DIFF].
 """
 
+import time
+
 from pulp import (
     LpProblem,
     LpMinimize,
@@ -515,8 +517,10 @@ for Cf in Cf_list:
     # SOLVE
     # =============================================================================
 
-    solver = PULP_CBC_CMD(msg=1)
+    solver = PULP_CBC_CMD(msg=1, timeLimit=600)
+    t0 = time.time()
     prob.solve(solver)
+    solve_time = time.time() - t0
 
     # =============================================================================
     # OUTPUT
@@ -573,7 +577,7 @@ for Cf in Cf_list:
         import os, sys
         sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
         from translator import show_first_species
-        show_first_species(Cf, cp_pitches, "Invertible First Species Counterpoint")
+        show_first_species(Cf, cp_pitches, "Invertible First Species Counterpoint", solve_time=solve_time)
 
     # =============================================================================
     # FUX COVERAGE SUMMARY
