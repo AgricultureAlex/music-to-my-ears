@@ -1,7 +1,7 @@
 """
 First Species Counterpoint — Integer Linear Program
 Based on: Tanaka (2022), SMC, "Formulating First Species Counterpoint with Integer Programming"
-Reference rules: Fux, Gradus ad Parnassum (1725), via Jeppesen and the Hiroshi/Noël-Marcel tradition.
+Reference rules: Fux, Gradus ad Parnassum (1725), via Jeppesen and the Hiroshi/Noel-Marcel tradition.
 
 Install: pip install pulp
 Run:     python first_species_ilp.py

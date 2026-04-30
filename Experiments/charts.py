@@ -33,7 +33,7 @@ ax.scatter(df['cf_length'], df['wallclock_sec'], s=50, color='#534AB7',
 n_range = np.linspace(df['cf_length'].min(), df['cf_length'].max(), 100)
 t_fit = np.exp(intercept) * n_range**slope
 ax.plot(n_range, t_fit, '--', color='#1D9E75',
-        label=f'Power-law fit: $t \\propto N^{{{slope:.2f}}}$ (R² = {r**2:.2f})')
+        label=f'Power-law fit: $t \\propto N^{{{slope:.2f}}}$ (R^2 = {r**2:.2f})')
 
 ax.set_xscale('log')
 ax.set_yscale('log')
