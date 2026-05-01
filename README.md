@@ -1,6 +1,6 @@
 # Second Species and Invertible Counterpoint by Integer Programming
 
-Code repository for the ISMIR 2026 paper by Katherine Guerrerio and Alex Ma (Johns Hopkins University).
+Code repository for the 11th JHU Declarative Methods (2026) paper by Katherine Guerrerio and Alex Ma (Johns Hopkins University).
 
 Given a cantus firmus (a challenge melody), the scripts in this repository use integer linear programming to automatically compose a valid counterpoint above it, following rules adapted from Fux's *Gradus ad Parnassum* (1725). Three formulations are provided: first species, invertible first species, and second species.
 
@@ -100,7 +100,7 @@ If you use this code, please cite:
 
 ```
 Katherine Guerrerio and Alex Ma. "Second Species and Invertible Counterpoint
-by Integer Programming." Proceedings of ISMIR 2026.
+by Integer Programming." Proceedings of the 11th JHU Declarative Methods 2026.
 ```
 
 ---
