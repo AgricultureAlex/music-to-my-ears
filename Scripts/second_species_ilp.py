@@ -11,15 +11,15 @@ Run:
 import time
 
 from pulp import (
-    LpProblem,
-    LpMinimize,
-    LpVariable,
+    PULP_CBC_CMD,
     LpBinary,
     LpInteger,
-    lpSum,
+    LpMinimize,
+    LpProblem,
     LpStatus,
+    LpVariable,
+    lpSum,
     value,
-    PULP_CBC_CMD,
 )
 
 # =============================================================================
@@ -28,40 +28,32 @@ from pulp import (
 
 # Cantus firmus
 # Cf = [0, -5, -7, -8, -7, -10, -5, -8, -10, -12]
-Cf_list =[
+Cf_list = [
     [0, -5, -7, -8, -7, -10, -5, -8, -10, -12],
-
     [0, 2, 4, 2, 5, 7, 5, 4, 2, 0],
     [0, 4, 5, 7, 4, 5, 2, 0],
     [0, 2, 0, 4, 5, 4, 2, 0],
-
     [0, 7, 9, 7, 5, 4, 2, 0],
     [0, 2, 5, 4, 7, 5, 4, 2, 0],
     [0, 4, 2, 5, 7, 9, 7, 5, 2, 0],
-
     [0, 2, 4, 7, 9, 7, 5, 4, 2, 0],
     [0, 5, 7, 9, 7, 4, 5, 2, 0],
     [0, 2, 4, 5, 9, 7, 5, 4, 2, 0],
-
     [0, 2, 4, 5, 7, 4, 5, 9, 7, 5, 4, 2, 0],
     [0, 4, 5, 7, 9, 7, 5, 4, 2, 4, 2, 0],
     [0, 2, 5, 7, 9, 5, 7, 4, 2, 0],
-
     [0, 2, 4, 5, 7, 5, 4, -1, 0],
     [0, 4, 5, 7, 9, 7, 5, -1, 0],
     [0, 2, 5, 7, 4, 5, -1, 0],
-
     [0, 2, 4, 5, 7, 5, 4, 0],
     [0, 4, 7, 5, 4, 0],
     [0, 2, 4, 7, 5, 4, 0],
-
     [0, 2, 4, 5, 9, 7, 5, 4, 0],
     [0, 5, 7, 9, 7, 5, 4, 0],
     [0, 2, 5, 7, 5, 4, 0],
-
     [0, 4, 5, 7, 9, 5, 4, 0],
     [0, 2, 4, 7, 9, 7, 4, 0],
-    [0, 5, 4, 7, 5, 4, 0]
+    [0, 5, 4, 7, 5, 4, 0],
 ]
 
 results = []
@@ -138,8 +130,7 @@ for Cf in Cf_list:
     turn = {s: LpVariable(f"turn_{s}", cat=LpBinary) for s in S2}
 
     consecutiveLeap = {
-        s: LpVariable(f"consLeap_{s}", lowBound=0, upBound=2, cat=LpInteger)
-        for s in S2
+        s: LpVariable(f"consLeap_{s}", lowBound=0, upBound=2, cat=LpInteger) for s in S2
     }
 
     largeLeap = {s: LpVariable(f"largeLeap_{s}", cat=LpBinary) for s in S1}
@@ -290,21 +281,25 @@ for Cf in Cf_list:
 
         for i1 in [0, 12, 24]:
             for i2 in [0, 12, 24]:
-                prob += h[upbeat, i1] + h[nxt, i2] <= 1, f"no_par_octave_up_db_{b}_{i1}_{i2}"
+                prob += (
+                    h[upbeat, i1] + h[nxt, i2] <= 1,
+                    f"no_par_octave_up_db_{b}_{i1}_{i2}",
+                )
 
         for i1 in [7, 19]:
             for i2 in [7, 19]:
-                prob += h[upbeat, i1] + h[nxt, i2] <= 1, f"no_par_fifth_up_db_{b}_{i1}_{i2}"
+                prob += (
+                    h[upbeat, i1] + h[nxt, i2] <= 1,
+                    f"no_par_fifth_up_db_{b}_{i1}_{i2}",
+                )
 
     # No hidden fifths/octaves into downbeats when CP leaps in similar motion.
     similarDownbeat = {
-        b: LpVariable(f"similarDownbeat_{b}", cat=LpBinary)
-        for b in range(N - 1)
+        b: LpVariable(f"similarDownbeat_{b}", cat=LpBinary) for b in range(N - 1)
     }
 
     hiddenTrigger = {
-        b: LpVariable(f"hiddenTrigDownbeat_{b}", cat=LpBinary)
-        for b in range(N - 1)
+        b: LpVariable(f"hiddenTrigDownbeat_{b}", cat=LpBinary) for b in range(N - 1)
     }
 
     for b in range(N - 1):
@@ -321,9 +316,13 @@ for Cf in Cf_list:
                 prob += similarDownbeat[b] == 0, f"sim_db_static_{b}"
 
             prob += hiddenTrigger[b] <= similarDownbeat[b], f"hid_db_le_sim_{b}"
-            prob += hiddenTrigger[b] <= 1 - conjunct[prev_to_downbeat], f"hid_db_le_leap_{b}"
             prob += (
-                hiddenTrigger[b] >= similarDownbeat[b] + (1 - conjunct[prev_to_downbeat]) - 1,
+                hiddenTrigger[b] <= 1 - conjunct[prev_to_downbeat],
+                f"hid_db_le_leap_{b}",
+            )
+            prob += (
+                hiddenTrigger[b]
+                >= similarDownbeat[b] + (1 - conjunct[prev_to_downbeat]) - 1,
                 f"hid_db_ge_{b}",
             )
 
@@ -334,7 +333,10 @@ for Cf in Cf_list:
     # No triadic arpeggio patterns.
     for s in S2:
         prob += m[s, 3] + m[s, 4] + m[s + 1, 3] + m[s + 1, 4] <= 1, f"no_arp_up_33_{s}"
-        prob += m[s, -3] + m[s, -4] + m[s + 1, -3] + m[s + 1, -4] <= 1, f"no_arp_dn_33_{s}"
+        prob += (
+            m[s, -3] + m[s, -4] + m[s + 1, -3] + m[s + 1, -4] <= 1,
+            f"no_arp_dn_33_{s}",
+        )
         prob += m[s, 3] + m[s, 4] + m[s + 1, 5] <= 1, f"no_arp_up_34_{s}"
         prob += m[s, -5] + m[s + 1, -3] + m[s + 1, -4] <= 1, f"no_arp_dn_34_{s}"
         prob += m[s, 5] + m[s + 1, 3] + m[s + 1, 4] <= 1, f"no_arp_up_43_{s}"
@@ -347,7 +349,10 @@ for Cf in Cf_list:
     # Avoid overusing a pitch.
     for s in S4:
         for u in P:
-            prob += lpSum(p[k, u] for k in range(s, s + 5)) <= 2, f"no_triple_pitch_{s}_{u}"
+            prob += (
+                lpSum(p[k, u] for k in range(s, s + 5)) <= 2,
+                f"no_triple_pitch_{s}_{u}",
+            )
 
     # If CF leaps from one downbeat to next, CP should not also leap similarly into that downbeat.
     for b in range(N - 1):
@@ -378,7 +383,10 @@ for Cf in Cf_list:
 
     # Prefer some contrary motion only on transitions where the CF actually moves.
     moving_transitions = [s for s in S1 if CfStep[s] != 0]
-    prob += lpSum(contrary[s] for s in moving_transitions) >= MinContrary, "min_contrary"
+    prob += (
+        lpSum(contrary[s] for s in moving_transitions) >= MinContrary,
+        "min_contrary",
+    )
 
     # Unique climax.
     prob += lpSum(climax[s] for s in S0) == 1, "unique_climax"
@@ -392,12 +400,17 @@ for Cf in Cf_list:
     # --- Rule 3.4.1a: Unison or octave ENFORCED at last bar ---
     IC = sorted(set(i % 12 for i in H))
 
-    hClass = {(s, c): LpVariable(f"hClass_{s}_{c}", cat=LpBinary) for s in S0 for c in IC}
+    hClass = {
+        (s, c): LpVariable(f"hClass_{s}_{c}", cat=LpBinary) for s in S0 for c in IC
+    }
 
     for s in S0:
         for c in IC:
             members = [i for i in H if i % 12 == c]
-            prob += hClass[s, c] == lpSum(h[s, i] for i in members), f"hClass_def_{s}_{c}"
+            prob += (
+                hClass[s, c] == lpSum(h[s, i] for i in members),
+                f"hClass_def_{s}_{c}",
+            )
 
     prob += hClass[S - 1, 0] == 1, "final_perfect_unison_class"
 
@@ -407,7 +420,7 @@ for Cf in Cf_list:
 
     prob += (
         lpSum(turn[s] for s in S2)
-        - lpSum(conjunct[s] for s in S1)
+        - lpSum(3 * conjunct[s] for s in S1)
         - lpSum(contrary[s] for s in moving_transitions),
         "objective",
     )
@@ -462,7 +475,11 @@ for Cf in Cf_list:
             cp_p = cp_pitches[s]
             hi = cp_intervals_h[s]
 
-            diss = int(round(value(isDissonant[s]))) if value(isDissonant[s]) is not None else "-"
+            diss = (
+                int(round(value(isDissonant[s])))
+                if value(isDissonant[s]) is not None
+                else "-"
+            )
 
             if s in S1:
                 mi = int(round(value(mInterval[s])))
@@ -493,9 +510,9 @@ for Cf in Cf_list:
 
         print()
         print(f"Dissonant upbeats: {n_diss}/{len(Upbeats)}")
-        print(f"Conjunct motions:  {n_conjunct}/{S-1}")
+        print(f"Conjunct motions:  {n_conjunct}/{S - 1}")
         print(f"Contrary motions:  {n_contrary}/{len(moving_transitions)}")
-        print(f"Turns:             {n_turns}/{S-2}")
+        print(f"Turns:             {n_turns}/{S - 2}")
         print(f"Climax at subbeat: {climax_bar} (pitch={cp_pitches[climax_bar]})")
 
         results.append((Cf, cp_pitches, solve_time))
@@ -503,7 +520,10 @@ for Cf in Cf_list:
     else:
         results.append((Cf, None, solve_time))
 
-import os, sys
+import os
+import sys
+
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from translator import show_combined_second_species
+
 show_combined_second_species(results, "Second Species Counterpoint")
