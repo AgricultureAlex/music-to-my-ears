@@ -1,9 +1,110 @@
-# music-to-my-ears
-## Alphabet
+# Second Species and Invertible Counterpoint by Integer Programming
 
+Code repository for the ISMIR 2026 paper by Katherine Guerrerio and Alex Ma (Johns Hopkins University).
 
-## First Problem
-Input: A list of k-grams.
-Output: The shortest sequence to contain all of those k-grams.
+Given a cantus firmus (a challenge melody), the scripts in this repository use integer linear programming to automatically compose a valid counterpoint above it, following rules adapted from Fux's *Gradus ad Parnassum* (1725). Three formulations are provided: first species, invertible first species, and second species.
 
-## Second Problem
+---
+
+## Quick Start: Generate and Listen
+
+**Requirements:** Python 3.11+, [MuseScore](https://musescore.org) (free, for playback)
+
+```bash
+# Install Python dependencies
+pip install -r requirements.txt
+
+# Generate first species counterpoints for all 25 cantus firmi
+# MuseScore opens automatically when done
+python Scripts/first_species_ilp.py
+
+# Or try second species
+python Scripts/second_species_ilp.py
+
+# Or invertible first species (runs a pre-validation pass first)
+python Scripts/invertible_first_species_ilp.py
+```
+
+Each script solves all 25 cantus firmi and then opens a single MuseScore window showing all results, with solve times annotated and double barlines between examples. Press the play button in MuseScore to hear the output.
+
+If MuseScore is not on your PATH, music21 will prompt you to configure it on first run.
+
+---
+
+## Listening to the Pre-computed Results
+
+Pre-computed MuseScore files are in `Experiments/Musescore Files (Listen)/`:
+
+| File | Contents |
+|---|---|
+| `FirstSpeciesExperiments.mscz` | All 25 first species solutions |
+| `InvertibleFirstSpeciesExperiments.mscz` | Invertible solutions (some CFs rejected) |
+| `SecondSpeciesExperiments.mscz` | Second species solutions (one CF timed out) |
+
+PDFs of the same scores are included alongside each `.mscz` file.
+
+---
+
+## Tweaking the Objective Function
+
+The solver minimizes turns while rewarding contrary and conjunct (stepwise) motion. You can adjust the relative weights to steer the character of the output. Look for the `# OBJECTIVE FUNCTION` section near the bottom of each script:
+
+- `Scripts/first_species_ilp.py`
+- `Scripts/invertible_first_species_ilp.py`
+- `Scripts/second_species_ilp.py`
+
+The objective currently weights turns, contrary motion, and conjunct motion equally at `1:-1:-1`. Increasing the weight on conjunct produces smoother, more chant-like counterpoints; increasing contrary leads to more independent voice movement. Note that the counterpoint will remain musically valid regardless of how you set the weights, since all hard rules are encoded as constraints.
+
+---
+
+## Project Structure
+
+```
+Scripts/
+    first_species_ilp.py            -- first species ILP (replication of Tanaka 2022)
+    invertible_first_species_ilp.py -- first species with octave-invertibility
+    second_species_ilp.py           -- second species ILP
+    translator.py                   -- converts semitone output to music21 scores
+
+Experiments/
+    Musescore Files (Listen)/       -- .mscz and .pdf outputs from our runs
+    CSVs for Analysis/              -- solver statistics per cantus firmus
+    Charts and Graphs/              -- power-law and cut-frequency figures
+    charts.py                       -- script that generates the figures from the CSVs
+
+Resources and Writeups/
+    First species counterpoint - Integer programming.pdf  -- Tanaka (2022)
+```
+
+---
+
+## How It Works
+
+Notes are encoded as integer semitone offsets from middle C (C4 = 0). The ILP uses three families of binary decision variables -- harmonic intervals `h`, melodic intervals `m`, and counterpoint pitches `p` -- plus integer-valued auxiliary variables that track the actual interval values. Counterpoint rules (no parallel fifths, stepwise motion preferences, unique climax, etc.) are encoded as linear constraints. The CBC solver (via PuLP) finds an optimal solution in under a few seconds for first species; second species can take several minutes for longer cantus firmi.
+
+For invertible first species, the cantus firmus is pre-validated to ensure it also satisfies the counterpoint melodic rules. The harmonic interval set is restricted to intervals that are consonant under octave inversion (fifths are excluded since a perfect fifth inverts to a perfect fourth, which is dissonant in strict counterpoint).
+
+For a full description of the formulation, see the paper.
+
+---
+
+## Experimental Data
+
+CSVs recording solver statistics (wall time, cut counts, problem size, climax position) for all 25 runs of each species are in `Experiments/CSVs for Analysis/`. The figures in the paper were generated from these CSVs using `Experiments/charts.py`.
+
+---
+
+## Citation
+
+If you use this code, please cite:
+
+```
+Katherine Guerrerio and Alex Ma. "Second Species and Invertible Counterpoint
+by Integer Programming." Proceedings of ISMIR 2026.
+```
+
+---
+
+## AI Usage Statement
+
+This README was generated by an AI assistant and reviewed by the authors.
