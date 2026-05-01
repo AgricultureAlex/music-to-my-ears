@@ -61,7 +61,7 @@ The objective currently weights turns, contrary motion, and conjunct motion equa
 
 ```
 Scripts/
-    first_species_ilp.py            -- first species ILP (replication of Tanaka 2022)
+    first_species_ilp.py            -- first species ILP (replication of Tanaka 2022 with corrections/adjustments)
     invertible_first_species_ilp.py -- first species with octave-invertibility
     second_species_ilp.py           -- second species ILP
     translator.py                   -- converts semitone output to music21 scores
